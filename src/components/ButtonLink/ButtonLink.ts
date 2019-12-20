@@ -9,7 +9,9 @@ class ButtonLink extends Component< ButtonLinkProps, ButtonLinkState > {
     static componentName = 'button-link';
 
     static attributes = [
-
+		'title',
+		'modifier',
+		'href'
     ];
 
     public methods: ButtonLinkMethods = {
@@ -24,7 +26,9 @@ class ButtonLink extends Component< ButtonLinkProps, ButtonLinkState > {
   
     get defaultProps() {
         return {
-
+			title: '',
+			modifier: '',
+			href: null
         }
     }
 

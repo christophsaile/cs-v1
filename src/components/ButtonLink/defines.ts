@@ -6,7 +6,9 @@
  * Props
  */
  interface ButtonLinkProps {
-
+	 title: string,
+	 modifier?: string,
+	 href?: string,
  }
 
 /**
