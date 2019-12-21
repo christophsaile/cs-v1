@@ -1,5 +1,73 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
 
-@include host('header-navigation') {
+@include host("header-navigation") {
+	.navHeader {
+		position: fixed;
+		top: 0;
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		padding: 16px 0px;
+		background-color: black;
 
+		@include breakpoint($medium) {
+			flex-direction: row;
+		}
+
+		&__logo {
+			letter-spacing: 2px;
+		}
+		&__menuBtn {
+			position: absolute;
+			align-self: flex-end;
+			line-height: 0;
+			cursor: pointer;
+
+			svg {
+				fill: white;
+			}
+			@include breakpoint($medium) {
+				display: none;
+			}
+		}
+		&__items {
+			display: none;
+			flex-direction: column;
+
+			&--show {
+				display: flex;
+			}
+			.navHeader__links {
+				margin-top: 10px;
+			}
+
+			@include breakpoint($medium) {
+				display: flex;
+				flex-direction: row;
+				margin-left: auto;
+
+				.navHeader__links {
+					margin-top: 0;
+					margin-left: 20px;
+				}
+			}
+		}
+		&__links {
+			list-style: none;
+
+			//will be replaced by <a> component
+			a {
+				color: white;
+				text-decoration: none;
+			}
+		}
+		&__logo,
+		&__items {
+			list-style: none;
+			margin-block-end: 0;
+			margin-block-start: 0;
+			padding-inline-start: 0;
+		}
+	}
 }

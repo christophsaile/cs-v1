@@ -1,36 +1,52 @@
-import Component from '@biotope/element';
-import template from './template';
+import Component from "@biotope/element";
+import template from "./template";
 
-import { HeaderNavigationProps, HeaderNavigationState, HeaderNavigationMethods } from './defines';
+import {
+	HeaderNavigationProps,
+	HeaderNavigationState,
+	HeaderNavigationMethods
+} from "./defines";
 
+class HeaderNavigation extends Component<
+	HeaderNavigationProps,
+	HeaderNavigationState
+> {
+	static componentName = "header-navigation";
 
+	static attributes = [];
 
-class HeaderNavigation extends Component< HeaderNavigationProps, HeaderNavigationState > {
-    static componentName = 'header-navigation';
+	public methods: HeaderNavigationMethods = {};
 
-    static attributes = [
+	public navHeaderItems: HTMLElement;
+	public navHeaderMenuBtn: HTMLElement;
 
-    ];
+	connectedCallback() {
+		this.navHeaderItems = this.shadowRoot.querySelector(
+			".navHeader__items"
+		);
+		this.navHeaderMenuBtn = this.shadowRoot.querySelector(
+			".navHeader__menuBtn"
+		);
+		this.navHeaderMenuBtn.addEventListener("click", () => {
+			this.navHeaderItems.classList.toggle("navHeader__items--show");
+		});
+	}
 
-    public methods: HeaderNavigationMethods = {
+	get defaultState() {
+		return {};
+	}
 
-    };
-   
-    get defaultState() {
-        return {
+	get defaultProps() {
+		return {};
+	}
 
-        }
-    }
-  
-    get defaultProps() {
-        return {
-
-        }
-    }
-
-    render() {
-        return template(this.html, { ...this.props, ...this.state, ...this.methods }, this.createStyle);
-    }
+	render() {
+		return template(
+			this.html,
+			{ ...this.props, ...this.state, ...this.methods },
+			this.createStyle
+		);
+	}
 }
 
 export default HeaderNavigation;
