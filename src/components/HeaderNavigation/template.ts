@@ -8,15 +8,14 @@ export default (render: Function, data: HeaderNavigationProps & HeaderNavigation
 		${createStyle(styles)}
 		<!-- <a> will be replaced by <a> component -->
 		<nav class="navHeader">
-			<ul class="navHeader__logo">
-				<li class="navHeader__links"><a href="#">LINK NAME</a></li>
-			</ul>
-			<div class="navHeader__menuBtn">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
-			</div>
-			<ul class="navHeader__items">
-				<li class="navHeader__links"><a href="#">LINK NAME</a></li>
-				<li class="navHeader__links"><a href="#">LINK NAME</a></li>
+		<div class="navHeader__menu-toggle"><span>Menu</span></div>
+			<ul class="navHeader__menu">
+				<li class="navHeader__links"><a href="#"><span>Home</span></a></li>
+				<li class="navHeader__links"><a href="#"><span>Learn More</span></a></li>
+				<li class="navHeader__links"><a href="#"><span>Get Involved</span></a></li>
+				<li class="navHeader__links"><a href="#"><span>Have Some Fun</span></a></li>
+				<li class="navHeader__links"><a href="#"><span>Don't Miss Out</span></a></li>
+				<li class="navHeader__links"><a href="#"><span>Get The Gear</span></a></li>
 			</ul>
 		</nav>
     `;
