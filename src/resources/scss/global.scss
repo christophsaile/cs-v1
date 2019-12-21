@@ -1,8 +1,25 @@
 @import "defaultSassImports.scss";
 
 body {
+}
+
+.frame {
+	padding-left: 6%;
+	padding-right: 6%;
+}
+.container {
+	&__fullPage {
+		height: 100vh;
+	}
+}
+
+.landingPage {
 	background-color: darkslateblue;
 }
-footer{
+.aboutMe {
+	background-color: darkslategray;
+}
+
+footer {
 	background-color: coral;
 }
