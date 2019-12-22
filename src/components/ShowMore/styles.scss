@@ -1,0 +1,38 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+
+@include host("show-more") {
+
+	.showMore {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		height: 20vh;
+		background: linear-gradient(to bottom, rgba(black, 0), black);
+		transition: height ease-in-out 0.3s;
+
+		&--scrollActive {
+			height: 0;
+		}
+		&__icon {
+			position: fixed;
+			bottom: 2rem;
+			left: 0;
+			right: 0;
+			height: 3rem;
+			width: 3rem;
+			margin: 0 auto;
+			fill: greenyellow;
+			transition: all ease-in-out 0.3s;
+
+			&.showMore--scrollActive {
+				height: 0;
+				bottom: -3rem;
+			}
+
+			&:hover {
+				fill: green;
+			}
+		}
+	}
+}
