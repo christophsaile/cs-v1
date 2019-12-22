@@ -17,7 +17,7 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 	connectedCallback() {
 		this.showMore = this.shadowRoot.querySelector(".showMore");
 		this.showMoreIcon = this.shadowRoot.querySelector(".showMore__icon");
-		this.prevScrollPos = 100;
+		this.prevScrollPos = window.innerHeight / 10;
 		this.scrollDown();
 	}
 	public scrollDown() {
