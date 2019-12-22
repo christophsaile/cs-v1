@@ -21,7 +21,6 @@ class AccordionMain extends Component<AccordionMainProps, AccordionMainState> {
 			".accordion__item"
 		);
 		this.accordionItems.forEach(item => {
-			item.classList.add("default");
 			item.addEventListener("click", (e: Event) =>
 				this.checkIfExpanded(e)
 			);

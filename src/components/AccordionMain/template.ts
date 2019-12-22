@@ -1,12 +1,19 @@
-import * as styles from './styles.scss';
+import * as styles from "./styles.scss";
 
-import { AccordionMainProps, AccordionMainState, AccordionMainMethods } from './defines';
+import {
+	AccordionMainProps,
+	AccordionMainState,
+	AccordionMainMethods
+} from "./defines";
 
-
-export default (render: Function, data: AccordionMainProps & AccordionMainState & AccordionMainMethods , createStyle: Function) => {
-    return render`
+export default (
+	render: Function,
+	data: AccordionMainProps & AccordionMainState & AccordionMainMethods,
+	createStyle: Function
+) => {
+	return render`
         ${createStyle(styles)}
-		<section>
+		<section class="accordion">
 			<div class="accordion__item">1</div>
 			<div class="accordion__item">2</div>
 			<div class="accordion__item">3</div>
@@ -14,4 +21,4 @@ export default (render: Function, data: AccordionMainProps & AccordionMainState 
 			<div class="accordion__item">5</div>
 		</section>
     `;
-}
+};
