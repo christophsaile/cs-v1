@@ -1,0 +1,40 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("accordion-main") {
+
+	.accordion {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		position: relative;
+		min-height: 50vh;
+		transition: all 200ms ease-in-out 50ms;
+
+		&__item {
+			box-sizing: border-box;
+			height: 50vh;
+			width: 10vw;
+			overflow: hidden;
+			margin-left: 5px;
+			margin-right: 5px;
+			border-radius: 3px;
+			background: rgba(220, 220, 220, 0.5);
+			color: rgba(255, 255, 255, 0);
+			transition: all 200ms ease-in-out 50ms;
+			font-family: Helvetica, Arial, Sans-Serif;
+			font-size: 16pt;
+			font-weight: 500;
+			cursor: pointer;
+		}
+		.expand {
+			height: 50vh;
+			width: 100vw;
+			background: #7ab7ff;
+			color: rgba(255, 255, 255, 1);
+			padding: 20px;
+		}
+	}
+}
