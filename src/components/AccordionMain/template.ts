@@ -14,7 +14,7 @@ export default (
 	return render`
         ${createStyle(styles)}
 		<section class="accordion">
-			<div class="accordion__item">1</div>
+			<div class="accordion__item expand">1</div>
 			<div class="accordion__item">2</div>
 			<div class="accordion__item">3</div>
 			<div class="accordion__item">4</div>
