@@ -24,15 +24,12 @@
 			background: rgba(220, 220, 220, 0.5);
 			color: rgba(255, 255, 255, 0);
 			transition: all 200ms ease-in-out 50ms;
-			font-family: Helvetica, Arial, Sans-Serif;
-			font-size: 16pt;
-			font-weight: 500;
 			cursor: pointer;
 		}
 		.expand {
 			height: 50vh;
 			width: 100vw;
-			background: #7ab7ff;
+			background: $purpleGradient;
 			color: rgba(255, 255, 255, 1);
 			padding: 20px;
 		}
