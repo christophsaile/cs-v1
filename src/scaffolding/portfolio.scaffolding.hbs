@@ -1,32 +1,28 @@
 <header>
 	<header-navigation data-resources="[{paths: ['components/HeaderNavigation/index.js']}]"></header-navigation>
 </header>
-<main>
-	<section class="cg frame">
-		<div class="container container__fullPage">
-			<h1>3D Modelling</h1>
-			<div class="grid grid__3col">
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-			</div>
-			<show-more data-resources="[{paths: ['components/ShowMore/index.js']}]"></show-more>
+<section class="cg grid grid__3col-2row">
+	<div class="container">
+		<h1>3D Modelling</h1>
+		<div class="grid grid__3col">
+			<card-component class="center" data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
+			<card-component class="center" data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
+			<card-component class="center" data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
 		</div>
-	</section>
-	<section class="prog frame">
-		<div class="container container__fullPage">
-			<h2>programming</h2>
-			<div class="grid grid__3col">
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-			</div>
+		<show-more data-resources="[{paths: ['components/ShowMore/index.js']}]"></show-more>
+	</div>
+</section>
+<section class="prog grid grid__3col-2row">
+	<div class="container">
+		<h2>programming</h2>
+		<div class="grid grid__3col">
+			<card-component class="center" data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
+			<card-component class="center" data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
+			<card-component class="center" data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
 		</div>
-	</section>
-</main>
-<footer class="frame">
+	</div>
+</section>
+<footer>
 	christoph saile</br>
 	christoph saile
 </footer>
