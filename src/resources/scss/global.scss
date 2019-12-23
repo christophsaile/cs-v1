@@ -1,24 +1,25 @@
 @import "defaultSassImports.scss";
-
-body {
+*{
+	padding: 0;
 }
-
+////LAYOUT
+////DEFAULT
 .grid {
 	display: grid;
 
-	.center {
-		margin: auto;
-		&--hor {
-			margin: 0 auto;
-		}
-		&--ver {
-			margin: auto 0;
-		}
-	}
-	&__3col-2row {
+	&__default {
 		grid-template-columns: 6% 1fr 6%;
 		grid-template-rows: 10vh 90vh;
+		max-width: $content-max-width;
+		margin: 0 auto;
 
+		footer &{
+			grid-template-rows: 1fr;
+			
+			.container{
+				grid-row-start: 1;
+			}
+		}
 		.container {
 			grid-column-start: 2;
 			grid-row-start: 2;
@@ -26,12 +27,45 @@ body {
 	}
 	&__3col {
 		grid-template-columns: 1fr;
+		column-gap: 10px;
+		row-gap: 15px;
 
 		@include breakpoint($small) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include breakpoint($medium) {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 }
+.center {
+	margin: auto;
+	&--hor {
+		margin: 0 auto;
+	}
+	&--ver {
+		margin: auto 0;
+	}
+	&--text {
+		text-align: center;
+	}
+}
+
+////LAYOUT
+////SPECIFIC
+.contact {
+	.fix-width {
+		@include breakpoint ($small) {
+			max-width: 50vw;
+		}
+		@include breakpoint ($medium) {
+			max-width: 25vw;
+		}
+
+	}
+}
+
+////BACKGROUNDS
 .landingPage,
 .cg,
 .contact {
