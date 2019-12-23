@@ -15,7 +15,7 @@
 			margin: 0;
 			z-index: 1;
 			width: 100%;
-			background: #ff7012;
+			background: $orangeGradient;
 			padding: 3em 0 2em;
 			position: absolute;
 			transform: translateY(-100%);
@@ -30,7 +30,7 @@
 
 				a {
 					padding: 1em;
-					color: #fff;
+					color: $white;
 					display: block;
 					background: none;
 					line-height: 1em;
@@ -40,7 +40,7 @@
 					transition: background 0.2s ease-in-out;
 
 					span {
-						border-bottom: 1px dotted #fff;
+						border-bottom: 1px dotted $white;
 					}
 
 					&:hover,
@@ -68,7 +68,7 @@
 				display: block;
 				overflow: hidden;
 				text-indent: 100%;
-				background: #ff7012;
+				background: $white;
 				border-radius: 2px;
 				white-space: nowrap;
 				transition: background 0.3s ease-in-out;
@@ -80,7 +80,7 @@
 				content: "";
 				width: 22px;
 				height: 4px;
-				background: #ff7012;
+				background: $white;
 				border-radius: 2px;
 				position: absolute;
 				transform-origin: center center;
@@ -110,7 +110,7 @@
 				&::before,
 				&::after {
 					width: 26px;
-					background: #fff;
+					background: $white;
 				}
 				&:hover,
 				&:focus,
