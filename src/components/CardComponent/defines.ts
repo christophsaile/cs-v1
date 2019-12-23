@@ -6,7 +6,7 @@
  * Props
  */
  interface CardComponentProps {
-
+	modifier: string
  }
 
 /**

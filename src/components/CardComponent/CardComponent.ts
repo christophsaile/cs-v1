@@ -1,36 +1,36 @@
-import Component from '@biotope/element';
-import template from './template';
+import Component from "@biotope/element";
+import template from "./template";
 
-import { CardComponentProps, CardComponentState, CardComponentMethods } from './defines';
+import {
+	CardComponentProps,
+	CardComponentState,
+	CardComponentMethods
+} from "./defines";
 
+class CardComponent extends Component<CardComponentProps, CardComponentState> {
+	static componentName = "card-component";
 
+	static attributes = ["modifier"];
 
-class CardComponent extends Component< CardComponentProps, CardComponentState > {
-    static componentName = 'card-component';
+	public methods: CardComponentMethods = {};
 
-    static attributes = [
+	get defaultState() {
+		return {};
+	}
 
-    ];
+	get defaultProps() {
+		return {
+			modifier: null
+		};
+	}
 
-    public methods: CardComponentMethods = {
-
-    };
-   
-    get defaultState() {
-        return {
-
-        }
-    }
-  
-    get defaultProps() {
-        return {
-
-        }
-    }
-
-    render() {
-        return template(this.html, { ...this.props, ...this.state, ...this.methods }, this.createStyle);
-    }
+	render() {
+		return template(
+			this.html,
+			{ ...this.props, ...this.state, ...this.methods },
+			this.createStyle
+		);
+	}
 }
 
 export default CardComponent;
