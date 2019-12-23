@@ -1,5 +1,19 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
 
-@include host('card-component') {
-
+@include host("card-component") {
+	.card {
+		width: 100%;
+		&__content {
+		}
+		&__header {
+			line-height: 0;
+		}
+		&__img {
+			width: 100%;
+		}
+		&__body {
+			background-color: darkorange;
+			padding: 10px 20px;
+		}
+	}
 }
