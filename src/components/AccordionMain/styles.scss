@@ -2,36 +2,58 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("accordion-main") {
-
 	.accordion {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		align-content: center;
 		position: relative;
 		min-height: 50vh;
-		transition: all 200ms ease-in-out 50ms;
+		transition: all 300ms ease-in-out 50ms;
+
+		@include breakpoint($medium) {
+			flex-direction: row;
+		}
 
 		&__item {
 			box-sizing: border-box;
-			height: 50vh;
-			width: 10%;
+			height: 5vh;
+			width: 100%;
 			overflow: hidden;
-			margin-left: 5px;
-			margin-right: 5px;
+			margin: 5px 0;
 			border-radius: 3px;
 			background: rgba(220, 220, 220, 0.5);
 			color: rgba(255, 255, 255, 0);
-			transition: all 200ms ease-in-out 50ms;
+			transition: all 300ms ease-in-out 50ms;
 			cursor: pointer;
+			&:first-child{
+				margin-top: 0;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+			@include breakpoint($medium) {
+				&:first-child{
+					margin-left: 0;
+				}
+				&:last-child{
+					margin-right: 0;
+				}
+				margin: 0 5px;
+				height: 50vh;
+				width: 10%;
+			}
 		}
 		.expand {
 			height: 50vh;
-			width: 100%;
 			background: $purpleGradient;
 			color: rgba(255, 255, 255, 1);
 			padding: 20px;
+			
+			@include breakpoint($medium){
+				width: 100%;
+			}
 		}
 	}
 }
