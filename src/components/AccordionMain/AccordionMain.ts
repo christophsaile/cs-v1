@@ -21,18 +21,22 @@ class AccordionMain extends Component<AccordionMainProps, AccordionMainState> {
 			".accordion__item"
 		);
 		this.accordionItems.forEach(item => {
+			console.log(item);
 			item.addEventListener("click", (e: Event) =>
 				this.checkIfExpanded(e)
 			);
 		});
 	}
 	public checkIfExpanded = (click: Event) => {
+		console.log(click);
+		console.log(click.target);
+		console.log(click.currentTarget);
 		this.accordionItems.forEach(elem => {
 			if (elem.classList.contains("expand")) {
 				elem.classList.remove("expand");
-				(click.target as HTMLElement).classList.add("expand");
+				(click.currentTarget as HTMLElement).classList.add("expand");
 			} else {
-				(click.target as HTMLElement).classList.add("expand");
+				(click.currentTarget as HTMLElement).classList.add("expand");
 			}
 		});
 	};

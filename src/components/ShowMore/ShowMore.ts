@@ -10,14 +10,16 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 
 	public methods: ShowMoreMethods = {};
 	public showMore: HTMLElement;
-	public showMoreIcon: HTMLElement;
+	public showMoreHeight: number;
 	public prevScrollPos: number;
 	public currentScrollPos: number;
 
 	connectedCallback() {
 		this.showMore = this.shadowRoot.querySelector(".showMore");
-		this.showMoreIcon = this.shadowRoot.querySelector(".showMore__icon");
+		this.showMoreHeight = this.showMore.offsetHeight;
 		this.prevScrollPos = window.innerHeight / 10;
+		console.log(this.showMoreHeight);
+
 		this.scrollDown();
 	}
 	public scrollDown() {
@@ -25,13 +27,13 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 			this.currentScrollPos = window.pageYOffset;			
 			if (this.prevScrollPos > this.currentScrollPos) {
 				this.showMore.classList.remove("showMore--scrollActive");
-				this.showMoreIcon.classList.remove("showMore--scrollActive");
+				this.showMore.style.bottom = "";
 			} else {
 				this.showMore.classList.add("showMore--scrollActive");
-				this.showMoreIcon.classList.add("showMore--scrollActive");
+				this.showMore.style.bottom = "-"+this.showMoreHeight+"px";
 			}
 		};
-		this.showMoreIcon.addEventListener("click", () => {
+		this.showMore.addEventListener("click", () => {
 			window.scrollBy({
 				top: window.innerHeight,
 				left: 0,
