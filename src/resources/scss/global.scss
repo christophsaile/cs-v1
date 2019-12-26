@@ -2,6 +2,9 @@
 
 ////LAYOUT
 ////DEFAULT
+* {
+	scroll-behavior: smooth;
+}
 .grid {
 	display: grid;
 
@@ -11,10 +14,10 @@
 		max-width: $content-max-width;
 		margin: 0 auto;
 
-		footer &{
+		footer & {
 			grid-template-rows: 1fr;
-			
-			.container{
+
+			.container {
 				grid-row-start: 1;
 			}
 		}
@@ -53,13 +56,12 @@
 ////SPECIFIC
 .contact {
 	.fix-width {
-		@include breakpoint ($small) {
+		@include breakpoint($small) {
 			max-width: 50vw;
 		}
-		@include breakpoint ($medium) {
+		@include breakpoint($medium) {
 			max-width: 25vw;
 		}
-
 	}
 }
 
@@ -81,5 +83,6 @@
 }
 footer {
 	height: 10vh;
+	position: relative;
 	background: $purpleGradient;
 }
