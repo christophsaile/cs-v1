@@ -69,20 +69,20 @@
 .landingPage,
 .cg,
 .contact {
-	background: $purpleGradient;
+	background: $turquoise;
+	color: $black;
 }
 .aboutMe,
 .prog {
-	background: $orangeGradient;
+
 }
 
 .contact {
 	~ footer {
-		background: $orangeGradient;
 	}
 }
 footer {
 	height: 10vh;
 	position: relative;
-	background: $purpleGradient;
+
 }

@@ -23,7 +23,7 @@
 			overflow: hidden;
 			margin: 5px 0;
 			border-radius: 3px;
-			background: rgba(220, 220, 220, 0.5);
+			background: $turquoise;
 			color: rgba(255, 255, 255, 0);
 			transition: all $transition-default;
 			cursor: pointer;
@@ -47,8 +47,8 @@
 		}
 		.expand {
 			height: 50vh;
-			background: $purpleGradient;
-			color: rgba(255, 255, 255, 1);
+			background: $coral;
+			color: $black;
 			padding: 20px;
 			
 			@include breakpoint($medium){

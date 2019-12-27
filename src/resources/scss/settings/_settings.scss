@@ -1,9 +1,8 @@
 // GLOBAL SASS SETTINGS
 
 // FONTS
-$font-family-text: "Open Sans", sans-serif;
-$font-weight-normal: 400;
-$font-weight-bold: 600;
+$font-family-sans-serif: "Gilroy-Light", sans-serif;
+$font-weight-normal: normal;
 
 // Z-INDEXES
 //$z-index-component-xyz: 1;
@@ -12,12 +11,11 @@ $font-weight-bold: 600;
 $orangeGradient: linear-gradient(90deg, #f7b733, #ff7012);
 $purpleGradient: linear-gradient(90deg, #4a00e0, #8e2de2);
 $blackGradient: linear-gradient(90deg, #434343, #000000);
-$orange: #ff7012;
-$yellow: #f7b733;
-$purple: #8e2de2;
-$darkPurple: #4a00e0;
-$white: #fff;
-$black: #000;
+$coral: rgb(255, 164, 137);
+$red: rgb(222, 40, 38);
+$turquoise: rgb(159, 212, 202);
+$white: rgb(245, 245, 235);
+$black: rgb(24, 23, 23);
 
 // TRANSITIONS
 $transition-default: 0.3s cubic-bezier(1, 0.5, 0, 1);
@@ -25,7 +23,7 @@ $transition-default: 0.3s cubic-bezier(1, 0.5, 0, 1);
 // BODY STYLES
 $body-bg: $black;
 $body-font-color: $white;
-$body-font-family: $font-family-text;
+$body-font-family: $font-family-sans-serif;
 $body-font-weight: $font-weight-normal;
 $body-font-style: normal;
 $body-font-size: 17px;
