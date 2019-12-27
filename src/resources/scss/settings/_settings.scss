@@ -1,7 +1,7 @@
 // GLOBAL SASS SETTINGS
 
 // FONTS
-$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-text: "Open Sans", sans-serif;
 $font-weight-normal: 400;
 $font-weight-bold: 600;
 
@@ -25,7 +25,7 @@ $transition-default: 0.3s cubic-bezier(1, 0.5, 0, 1);
 // BODY STYLES
 $body-bg: $black;
 $body-font-color: $white;
-$body-font-family: $font-family-sans-serif;
+$body-font-family: $font-family-text;
 $body-font-weight: $font-weight-normal;
 $body-font-style: normal;
 $body-font-size: 17px;
