@@ -27,6 +27,26 @@
 		.container {
 			grid-column-start: 2;
 			grid-row-start: 2;
+
+			.container {
+				grid-column-start: unset;
+				grid-row-start: unset;
+			}
+		}
+	}
+	&__autoHeigth {
+		grid-template-columns: 6% 1fr 6%;
+		grid-template-rows: 5vh auto;
+		min-height: 100vh;
+		max-width: $content-max-width;
+		margin: 0 auto;
+
+		@include breakpoint($small) {
+			grid-template-rows: 10vh auto;
+		}
+		.container {
+			grid-column-start: 2;
+			grid-row-start: 2;
 		}
 	}
 	&__3col {
@@ -57,6 +77,52 @@
 
 ////LAYOUT
 ////SPECIFIC
+.vita {
+	margin-top: 3rem;
+	margin-bottom: 4rem;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-top: 1rem;
+		padding: 1rem;
+
+		@include breakpoint($small) {
+			width: 55%;
+			margin-top: 2rem;
+			padding: 3rem;
+		}
+		&--left {
+			margin-right: auto;
+			background: $white;
+		}
+		&--right {
+			margin-left: auto;
+			align-items: flex-end;
+			text-align: right;
+			background: $turquoise
+		}
+	}
+	&__number {
+		display: inline-block;
+		width: fit-content;
+		margin-bottom: (4rem / 1.5 / 2); ;
+		margin-top: (4rem / 1.5 / 2);
+		font-size: (4rem / 1.5);
+		line-height: 0.3;
+		background-color: $turquoise;
+
+		@include breakpoint($medium) {
+			margin-top: (4rem / 1.25/ 2);
+			font-size: (4rem / 1.25);
+		}
+		@include breakpoint($large) {
+			margin-top: (4rem / 2);
+			font-size: 4rem;
+		}
+	}
+}
 .contact {
 	.fix-width {
 		@include breakpoint($small) {
