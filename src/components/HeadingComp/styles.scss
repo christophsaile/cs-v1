@@ -18,18 +18,18 @@
 		font-family: "Gilroy-ExtraBold", sans-serif;
 
 		&--styled {
-			font-family: "Gilroy-Light", sans-serif;
 			display: inline-block;
 			margin-top: 1rem;
 			line-height: 0.3;
 			background-color: $turquoise;
+			font-family: "Gilroy-Light", sans-serif;
 		}
 	}
 	.h1 {
 		margin-top: ($h1-size / 1.5 / 4);
 		font-size: ($h1-size / 1.5);
-		
-		@include breakpoint ($medium){
+
+		@include breakpoint($medium) {
 			margin-top: ($h1-size / 1.25/ 4);
 			font-size: ($h1-size / 1.25);
 		}
@@ -46,7 +46,7 @@
 		margin-top: ($h2-size / 1.5 / 4);
 		font-size: ($h2-size / 1.5);
 
-		@include breakpoint ($medium){
+		@include breakpoint($medium) {
 			margin-top: ($h2-size / 1.25/ 4);
 			font-size: ($h2-size / 1.25);
 		}
@@ -63,7 +63,7 @@
 		margin-top: ($h3-size / 1.5 / 3);
 		font-size: ($h3-size / 1.5);
 
-		@include breakpoint ($medium){
+		@include breakpoint($medium) {
 			margin-top: ($h3-size / 1.25/ 4);
 			font-size: ($h3-size / 1.25);
 		}
@@ -81,20 +81,5 @@
 	}
 	.h5 {
 		font-size: $h5-size;
-	}
-}
-.accordion__date {
-	display: inline-block;
-	font-size: 2.7rem;
-	line-height: 0.3;
-	background: $turquoise;
-	@include breakpoint($small) {
-		font-size: 4rem;
-	}
-	@include breakpoint($medium) {
-		font-size: 5rem;
-	}
-	@include breakpoint($large) {
-		font-size: 6rem;
 	}
 }
