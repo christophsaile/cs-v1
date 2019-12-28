@@ -4,8 +4,9 @@
 <section class="landingPage">
 	<div class="grid grid__default">
 		<div class="container center">
-			<h1>Christoph <br>
-				Saile</h1>
+					<heading-comp type="h1" text="Christoph" second-line="Saile"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
 			<br>
 			<p>OnlineMedia Student</p>
 			<show-more data-resources="[{paths: ['components/ShowMore/index.js']}]"></show-more>
@@ -16,7 +17,43 @@
 	<div class="grid grid__default">
 		<div class="container">
 			<h2>About Me</h2>
-			<accordion-main data-resources="[{paths: ['components/AccordionMain/index.js']}]"></accordion-main>
+			<accordion-main data-resources="[{paths: ['components/AccordionMain/index.js']}]">
+				<div class="accordion__item expand">
+					<p class="accordion__date">09/2018 - Heute</p>
+					<heading-comp type="h3" text="Bachelor of Science OnlineMedien"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
+					<p>Hochschule für Digitale Medien in Furtwangen</p>
+				</div>
+				<div class="accordion__item">
+					<p class="accordion__date">09/2019 - 02/2020</p>
+					<heading-comp type="h3" text="Praxissemester"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
+					<p>Virtual Identity AG - Freibrug</p>
+				</div>
+				<div class="accordion__item">
+					<p class="accordion__date">09/2015 - 06/2018</p>
+					<heading-comp type="h3" text="Ausbildung zum Industriekaufmann"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
+					<p>Beton Kemmler GmbH - Hirschau</p>
+				</div>
+				<div class="accordion__item">
+					<p class="accordion__date">09/2014 - 08/2015</p>
+					<heading-comp type="h3" text="Bundesfreiwilligendienst"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
+					<p>Klinik für Urologie - Tübingen, Verwaltung</p>
+				</div>
+				<div class="accordion__item">
+					<p class="accordion__date"> 2006 - 2014</p>
+					<heading-comp type="h3" text="Allgemeine Hochschulreife"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
+					<p>Eugen-Bolz-Gymnasium - Rottenburg</p>
+				</div>
+			</accordion-main>
 		</div>
 	</div>
 </section>
