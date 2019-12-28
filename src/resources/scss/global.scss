@@ -10,10 +10,13 @@
 
 	&__default {
 		grid-template-columns: 6% 1fr 6%;
-		grid-template-rows: 10vh 90vh;
+		grid-template-rows: 5vh 95vh;
 		max-width: $content-max-width;
 		margin: 0 auto;
 
+		@include breakpoint($small) {
+			grid-template-rows: 10vh 90vh;
+		}
 		footer & {
 			grid-template-rows: 1fr;
 
@@ -74,15 +77,10 @@
 }
 .aboutMe,
 .prog {
-
-}
-
-.contact {
-	~ footer {
-	}
+	color: $black;
+	background: $coral;
 }
 footer {
 	height: 10vh;
 	position: relative;
-
 }
