@@ -17,20 +17,22 @@ class AccordionMain extends Component<AccordionMainProps, AccordionMainState> {
 	public accordionItems: NodeListOf<HTMLElement>;
 
 	connectedCallback() {
+		
+		const accordionContainer = this.shadowRoot.querySelectorAll('.accordion');
+		accordionContainer.forEach((item: Element) => {
+			item.innerHTML = this.innerHTML;
+		});
+
 		this.accordionItems = this.shadowRoot.querySelectorAll(
 			".accordion__item"
 		);
 		this.accordionItems.forEach(item => {
-			console.log(item);
 			item.addEventListener("click", (e: Event) =>
 				this.checkIfExpanded(e)
 			);
 		});
 	}
 	public checkIfExpanded = (click: Event) => {
-		console.log(click);
-		console.log(click.target);
-		console.log(click.currentTarget);
 		this.accordionItems.forEach(elem => {
 			if (elem.classList.contains("expand")) {
 				elem.classList.remove("expand");
