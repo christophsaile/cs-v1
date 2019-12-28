@@ -9,7 +9,8 @@
 		align-items: center;
 		align-content: center;
 		position: relative;
-		min-height: 50vh;
+		margin-top: 10px;
+		min-height: 60vh;
 		transition: all $transition-default;
 
 		@include breakpoint($medium) {
@@ -23,36 +24,60 @@
 			overflow: hidden;
 			margin: 5px 0;
 			border-radius: 3px;
-			background: $turquoise;
+			background: $white;
 			color: rgba(255, 255, 255, 0);
 			transition: all $transition-default;
 			cursor: pointer;
-			&:first-child{
+			&:first-child {
 				margin-top: 0;
 			}
-			&:last-child{
+			&:last-child {
 				margin-bottom: 0;
 			}
 			@include breakpoint($medium) {
-				&:first-child{
+				&:first-child {
 					margin-left: 0;
 				}
-				&:last-child{
+				&:last-child {
 					margin-right: 0;
 				}
 				margin: 0 5px;
-				height: 50vh;
+				height: 60vh;
 				width: 10%;
 			}
 		}
 		.expand {
 			height: 50vh;
-			background: $coral;
 			color: $black;
 			padding: 20px;
-			
-			@include breakpoint($medium){
+
+			@include breakpoint($medium) {
+				height: 60vh;
 				width: 100%;
+			}
+			.accordion__date {
+				display: inline-block;
+				position: relative;
+				font-size: 27px;
+				line-height: 0.3;
+				background: $turquoise;
+				@include breakpoint ($small){
+					font-size: 40px;
+				}
+				@include breakpoint($medium){
+					font-size: 50px;
+				}
+				@include breakpoint($large){
+					font-size: 60px;
+				}
+			}
+
+			.accordion__heading, p {
+				
+				margin-top: 5px;
+				@include breakpoint ($medium){
+					margin-top: 20px;
+				}
 			}
 		}
 	}
