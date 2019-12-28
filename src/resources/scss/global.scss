@@ -10,16 +10,39 @@
 
 	&__default {
 		grid-template-columns: 6% 1fr 6%;
-		grid-template-rows: 10vh 90vh;
+		grid-template-rows: 5vh 95vh;
 		max-width: $content-max-width;
 		margin: 0 auto;
 
+		@include breakpoint($small) {
+			grid-template-rows: 10vh 90vh;
+		}
 		footer & {
 			grid-template-rows: 1fr;
 
 			.container {
 				grid-row-start: 1;
 			}
+		}
+		.container {
+			grid-column-start: 2;
+			grid-row-start: 2;
+
+			.container {
+				grid-column-start: unset;
+				grid-row-start: unset;
+			}
+		}
+	}
+	&__autoHeigth {
+		grid-template-columns: 6% 1fr 6%;
+		grid-template-rows: 5vh auto;
+		min-height: 100vh;
+		max-width: $content-max-width;
+		margin: 0 auto;
+
+		@include breakpoint($small) {
+			grid-template-rows: 10vh auto;
 		}
 		.container {
 			grid-column-start: 2;
@@ -69,20 +92,15 @@
 .landingPage,
 .cg,
 .contact {
-	background: $purpleGradient;
+	background: $turquoise;
+	color: $black;
 }
 .aboutMe,
 .prog {
-	background: $orangeGradient;
-}
-
-.contact {
-	~ footer {
-		background: $orangeGradient;
-	}
+	color: $black;
+	background: $coral;
 }
 footer {
 	height: 10vh;
 	position: relative;
-	background: $purpleGradient;
 }

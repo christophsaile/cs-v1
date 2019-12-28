@@ -18,7 +18,6 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 		this.showMore = this.shadowRoot.querySelector(".showMore");
 		this.showMoreHeight = this.showMore.offsetHeight;
 		this.prevScrollPos = window.innerHeight / 10;
-		console.log(this.showMoreHeight);
 
 		this.scrollDown();
 	}

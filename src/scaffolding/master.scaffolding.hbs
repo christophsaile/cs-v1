@@ -3,19 +3,60 @@
 </header>
 <section class="landingPage">
 	<div class="grid grid__default">
-		<div class="container">
-			<h1>Portfolio - Christoph</h1>
-			<h2>first page</h2>
-			<p>test margin</p>
+		<div class="container center">
+			<heading-comp type="h1" text="Christoph" second-line="Saile"
+				data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+			</heading-comp>
+			<p>OnlineMedia Student</p>
 			<show-more data-resources="[{paths: ['components/ShowMore/index.js']}]"></show-more>
 		</div>
 	</div>
 </section>
 <section class="aboutMe">
-	<div class="grid grid__default">
+	<div class="grid grid__autoHeigth">
 		<div class="container">
-			<h2>second page</h2>
-			<accordion-main data-resources="[{paths: ['components/AccordionMain/index.js']}]"></accordion-main>
+			<heading-comp type="h2" text="About Me" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+			</heading-comp>
+			<my-vita theme="vita__container--white" position="vita__container--left"
+				data-resources="[{paths: ['components/MyVita/index.js']}]">
+				<span class="vita__number">09/2018 - Heute</span>
+				<heading-comp type="h3" text="Bachelor of Science OnlineMedien"
+					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+				</heading-comp>
+				<p>Hochschule für Digitale Medien in Furtwangen</p>
+			</my-vita>
+			<my-vita theme="vita__container--turquoise" position="vita__container--right"
+				data-resources="[{paths: ['components/MyVita/index.js']}]">
+				<span class="vita__number">09/2019 - 02/2020</span>
+				<heading-comp type="h3" text="Praxissemester"
+					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+				</heading-comp>
+				<p>Virtual Identity AG - Freibrug</p>
+			</my-vita>
+			<my-vita theme="vita__container--white" position="vita__container--left"
+				data-resources="[{paths: ['components/MyVita/index.js']}]">
+				<span class="vita__number">09/2015 - 06/2018</span>
+				<heading-comp type="h3" text="Ausbildung zum Industriekaufmann"
+					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+				</heading-comp>
+				<p>Beton Kemmler GmbH - Hirschau</p>
+			</my-vita>
+			<my-vita theme="vita__container--turquoise" position="vita__container--right"
+				data-resources="[{paths: ['components/MyVita/index.js']}]">
+				<span class="vita__number">09/2014 - 08/2015</span>
+				<heading-comp type="h3" text="Bundesfrei-" second-line="willigendienst"
+					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+				</heading-comp>
+				<p>Klinik für Urologie - Tübingen, Verwaltung</p>
+			</my-vita>
+			<my-vita theme="vita__container--white" position="vita__container--left"
+				data-resources="[{paths: ['components/MyVita/index.js']}]">
+				<span class="vita__number"> 2006 - 2014</span>
+				<heading-comp type="h3" text="Allgemeine Hochschulreife"
+					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+				</heading-comp>
+				<p>Eugen-Bolz-Gymnasium - Rottenburg</p>
+			</my-vita>
 		</div>
 	</div>
 </section>

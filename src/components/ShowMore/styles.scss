@@ -9,6 +9,7 @@
 		right: 6%;
 		opacity: 1;
 		transition: all $transition-default;
+		cursor: pointer;
 
 		&--scrollActive {
 			opacity: 0;
@@ -19,8 +20,15 @@
 		}
 		&__text {
 			display: block;
-			margin-top: 5px;
+			margin-top: 13px;
 			writing-mode: vertical-lr;
+			font-family: $font-family-bold;
+			font-size: 13px;
+
+			@include breakpoint ($small){
+				font-size: 17px;
+			}
+
 		}
 		&:hover {
 			fill: darkgrey;

@@ -17,19 +17,30 @@ class RocketComponent extends Component<
 
 	public methods: RocketComponentMethods = {};
 	public rocket: HTMLElement;
-	public lengthOfAnimation: any;
+	public rocketHeight: number;
+	public scaledRocketHeight: number;
+	public bodyLenght: number;
+	public bodyLenghtWithRocket: number;
+	public animationDuration: number;
 
 	connectedCallback() {
+		this.animationDuration = 3000;
 		this.rocket = this.shadowRoot.querySelector(".rocket__icon");
-		this.lengthOfAnimation = document.body.scrollHeight;
+
+		this.rocketHeight = this.rocket.getBoundingClientRect().height;
+		this.scaledRocketHeight = this.rocketHeight * 5;
+
+		this.bodyLenght = document.body.scrollHeight;
+		this.bodyLenghtWithRocket = this.bodyLenght + this.scaledRocketHeight;
+
 		this.rocket.addEventListener("click", () => {
 			this.rocket.style.cssText =
 				"transform: translateY(-" +
-				this.lengthOfAnimation +
-				"px) scale(5.0);transition: all linear 1s";
+				this.bodyLenghtWithRocket +
+				"px) scale(4.0);transition: all linear "+this.animationDuration+"ms";
 			window.setTimeout(() => {
 				this.rocket.style.cssText = "";
-			}, 1000);
+			}, this.animationDuration+100);
 		});
 	}
 
