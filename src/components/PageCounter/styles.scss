@@ -1,5 +1,48 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
 
-@include host('page-counter') {
+@include host("page-counter") {
+	.counter {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		top: 0;
+		bottom: 0;
+		right: 6%;
 
+		&__container {
+			list-style: none;
+			margin-block-start: 0;
+			margin-block-end: 0;
+			padding-inline-start: 0;
+		}
+		&__item {
+			line-height: 1;
+			padding: 2rem 0;
+
+			&:first-child {
+				.counter__link::after {
+					position: absolute;
+					bottom: -1.9rem;
+					left: 0;
+					height: 0.1rem;
+					width: 100%;
+					margin-top: 2rem;
+					content: "";
+					background-color: $white;
+				}
+			}
+		}
+		&__link {
+			position: relative;
+			color: $white;
+			text-decoration: none;
+
+			&--active {
+				color: $red;
+			}
+		}
+	}
 }
