@@ -6,6 +6,6 @@ import { PageCounterProps, PageCounterState, PageCounterMethods } from './define
 export default (render: Function, data: PageCounterProps & PageCounterState & PageCounterMethods , createStyle: Function) => {
     return render`
         ${createStyle(styles)}
-        <div>Fill me</div>
+        <div>init</div>
     `;
 }
