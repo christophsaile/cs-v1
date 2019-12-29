@@ -6,7 +6,9 @@
  * Props
  */
  interface PageCounterProps {
-
+	 switchSides: boolean,
+	 firstAnchor: string,
+	 secondAnchor: string
  }
 
 /**

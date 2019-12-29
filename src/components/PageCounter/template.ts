@@ -16,10 +16,10 @@ export default (
 		<nav class="counter">
 			<ul class="counter__container">
 				<li class="counter__item"> 
-					<a class="counter__link counter__link--active" href="#">01</a>
+					<a class="counter__link counter__link--active" href=${data.firstAnchor}>01</a>
 				</li>
 				<li class="counter__item">
-					<a class="counter__link" href="#aboutMe">02</a>
+					<a class="counter__link" href=${data.secondAnchor}>02</a>
 				</li>
 			</ul>
 		</nav>

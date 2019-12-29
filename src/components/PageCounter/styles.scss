@@ -11,7 +11,12 @@
 		top: 0;
 		bottom: 0;
 		right: 6%;
+		transition: right $transition-default;
 
+		&--left {
+			right: calc(94% - 2rem); // dont forget the size of the pageCounter itself
+			transition: right $transition-default;
+		}
 		&__container {
 			list-style: none;
 			margin-block-start: 0;
