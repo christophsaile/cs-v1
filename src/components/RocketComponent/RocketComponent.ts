@@ -24,24 +24,28 @@ class RocketComponent extends Component<
 	public animationDuration: number;
 
 	connectedCallback() {
+		this.init();
+		this.rocket.addEventListener("click", () => {
+			this.bodyLenght = document.body.scrollHeight;
+			this.bodyLenghtWithRocket = this.bodyLenght + this.scaledRocketHeight;
+
+			this.rocket.style.cssText =
+				"transform: translateY(-" +
+				this.bodyLenghtWithRocket +
+				"px) scale(4.0);transition: all linear " +
+				this.animationDuration +
+				"ms";
+			window.setTimeout(() => {
+				this.rocket.style.cssText = "";
+			}, this.animationDuration + 100);
+		});
+	}
+	public init() {
 		this.animationDuration = 3000;
 		this.rocket = this.shadowRoot.querySelector(".rocket__icon");
 
 		this.rocketHeight = this.rocket.getBoundingClientRect().height;
 		this.scaledRocketHeight = this.rocketHeight * 5;
-
-		this.bodyLenght = document.body.scrollHeight;
-		this.bodyLenghtWithRocket = this.bodyLenght + this.scaledRocketHeight;
-
-		this.rocket.addEventListener("click", () => {
-			this.rocket.style.cssText =
-				"transform: translateY(-" +
-				this.bodyLenghtWithRocket +
-				"px) scale(4.0);transition: all linear "+this.animationDuration+"ms";
-			window.setTimeout(() => {
-				this.rocket.style.cssText = "";
-			}, this.animationDuration+100);
-		});
 	}
 
 	get defaultState() {
