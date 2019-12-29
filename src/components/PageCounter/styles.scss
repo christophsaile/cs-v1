@@ -42,6 +42,7 @@
 
 			&--active {
 				color: $red;
+				transition: all $transition-default;
 			}
 		}
 	}
