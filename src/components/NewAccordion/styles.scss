@@ -8,25 +8,59 @@
 	.accordion {
 		width: 100%;
 		min-height: 50vh;
+
 		&__item {
 			height: 50vh;
+			border-top: 0.1rem solid $black;
 			overflow: hidden;
 			transition: height $transition-default;
-
+			&:last-child {
+				border-bottom: 0.1rem solid $black;
+			}
+			&:not(.hidden) {
+				.accordion__icon {
+					&::before {
+						transform: rotate(45deg);
+					}
+				}
+			}
 			&.hidden {
-				height: 10vh;
+				height: 7vh;
+			}
+		}
+
+		&__header {
+			display: flex;
+			height: 7vh;
+			padding: 1rem 2rem;
+			cursor: pointer;
+			background-color: $white;
+			color: $black;
+		}
+		&__icon {
+			position: relative;
+			bottom: 0;
+			top: 0;
+			margin: auto 0;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: inline-block;
+				height: 0.7rem;
+				width: 0.7rem;
+				border-right: 0.1rem solid;
+				border-bottom: 0.1rem solid;
+				transform: rotate(-45deg);
+				transition: transform $transition-default;
 			}
 		}
 		heading-comp {
 			margin: auto 0;
-		}
-		&__header {
-			display: flex;
-			height: 10vh;
-			padding: 1rem;
-			cursor: pointer;
-			background-color: $white;
-			color: $black;
+			padding-left: 3rem;
 		}
 		&--coral {
 			.accordion__body {
@@ -40,7 +74,8 @@
 		}
 		&__body {
 			height: 45vh;
-			padding: 10px 20px;
+			padding: 1rem 2rem;
+			border-top: 0.1rem solid $black;
 		}
 	}
 }
