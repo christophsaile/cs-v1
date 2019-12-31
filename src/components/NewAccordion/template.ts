@@ -13,7 +13,7 @@ export default (
 ) => {
 	return render`
 		${createStyle(styles)}
-		<div class="accordion">
-		</div>
+		<section class="accordion">
+		</section>
     `;
 };
