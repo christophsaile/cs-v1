@@ -49,6 +49,17 @@
 			grid-row-start: 2;
 		}
 	}
+	&__2col{
+		grid-template-columns: 1fr;
+		
+		@include breakpoint($small) {
+			grid-template-columns: 1fr 1fr;
+			
+			.right{
+				grid-column-start: 2
+			}
+		}
+	}
 	&__3col {
 		grid-template-columns: 1fr;
 		column-gap: 10px;
