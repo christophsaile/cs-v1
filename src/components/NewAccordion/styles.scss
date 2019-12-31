@@ -1,0 +1,43 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+
+@include host("new-accordion") {
+	body {
+		font-family: Helvetica, sans-serif;
+		font-weight: lighter;
+		color: #6f6c6c;
+		font-size: 14px;
+		line-height: 18px;
+		padding-top: 50px;
+	}
+
+	.accordion {
+		margin: 0 auto;
+		max-width: 500px;
+	}
+	.accordion header {
+		line-height: 1.2;
+		font-size: 20px;
+		margin: 0;
+		padding: 10px 20px;
+		cursor: pointer;
+		background-color: #13c7d6;
+		color: white;
+		font-weight: lighter;
+	}
+	.accordion section {
+		overflow: hidden;
+		height: 180px;
+		border: 1px solid #11b4c2;
+		border-bottom: none;
+		transition: height 0.7s ease;
+	}
+	.accordion section:last-child {
+		border-bottom: 1px solid #11b4c2;
+	}
+	.accordion section.hidden {
+		height: 40px;
+	}
+	.accordion p {
+		padding: 10px 20px;
+	}
+}
