@@ -6,10 +6,11 @@
  * Props
  */
 interface HeadingCompProps {
-	type: string,
-	text: string,
+	type: string;
+	text: string;
 	secondLine: string;
-	hasStyle: boolean
+	hasStyle: boolean;
+	noMargin: boolean;
 }
 
 /**
