@@ -2,15 +2,19 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("new-accordion") {
+	* {
+		box-sizing: border-box;
+	}
 	.accordion {
 		width: 100%;
+		min-height: 50vh;
 		&__item {
 			height: 50vh;
 			overflow: hidden;
 			transition: height $transition-default;
 
 			&.hidden {
-				height: 5rem;
+				height: 10vh;
 			}
 		}
 		heading-comp {
@@ -18,13 +22,24 @@
 		}
 		&__header {
 			display: flex;
-			height: 3rem;
+			height: 10vh;
 			padding: 1rem;
 			cursor: pointer;
-			background-color: $coral;
-			color: $white;
+			background-color: $white;
+			color: $black;
+		}
+		&--coral {
+			.accordion__body {
+				background-color: $coral;
+			}
+		}
+		&--turquoise {
+			.accordion__body {
+				background-color: $turquoise;
+			}
 		}
 		&__body {
+			height: 45vh;
 			padding: 10px 20px;
 		}
 	}

@@ -1,5 +1,12 @@
+{{!-- 
+Accordion options:
+	modifier: string
+		accordion--coral
+		accordion--turquoise
+--}}
+
 <div style="display: grid; grid-template-columns: 1fr 1fr;">
-	<new-accordion data-resources="[{paths: ['components/NewAccordion/index.js']}]">
+	<new-accordion modifier="accordion--coral" data-resources="[{paths: ['components/NewAccordion/index.js']}]">
 		<article class="accordion__item">
 			<header class="accordion__header">
 				<heading-comp no-margin type="h4" text="Test Heading h4"
@@ -42,7 +49,8 @@
 	</new-accordion>
 </div>
 <div style="display: grid; grid-template-columns: 1fr 1fr;">
-	<new-accordion style="grid-column-start: 2" data-resources="[{paths: ['components/NewAccordion/index.js']}]">
+	<new-accordion style="grid-column-start: 2" modifier="accordion--turquoise"
+		data-resources="[{paths: ['components/NewAccordion/index.js']}]">
 		<article class="accordion__item">
 			<header class="accordion__header">
 				<heading-comp no-margin type="h4" text="Test Heading h4"

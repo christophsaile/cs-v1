@@ -10,7 +10,7 @@ import {
 class NewAccordion extends Component<NewAccordionProps, NewAccordionState> {
 	static componentName = "new-accordion";
 
-	static attributes = [];
+	static attributes = ["modifier"];
 
 	public methods: NewAccordionMethods = {};
 
@@ -45,7 +45,9 @@ class NewAccordion extends Component<NewAccordionProps, NewAccordionState> {
 	}
 
 	get defaultProps() {
-		return {};
+		return {
+			modifier: null,
+		};
 	}
 
 	render() {

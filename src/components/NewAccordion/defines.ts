@@ -5,27 +5,18 @@
 /**
  * Props
  */
- interface NewAccordionProps {
-
- }
+interface NewAccordionProps {
+	modifier: string;
+}
 
 /**
  * State
  */
- interface NewAccordionState {
-
- }
+interface NewAccordionState {}
 
 /**
  * Methods
  */
- interface NewAccordionMethods {
+interface NewAccordionMethods {}
 
- }
-
-
-export {
-    NewAccordionProps,
-	NewAccordionState,
-	NewAccordionMethods
-}
+export { NewAccordionProps, NewAccordionState, NewAccordionMethods };
