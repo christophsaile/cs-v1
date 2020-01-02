@@ -42,13 +42,13 @@
 	}
 	&__autoHeigth {
 		grid-template-columns: 6% 1fr 6%;
-		grid-template-rows: 5vh auto;
+		grid-template-rows: 5vh auto 5vh;
 		min-height: 100vh;
 		max-width: $content-max-width;
 		margin: 0 auto;
 
 		@include breakpoint($small) {
-			grid-template-rows: 10vh auto;
+			grid-template-rows: 10vh auto 10vh;
 		}
 		.container {
 			grid-column-start: 2;

@@ -8,7 +8,7 @@ export default (render: Function, data: HeaderNavigationProps & HeaderNavigation
 		${createStyle(styles)}
 		<!-- <a> will be replaced by <a> component -->
 		<nav class="navHeader">
-		<div class="navHeader__menu-toggle"><span>Menu</span></div>
+		<div class="navHeader__menu--toggle"><span>Menu</span></div>
 			<ul class="navHeader__menu">
 				<li class="navHeader__links"><a href="/01site.01master.html"><span>Home</span></a></li>
 				<li class="navHeader__links"><a href="/01site.02portfolio.html"><span>Portfolio</span></a></li>
