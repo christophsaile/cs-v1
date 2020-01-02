@@ -49,14 +49,19 @@
 			grid-row-start: 2;
 		}
 	}
-	&__2col{
+	&__2col {
 		grid-template-columns: 1fr;
-		
+
 		@include breakpoint($small) {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 55% 1fr;
 			
-			.right{
-				grid-column-start: 2
+			&--right{
+				grid-template-columns: 1fr 55%;
+			}
+
+			.right {
+				grid-template-columns: 1fr 55%;
+				grid-column-start: 2;
 			}
 		}
 	}
