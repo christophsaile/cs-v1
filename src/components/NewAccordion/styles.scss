@@ -1,0 +1,90 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("new-accordion") {
+	* {
+		box-sizing: border-box;
+	}
+	.accordion {
+		width: 100%;
+		min-height: 50vh;
+
+		&__item {
+			height: 50vh;
+			border-top: 0.1rem solid $black;
+			overflow: hidden;
+			transition: height $transition-default;
+			
+			&:first-child {
+				margin-top: 0.5rem;
+			}
+			&:last-child {
+				border-bottom: 0.1rem solid $black;
+			}
+			&:not(.hidden) {
+				.accordion__icon {
+					&::before {
+						transform: rotate(45deg);
+					}
+				}
+			}
+			&.hidden {
+				height: 7vh;
+			}
+		}
+
+		&__header {
+			display: flex;
+			height: 7vh;
+			padding: 1rem 2rem;
+			cursor: pointer;
+			background-color: $white;
+			color: $black;
+			transition: all 0.4s;
+
+			&:hover {
+				padding-left: 2.7rem;
+			}
+			heading-comp {
+				margin: auto 0;
+				padding-left: 3rem;
+			}
+		}
+		&__icon {
+			position: relative;
+			bottom: 0;
+			top: 0;
+			margin: auto 0;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: inline-block;
+				height: 0.7rem;
+				width: 0.7rem;
+				border-right: 0.1rem solid;
+				border-bottom: 0.1rem solid;
+				transform: rotate(-45deg);
+				transition: transform $transition-default;
+			}
+		}
+		&--coral {
+			.accordion__body {
+				background-color: $coral;
+			}
+		}
+		&--turquoise {
+			.accordion__body {
+				background-color: $turquoise;
+			}
+		}
+		&__body {
+			height: 45vh;
+			padding: 1rem 2rem;
+			border-top: 0.1rem solid $black;
+		}
+	}
+}
