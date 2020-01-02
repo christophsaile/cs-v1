@@ -1,33 +1,129 @@
 <header>
 	<header-navigation data-resources="[{paths: ['components/HeaderNavigation/index.js']}]"></header-navigation>
 </header>
+<page-counter second-anchor="#prog" switch-sides data-resources="[{paths: ['components/PageCounter/index.js']}]">
+</page-counter>
 <section class="cg">
 	<div class="grid grid__default">
 		<div class="container">
-			<h1>3D Modelling</h1>
-			<div class="grid grid__3col">
-				<card-component class="center" modifier="card__body--orange"
-					data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component class="center" modifier="card__body--orange"
-					data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component class="center" modifier="card__body--orange"
-					data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
+			<div class="grid grid__2col">
+				<new-accordion modifier="accordion--coral"
+					data-resources="[{paths: ['components/NewAccordion/index.js']}]">
+					<heading-comp type="h2" text="3D - Animation"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
+					<article class="accordion__item">
+						<header class="accordion__header">
+							<span class="accordion__icon"></span>
+							<heading-comp no-margin type="h4" text="Test Heading h4"
+								data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+							</heading-comp>
+						</header>
+						<div class="accordion__body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo
+								quisquam ex!
+								Illo,
+								soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus
+								beatae consequuntur
+								adipisci. Ipsum, impedit.</p>
+						</div>
+					</article>
+					<article class="accordion__item hidden">
+						<header class="accordion__header">
+							<span class="accordion__icon"></span>
+							<heading-comp no-margin type="h4" text="Test Heading h4"
+								data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+							</heading-comp>
+						</header>
+						<div class="accordion__body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo
+								quisquam ex!
+								Illo,
+								soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus
+								beatae consequuntur
+								adipisci. Ipsum, impedit.</p>
+						</div>
+					</article>
+					<article class="accordion__item hidden">
+						<header class="accordion__header">
+							<span class="accordion__icon"></span>
+							<heading-comp no-margin type="h4" text="Test Heading h4"
+								data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+							</heading-comp>
+						</header>
+						<div class="accordion__body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo
+								quisquam ex!
+								Illo,
+								soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus
+								beatae consequuntur
+								adipisci. Ipsum, impedit.</p>
+						</div>
+					</article>
+				</new-accordion>
 			</div>
 			<show-more data-resources="[{paths: ['components/ShowMore/index.js']}]"></show-more>
 		</div>
 	</div>
 </section>
-<section class="prog">
+<section id="#prog" class="prog">
 	<div class="grid grid__default">
 		<div class="container">
-			<h2>programming</h2>
-			<div class="grid grid__3col">
-				<card-component class="center" modifier="card__body--purple"
-					data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component class="center" modifier="card__body--purple"
-					data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
-				<card-component class="center" modifier="card__body--purple"
-					data-resources="[{paths: ['components/CardComponent/index.js']}]"></card-component>
+			<div class="grid grid__2col grid__2col--right">
+				<new-accordion class="right" modifier="accordion--turquoise"
+					data-resources="[{paths: ['components/NewAccordion/index.js']}]">
+					<heading-comp type="h2" text="Programming"
+						data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+					</heading-comp>
+					<article class="accordion__item">
+						<header class="accordion__header">
+							<span class="accordion__icon"></span>
+							<heading-comp no-margin type="h4" text="Test Heading h4"
+								data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+							</heading-comp>
+						</header>
+						<div class="accordion__body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo
+								quisquam ex!
+								Illo,
+								soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
+								consequuntur
+								adipisci. Ipsum, impedit.</p>
+						</div>
+					</article>
+					<article class="accordion__item hidden">
+						<header class="accordion__header">
+							<span class="accordion__icon"></span>
+							<heading-comp no-margin type="h4" text="Test Heading h4"
+								data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+							</heading-comp>
+						</header>
+						<div class="accordion__body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo
+								quisquam ex!
+								Illo,
+								soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
+								consequuntur
+								adipisci. Ipsum, impedit.</p>
+						</div>
+					</article>
+					<article class="accordion__item hidden">
+						<header class="accordion__header">
+							<span class="accordion__icon"></span>
+							<heading-comp no-margin type="h4" text="Test Heading h4"
+								data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+							</heading-comp>
+						</header>
+						<div class="accordion__body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo
+								quisquam ex!
+								Illo,
+								soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
+								consequuntur
+								adipisci. Ipsum, impedit.</p>
+						</div>
+					</article>
+				</new-accordion>
 			</div>
 		</div>
 	</div>

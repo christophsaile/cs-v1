@@ -15,6 +15,7 @@ class HeadingComp extends Component<HeadingCompProps, HeadingCompState> {
 		"type",
 		"text",
 		"second-line",
+		{ name: "no-margin", converter: toBoolean },
 		{ name: "has-style", converter: toBoolean }
 	];
 
@@ -29,7 +30,8 @@ class HeadingComp extends Component<HeadingCompProps, HeadingCompState> {
 			type: null,
 			text: null,
 			secondLine: null,
-			hasStyle: false
+			hasStyle: false,
+			noMargin: false,
 		};
 	}
 

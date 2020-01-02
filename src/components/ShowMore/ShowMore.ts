@@ -1,5 +1,6 @@
 import Component from "@biotope/element";
 import template from "./template";
+import { debounce } from "../../resources/js/debounce";
 
 import { ShowMoreProps, ShowMoreState, ShowMoreMethods } from "./defines";
 
@@ -22,16 +23,21 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 		this.scrollDown();
 	}
 	public scrollDown() {
-		window.onscroll = () => {
-			this.currentScrollPos = window.pageYOffset;			
-			if (this.prevScrollPos > this.currentScrollPos) {
-				this.showMore.classList.remove("showMore--scrollActive");
-				this.showMore.style.bottom = "";
-			} else {
-				this.showMore.classList.add("showMore--scrollActive");
-				this.showMore.style.bottom = "-"+this.showMoreHeight+"px";
-			}
-		};
+		window.addEventListener(
+			"scroll",
+			debounce(() => {
+				this.currentScrollPos = window.pageYOffset;
+				if (this.prevScrollPos > this.currentScrollPos) {
+					this.showMore.classList.remove("showMore--scrollActive");
+					this.showMore.style.bottom = "";
+				} else {
+					this.showMore.classList.add("showMore--scrollActive");
+					this.showMore.style.bottom =
+						"-" + this.showMoreHeight + "px";
+				}
+			}, 300)
+		);
+
 		this.showMore.addEventListener("click", () => {
 			window.scrollBy({
 				top: window.innerHeight,
