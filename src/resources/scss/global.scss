@@ -24,7 +24,8 @@
 			}
 		}
 		footer & {
-			grid-template-rows: 1fr;
+			grid-template-rows: 15vh;
+			max-width: unset;
 
 			.container {
 				grid-row-start: 1;
@@ -123,6 +124,27 @@
 	background: $coral;
 }
 footer {
-	height: 10vh;
-	position: relative;
+	rocket-component{
+		float: right;
+	}
+	.container {
+		margin-top: 3rem;
+	}
+	.brand {
+		color: $white;
+		text-decoration: none;
+		font-family: $font-family-bold;
+		font-size: 3.5rem;
+		line-height: initial;
+		letter-spacing: 0.4rem;
+		transition: all $transition-default;
+
+		&:hover {
+			color: $turquoise;
+		}
+	}
+	.follow {
+		font-family: $font-family-bold;
+		font-size: 1.7rem;
+	}
 }

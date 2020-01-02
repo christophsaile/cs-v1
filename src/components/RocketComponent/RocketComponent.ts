@@ -1,5 +1,6 @@
 import Component from "@biotope/element";
 import template from "./template";
+import { toBoolean } from "../../resources/ts/converters";
 
 import {
 	RocketComponentProps,
@@ -13,7 +14,7 @@ class RocketComponent extends Component<
 > {
 	static componentName = "rocket-component";
 
-	static attributes = [];
+	static attributes = [{ name: "has-bounce", converter: toBoolean }];
 
 	public methods: RocketComponentMethods = {};
 	public rocket: HTMLElement;
@@ -26,19 +27,30 @@ class RocketComponent extends Component<
 	connectedCallback() {
 		this.init();
 		this.rocket.addEventListener("click", () => {
-			this.bodyLenght = document.body.scrollHeight;
-			this.bodyLenghtWithRocket = this.bodyLenght + this.scaledRocketHeight;
+			this.setAttribute("has-bounce", "false"); //stop bounce effect while flying
 
+			this.rocket.classList.remove("animated", "bounce");
+			this.bodyLenght = document.body.scrollHeight;
+			this.bodyLenghtWithRocket =
+				this.bodyLenght + this.scaledRocketHeight;
 			this.rocket.style.cssText =
 				"transform: translateY(-" +
 				this.bodyLenghtWithRocket +
 				"px) scale(4.0);transition: all linear " +
 				this.animationDuration +
 				"ms";
+
 			window.setTimeout(() => {
 				this.rocket.style.cssText = "";
+				this.setAttribute("has-bounce", "true"); //add bounce effect after flying
 			}, this.animationDuration + 100);
 		});
+		this.bounceAnimation();
+	}
+	onPropsChanged() {
+		if(this.getAttribute("has-bounce")){
+			this.bounceAnimation();
+		}
 	}
 	public init() {
 		this.animationDuration = 3000;
@@ -48,12 +60,27 @@ class RocketComponent extends Component<
 		this.scaledRocketHeight = this.rocketHeight * 5;
 	}
 
+	public bounceAnimation = () => {
+		console.log(this.props.hasBounce);
+		if (this.props.hasBounce === true) {
+			this.rocket.classList.add("animated", "bounce", "delay-4s");
+			this.rocket.addEventListener("animationend", () => {
+				this.rocket.classList.remove("animated", "bounce", "delay-4s");
+				window.setTimeout(() => {
+					this.rocket.classList.add("animated", "bounce", "delay-4s");
+				}, 100);
+			});
+		}
+	};
+
 	get defaultState() {
 		return {};
 	}
 
 	get defaultProps() {
-		return {};
+		return {
+			hasBounce: true
+		};
 	}
 
 	render() {

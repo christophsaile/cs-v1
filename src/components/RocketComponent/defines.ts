@@ -6,7 +6,7 @@
  * Props
  */
  interface RocketComponentProps {
-
+	hasBounce: boolean;
  }
 
 /**
