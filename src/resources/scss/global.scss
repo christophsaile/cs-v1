@@ -17,6 +17,12 @@
 		@include breakpoint($small) {
 			grid-template-rows: 10vh 90vh;
 		}
+		.landingPage & {
+			grid-template-rows: 100vh;
+			.container {
+				grid-row-start: 1;
+			}
+		}
 		footer & {
 			grid-template-rows: 1fr;
 
@@ -54,8 +60,8 @@
 
 		@include breakpoint($small) {
 			grid-template-columns: 55% 1fr;
-			
-			&--right{
+
+			&--right {
 				grid-template-columns: 1fr 55%;
 			}
 
