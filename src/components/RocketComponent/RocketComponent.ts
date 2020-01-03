@@ -61,7 +61,6 @@ class RocketComponent extends Component<
 	}
 
 	public bounceAnimation = () => {
-		console.log(this.props.hasBounce);
 		if (this.props.hasBounce === true) {
 			this.rocket.classList.add("animated", "bounce", "delay-4s");
 			this.rocket.addEventListener("animationend", () => {

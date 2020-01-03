@@ -2,9 +2,6 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("new-accordion") {
-	* {
-		box-sizing: border-box;
-	}
 	.accordion {
 		width: 100%;
 		min-height: 50vh;
@@ -14,7 +11,7 @@
 			border-top: 0.1rem solid $black;
 			overflow: hidden;
 			transition: height $transition-default;
-			
+
 			&:first-child {
 				margin-top: 0.5rem;
 			}

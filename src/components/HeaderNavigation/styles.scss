@@ -59,9 +59,9 @@
 		&__menu--toggle {
 			top: 24px;
 			z-index: 2;
-			right: 12px;
+			right: 6%;
 			width: 22px;
-			height: 2px; // If you have *{box-sizing:border-box} applied, you'll want to change this to 20px
+			height: 18px;
 			padding: 8px 0;
 			cursor: pointer;
 			border-radius: 50%;
