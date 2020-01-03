@@ -7,7 +7,7 @@ import { ShowMoreProps, ShowMoreState, ShowMoreMethods } from "./defines";
 class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 	static componentName = "show-more";
 
-	static attributes = [];
+	static attributes = ["text"];
 
 	public methods: ShowMoreMethods = {};
 	public showMore: HTMLElement;
@@ -51,7 +51,9 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 	}
 
 	get defaultProps() {
-		return {};
+		return {
+			text: null
+		};
 	}
 
 	render() {

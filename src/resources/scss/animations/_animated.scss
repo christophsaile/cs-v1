@@ -3567,7 +3567,10 @@
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-
+.animated.delay-06s {
+	-webkit-animation-delay: .6s;
+	animation-delay: .6s;
+  }
 .animated.delay-1s {
   -webkit-animation-delay: 1s;
   animation-delay: 1s;

@@ -17,7 +17,8 @@
 		@include breakpoint($small) {
 			grid-template-rows: 10vh 90vh;
 		}
-		.landingPage & {
+		.landingPage,
+		.contact & {
 			grid-template-rows: 100vh;
 			.container {
 				grid-row-start: 1;
@@ -49,8 +50,11 @@
 		margin: 0 auto;
 
 		@include breakpoint($small) {
-			grid-template-columns: 6% 1fr 6%;
+			grid-template-columns: 6% 1fr 12%;
 			grid-template-rows: 10vh auto 10vh;
+		}
+		@include breakpoint($wide) {
+			grid-template-columns: 6% 1fr 6%;
 		}
 		.container {
 			grid-column-start: 2;
@@ -58,8 +62,14 @@
 		}
 	}
 	&__2col {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 12%;
 
+		&--right {
+			grid-template-columns: 12% 1fr;
+		}
+		.right {
+			grid-column-start: 2;
+		}
 		@include breakpoint($small) {
 			grid-template-columns: 55% 1fr;
 
@@ -69,7 +79,6 @@
 
 			.right {
 				grid-template-columns: 1fr 55%;
-				grid-column-start: 2;
 			}
 		}
 	}
@@ -110,6 +119,18 @@
 			max-width: 25vw;
 		}
 	}
+	&__list {
+		list-style: none;
+		padding-inline-start: 0;
+		li {
+			font-size: 2rem;
+			a {
+				font-size: 2rem;
+				text-decoration: none;
+				color: black;
+			}
+		}
+	}
 }
 
 ////BACKGROUNDS
@@ -125,7 +146,7 @@
 	background: $coral;
 }
 footer {
-	rocket-component{
+	rocket-component {
 		float: right;
 	}
 	.container {
@@ -143,9 +164,5 @@ footer {
 		&:hover {
 			color: $turquoise;
 		}
-	}
-	.follow {
-		font-family: $font-family-bold;
-		font-size: 1.7rem;
 	}
 }
