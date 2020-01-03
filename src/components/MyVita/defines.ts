@@ -8,6 +8,7 @@
 interface MyVitaProps {
 	position: string;
 	theme: string;
+	scrollAnimation: string;
 }
 
 /**
