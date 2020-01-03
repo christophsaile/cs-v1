@@ -6,7 +6,7 @@
  * Props
  */
  interface ShowMoreProps {
-
+	text: string;
  }
 
 /**

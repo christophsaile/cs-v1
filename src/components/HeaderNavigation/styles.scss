@@ -8,6 +8,7 @@
 		z-index: 1;
 		width: 100%;
 		position: fixed;
+		font-family: $font-family-bold;
 
 		&__menu {
 			top: 0;
@@ -15,7 +16,7 @@
 			margin: 0;
 			z-index: 1;
 			width: 100%;
-			background: $coral;
+			background: $white;
 			padding: 60px 0 35px;
 			position: absolute;
 			transform: translateY(-100%);
@@ -23,6 +24,8 @@
 
 			&.active {
 				transform: translateY(0);
+				color: $black;
+				box-shadow: 0px -10px 15px 1px;
 			}
 
 			.navHeader__links {
@@ -30,32 +33,29 @@
 
 				a {
 					padding: 20px;
-					color: $white;
+					color: $black;
 					display: block;
 					background: none;
 					text-align: center;
 					text-decoration: none;
-					transition: background 0.2s ease-in-out;
-
-					span {
-						border-bottom: 1px solid $white;
-					}
+					transition: all 0.2s ease-in-out;
 
 					&:hover,
 					&:focus,
 					&:active {
-						background: rgba(255, 255, 255, 0.2);
+						background: rgba($color: $red, $alpha: 0.8);
+						color: $white;
 					}
 				}
 			}
 		}
 
-		&__menu-toggle {
+		&__menu--toggle {
 			top: 24px;
 			z-index: 2;
-			right: 12px;
+			right: 6%;
 			width: 22px;
-			height: 2px; // If you have *{box-sizing:border-box} applied, you'll want to change this to 20px
+			height: 18px;
 			padding: 8px 0;
 			cursor: pointer;
 			border-radius: 50%;
@@ -108,7 +108,7 @@
 				&::before,
 				&::after {
 					width: 26px;
-					background: $white;
+					background: $black;
 				}
 				&:hover,
 				&:focus,

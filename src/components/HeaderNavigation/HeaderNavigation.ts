@@ -22,7 +22,7 @@ class HeaderNavigation extends Component<
 
 	connectedCallback() {
 		this.menu = this.shadowRoot.querySelector(".navHeader__menu");
-		this.menuBtn = this.shadowRoot.querySelector(".navHeader__menu-toggle");
+		this.menuBtn = this.shadowRoot.querySelector(".navHeader__menu--toggle");
 
 		this.menuBtn.addEventListener("click", this.toggleMenuBtn, false);
 		this.menuBtn.addEventListener("click", this.toggleMenu, false);

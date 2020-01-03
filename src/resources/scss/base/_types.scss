@@ -1,5 +1,7 @@
 /* Global heading styles */
-
+*{
+	box-sizing: border-box;
+}
 h1, h2, h3, h4 ,h5 {
 	font-family: "Gilroy-ExtraBold";
 	margin: 0;
@@ -28,11 +30,11 @@ h4 {
 
 /* Global paragraph styles */
 p {
-	font-size: 1.7rem;
+	font-size: 2rem;
 }
 /* Global link styles */
 a {
-	font-size: 1.7rem;
+	font-size: 2rem;
 }
 
 /* Global sup element */

@@ -5,7 +5,7 @@
 	.showMore {
 		position: absolute;
 		bottom: 0;
-		padding-bottom: 5px;
+		padding-bottom: 0.5rem;
 		right: 6%;
 		opacity: 1;
 		transition: all $transition-default;
@@ -19,15 +19,12 @@
 			fill: $white;
 		}
 		&__text {
+			color: $black;
 			display: block;
-			margin-top: 13px;
+			margin-top: 1.3rem;
 			writing-mode: vertical-lr;
 			font-family: $font-family-bold;
-			font-size: 13px;
-
-			@include breakpoint ($small){
-				font-size: 17px;
-			}
+			font-size: 2rem;
 
 		}
 		&:hover {

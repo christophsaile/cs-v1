@@ -17,8 +17,16 @@
 		@include breakpoint($small) {
 			grid-template-rows: 10vh 90vh;
 		}
+		.landingPage,
+		.contact & {
+			grid-template-rows: 100vh;
+			.container {
+				grid-row-start: 1;
+			}
+		}
 		footer & {
-			grid-template-rows: 1fr;
+			grid-template-rows: 15vh;
+			max-width: unset;
 
 			.container {
 				grid-row-start: 1;
@@ -35,14 +43,18 @@
 		}
 	}
 	&__autoHeigth {
-		grid-template-columns: 6% 1fr 6%;
-		grid-template-rows: 5vh auto;
+		grid-template-columns: 6% 1fr 18%;
+		grid-template-rows: 5vh auto 5vh;
 		min-height: 100vh;
 		max-width: $content-max-width;
 		margin: 0 auto;
 
 		@include breakpoint($small) {
-			grid-template-rows: 10vh auto;
+			grid-template-columns: 6% 1fr 12%;
+			grid-template-rows: 10vh auto 10vh;
+		}
+		@include breakpoint($wide) {
+			grid-template-columns: 6% 1fr 6%;
 		}
 		.container {
 			grid-column-start: 2;
@@ -50,18 +62,23 @@
 		}
 	}
 	&__2col {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 12%;
 
+		&--right {
+			grid-template-columns: 12% 1fr;
+		}
+		.right {
+			grid-column-start: 2;
+		}
 		@include breakpoint($small) {
 			grid-template-columns: 55% 1fr;
-			
-			&--right{
+
+			&--right {
 				grid-template-columns: 1fr 55%;
 			}
 
 			.right {
 				grid-template-columns: 1fr 55%;
-				grid-column-start: 2;
 			}
 		}
 	}
@@ -102,6 +119,18 @@
 			max-width: 25vw;
 		}
 	}
+	&__list {
+		list-style: none;
+		padding-inline-start: 0;
+		li {
+			font-size: 2rem;
+			a {
+				font-size: 2rem;
+				text-decoration: none;
+				color: black;
+			}
+		}
+	}
 }
 
 ////BACKGROUNDS
@@ -117,6 +146,23 @@
 	background: $coral;
 }
 footer {
-	height: 10vh;
-	position: relative;
+	rocket-component {
+		float: right;
+	}
+	.container {
+		margin-top: 3rem;
+	}
+	.brand {
+		color: $white;
+		text-decoration: none;
+		font-family: $font-family-bold;
+		font-size: 3.5rem;
+		line-height: initial;
+		letter-spacing: 0.4rem;
+		transition: all $transition-default;
+
+		&:hover {
+			color: $turquoise;
+		}
+	}
 }
