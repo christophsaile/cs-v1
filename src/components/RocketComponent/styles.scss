@@ -6,20 +6,17 @@
 	.rocket {
 		display: flex;
 		align-items: center;
-		&__link{
-
-		}
+		
 		&__icon {
 			height: 60px;
 			width: 60px;
 			fill: $white;
 		}
 		&__text {
-
 			text-align: center;
 			font-size: 1.2rem;
-			
-			@include breakpoint($small){
+
+			@include breakpoint($small) {
 				font-size: 1.5rem;
 			}
 		}

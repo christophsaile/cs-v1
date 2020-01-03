@@ -38,19 +38,13 @@
 					background: none;
 					text-align: center;
 					text-decoration: none;
-					transition: background 0.2s ease-in-out;
-
-					span {
-						border-bottom: 2px solid $white;
-						transition: border 0.2s ease-in-out;
-					}
+					transition: all 0.2s ease-in-out;
 
 					&:hover,
 					&:focus,
 					&:active {
-						span {
-							border-bottom: 2px solid $red;
-						}
+						background: rgba($color: $red, $alpha: 0.8);
+						color: $white;
 					}
 				}
 			}
