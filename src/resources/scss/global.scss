@@ -5,6 +5,9 @@
 * {
 	scroll-behavior: smooth;
 }
+body {
+	overflow-x: hidden; //needed for fadeInLeft / Right
+}
 .grid {
 	display: grid;
 
