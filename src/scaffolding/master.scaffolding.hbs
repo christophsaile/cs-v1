@@ -14,43 +14,43 @@
 </section>
 <section id="aboutMe" class="aboutMe">
 	<div class="grid grid__autoHeigth">
-		<div class="container animated fadeInUp delay-06s">
+		<div class="container">
 			<heading-comp type="h2" text="About Me" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
 			</heading-comp>
-			<my-vita theme="vita__container--white" position="vita__container--left"
-				data-resources="[{paths: ['components/MyVita/index.js']}]">
+			<my-vita scroll-animation="animation-fade-in-left" theme="vita__container--white"
+				position="vita__container--left" data-resources="[{paths: ['components/MyVita/index.js']}]">
 				<span class="vita__number">09/2018 - Heute</span>
 				<heading-comp type="h3" text="Bachelor of Science OnlineMedien"
 					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
 				</heading-comp>
 				<p>Hochschule für Digitale Medien in Furtwangen</p>
 			</my-vita>
-			<my-vita theme="vita__container--turquoise" position="vita__container--right"
-				data-resources="[{paths: ['components/MyVita/index.js']}]">
+			<my-vita scroll-animation="animation-fade-in-right" theme="vita__container--turquoise"
+				position="vita__container--right" data-resources="[{paths: ['components/MyVita/index.js']}]">
 				<span class="vita__number">09/2019 - 02/2020</span>
 				<heading-comp type="h3" text="Praxissemester"
 					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
 				</heading-comp>
 				<p>Virtual Identity AG - Freibrug</p>
 			</my-vita>
-			<my-vita theme="vita__container--white" position="vita__container--left"
-				data-resources="[{paths: ['components/MyVita/index.js']}]">
+			<my-vita scroll-animation="animation-fade-in-left" theme="vita__container--white"
+				position="vita__container--left" data-resources="[{paths: ['components/MyVita/index.js']}]">
 				<span class="vita__number">09/2015 - 06/2018</span>
 				<heading-comp type="h3" text="Ausbildung zum Industriekaufmann"
 					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
 				</heading-comp>
 				<p>Beton Kemmler GmbH - Hirschau</p>
 			</my-vita>
-			<my-vita theme="vita__container--turquoise" position="vita__container--right"
-				data-resources="[{paths: ['components/MyVita/index.js']}]">
+			<my-vita scroll-animation="animation-fade-in-right" theme="vita__container--turquoise"
+				position="vita__container--right" data-resources="[{paths: ['components/MyVita/index.js']}]">
 				<span class="vita__number">09/2014 - 08/2015</span>
 				<heading-comp type="h3" text="Bundesfrei-" second-line="willigendienst"
 					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
 				</heading-comp>
 				<p>Klinik für Urologie - Tübingen, Verwaltung</p>
 			</my-vita>
-			<my-vita theme="vita__container--white" position="vita__container--left"
-				data-resources="[{paths: ['components/MyVita/index.js']}]">
+			<my-vita scroll-animation="animation-fade-in-left" theme="vita__container--white"
+				position="vita__container--left" data-resources="[{paths: ['components/MyVita/index.js']}]">
 				<span class="vita__number"> 2006 - 2014</span>
 				<heading-comp type="h3" text="Allgemeine Hochschulreife"
 					data-resources="[{paths: ['components/HeadingComp/index.js']}]">
@@ -63,8 +63,9 @@
 <footer>
 	<div class="grid grid__default">
 		<div class="container">
-			<rocket-component has-bounce="true" data-resources="[{paths: ['components/RocketComponent/index.js']}]"></rocket-component>
-			<a class="brand"href="#">CS.</a>
+			<rocket-component has-bounce="true" data-resources="[{paths: ['components/RocketComponent/index.js']}]">
+			</rocket-component>
+			<a class="brand" href="#">CS.</a>
 		</div>
 	</div>
 </footer>
