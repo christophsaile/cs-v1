@@ -10,6 +10,7 @@
 		opacity: 1;
 		transition: all $transition-default;
 		cursor: pointer;
+		z-index: $z-index-showMore;
 
 		&--scrollActive {
 			opacity: 0;
