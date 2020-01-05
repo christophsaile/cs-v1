@@ -16,7 +16,7 @@
 
 			&:hover {
 				.vita__number {
-					background-color: $yellow;
+					background-color: $coral;
 				}
 			}
 
@@ -39,11 +39,11 @@
 				background: $white;
 			}
 
-			&--yellow {
-				background: $yellow;
+			&--turquoise {
+				background: $turquoise;
 				&:hover {
 					.vita__number {
-						background-color: $turquoise;
+						background-color: $coral;
 					}
 				}
 				& .vita__number {
@@ -62,7 +62,7 @@
 			transition: all $transition-default;
 
 			&:hover {
-				background-color: $yellow;
+				background-color: $turquoise;
 			}
 
 			@include breakpoint($medium) {

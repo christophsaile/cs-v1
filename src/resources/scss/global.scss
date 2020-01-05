@@ -189,38 +189,30 @@ footer {
 
 ////BACKGROUNDS
 .landingPage,
-.cg,
-.contact {
+.cg {
 	background: $turquoise;
 	color: $black;
 }
 .aboutMe,
+.contact {
+	color: $black;
+	background: $yellow;
+}
 .prog {
 	color: $black;
 	background: $coral;
 }
+
 ////BACKGROUNDS
 ////SVGs
 svg {
 	overflow: hidden;
 	position: absolute;
 }
+
 .landingPage {
 	.svg {
-		&__left {
-			svg {
-				height: 100vh;
-				.cls-1 {
-					isolation: isolate;
-				}
-				.cls-2 {
-					fill: $yellow;
-					mix-blend-mode: multiply;
-				}
-			}
-		}
-
-		&__center {
+		&__centerDots {
 			svg {
 				width: 100vw;
 				left: 0;
@@ -232,36 +224,154 @@ svg {
 				@include breakpoint($medium) {
 					width: 50vw;
 				}
+				@include breakpoint($wide) {
+					width: 35vw;
+				}
+			}
+		}
+		&__centerBackground {
+			svg {
+				fill: $yellow;
 			}
 		}
 	}
 }
 .aboutMe {
 	.svg {
-		&__leftMiddle {
+		&__top {
 			svg {
-				height: 150vh;
-				left: -32vh;
-				top: -1vh;
-				fill: $turquoise;
-			}
-		}
-		&__rightBottomAbove {
-			svg {
-				max-height: 150vh;
-				width: 70vw;
-				right: -10vh;
-				bottom: 0;
+				margin: 5vh 0;
+				width: 100vw;
 				fill: $white;
+
+				@include breakpoint($large) {
+					width: 60vw;
+				}
 			}
 		}
-		&__rightBottom {
+		&__bottom {
 			svg {
+				margin: 5vh 0;
 				bottom: 0;
 				right: 0;
-				width: 70vw;
+				width: 100vw;
+				fill: $white;
+
+				@include breakpoint($large) {
+					width: 60vw;
+				}
+			}
+		}
+	}
+}
+.cg {
+	.svg {
+		&__triangle {
+			display: none;
+			width: 100%;
+			margin-top: 2rem;
+			@include breakpoint($small) {
+				display: block;
+			}
+			svg {
+				max-height: 70vh;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+
+				.cls-1,
+				.cls-2 {
+					fill: none;
+				}
+
+				.cls-2 {
+					stroke: #1d1d1b;
+					stroke-width: 1.44px;
+				}
+
+				.cls-3 {
+					isolation: isolate;
+				}
+
+				.cls-4 {
+					fill: url(#_10_lpp_20_);
+				}
+
+				.cls-5 {
+					fill: $coral;
+					mix-blend-mode: multiply;
+				}
+			}
+		}
+	}
+}
+.prog {
+	.svg {
+		&__poly {
+			display: none;
+			position: relative;
+			width: 100%;
+			@include breakpoint($small) {
+				display: block;
+			}
+			svg {
+				max-height: 60vh;
+				top: 0;
+				bottom: 0;
+				margin: auto;
 				.cls-1 {
-					fill: $blue;
+					fill: $turquoise;
+				}
+
+				.cls-2 {
+					fill: none;
+					stroke: #1d262d;
+					stroke-miterlimit: 10;
+					stroke-width: 2px;
+				}
+			}
+		}
+	}
+}
+.contact {
+	overflow: hidden;
+	.svg {
+		&__square {
+			display: none;
+			@include breakpoint($small){
+				display: block;
+			}
+			svg {
+				max-height: 130vh;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+
+				.cls-1,
+				.cls-2,
+				.cls-3 {
+					fill: none;
+				}
+
+				.cls-2 {
+					stroke: $white;
+					stroke-width: 1.44px;
+				}
+
+				.cls-3 {
+					stroke: $white;
+					stroke-miterlimit: 10;
+					stroke-width: 2px;
+				}
+
+				.cls-4 {
+					fill: $turquoise;
+				}
+
+				.cls-5 {
+					fill: url(#_10_lpp_20_);
 				}
 			}
 		}
