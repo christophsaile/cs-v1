@@ -6,7 +6,21 @@ $font-family-bold: "Gilroy-ExtraBold", sans-serif;
 $font-weight-normal: normal;
 
 // Z-INDEXES
-//$z-index-component-xyz: 1;
+//HEADER
+$z-index-header: 20;
+//NAV
+$z-index-showMore: 12;
+$z-index-counter: 12;
+$z-index-svg: 11;
+//MAIN
+//LANDINGPAGE
+$z-index-main: 10;
+//ABOUTME
+
+//FOOTER
+$z-index-footer: 20;
+$z-index-footer-brand: 3;
+$z-index-footer-svg: 2;
 
 // COLORS
 $orangeGradient: linear-gradient(90deg, #f7b733, #ff7012);
@@ -16,6 +30,8 @@ $coral: rgb(255, 164, 137);
 $red: rgb(222, 40, 38);
 $turquoise: rgb(159, 212, 202);
 $white: rgb(245, 245, 235);
+$blue: #00a5b9;
+$yellow: #fdd06a;
 $black: rgb(24, 23, 23);
 
 // TRANSITIONS

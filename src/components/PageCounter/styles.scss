@@ -12,6 +12,7 @@
 		bottom: 0;
 		right: 6%;
 		transition: right $transition-default;
+		z-index: $z-index-counter;
 
 		&--left {
 			right: calc(94% - 2rem); // dont forget the size of the pageCounter itself

@@ -7,10 +7,11 @@
 		min-height: 50vh;
 
 		&__item {
-			height: 50vh;
+			height: 20vh;
 			border-top: 0.1rem solid $black;
 			overflow: hidden;
 			transition: height $transition-default;
+			box-shadow: 3px 3px 7px #0000001a;
 
 			&:first-child {
 				margin-top: 0.5rem;
@@ -26,13 +27,13 @@
 				}
 			}
 			&.hidden {
-				height: 7vh;
+				height: 6vh;
 			}
 		}
 
 		&__header {
 			display: flex;
-			height: 7vh;
+			height: 6vh;
 			padding: 1rem 2rem;
 			cursor: pointer;
 			background-color: $white;
@@ -79,7 +80,7 @@
 			}
 		}
 		&__body {
-			height: 45vh;
+			height: 20vh;
 			padding: 1rem 2rem;
 			border-top: 0.1rem solid $black;
 		}
