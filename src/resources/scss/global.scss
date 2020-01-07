@@ -114,8 +114,8 @@ footer {
 	}
 	&__3col {
 		grid-template-columns: 1fr;
-		column-gap: 10px;
-		row-gap: 15px;
+		column-gap: 1rem;
+		row-gap: 1.5rem;
 
 		@include breakpoint($small) {
 			grid-template-columns: 1fr 1fr;
