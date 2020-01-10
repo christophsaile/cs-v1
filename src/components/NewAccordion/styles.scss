@@ -8,6 +8,7 @@
 
 		&__item {
 			height: 20vh;
+			margin-top: 1rem;
 			overflow: hidden;
 			transition: height $transition-default;
 			box-shadow: 0.3rem 0.3rem 0.7rem #0000001a;
@@ -23,19 +24,24 @@
 				}
 			}
 			&.hidden {
-				height: 6vh;
+				height: 7vh;
+
+				.accordion__header {
+					border-radius: $border-radius;
+				}
 			}
 		}
 
 		&__header {
 			display: flex;
-			height: 6vh;
+			height: 7vh;
 			padding: 1rem 2rem;
+			border-top-left-radius: $border-radius;
+			border-top-right-radius: $border-radius;
 			cursor: pointer;
 			background-color: $white;
 			color: $black;
 			transition: all 0.4s;
-			border-bottom: 0.1rem solid #0000001c;
 
 			&:hover {
 				padding-left: 2.7rem;
@@ -79,6 +85,8 @@
 		&__body {
 			height: 20vh;
 			padding: 1rem 2rem;
+			border-bottom-left-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
 		}
 	}
 }
