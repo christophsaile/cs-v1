@@ -48,9 +48,12 @@ class RocketComponent extends Component<
 		this.bounceAnimation();
 	}
 	onPropsChanged() {
-		if(this.getAttribute("has-bounce")){
-			this.bounceAnimation();
-		}
+		window.setTimeout(() => {
+			//Set Timeout is needed because on the first call of onPropsChanged has-Bounce is true, but svg is not loaded, TIMING ISSUE
+			if (this.props.hasBounce) {
+				this.bounceAnimation();
+			}
+		}, 100);
 	}
 	public init() {
 		this.animationDuration = 3000;
@@ -61,7 +64,7 @@ class RocketComponent extends Component<
 	}
 
 	public bounceAnimation = () => {
-		if (this.props.hasBounce === true) {
+		if (this.props.hasBounce) {
 			this.rocket.classList.add("animated", "bounce", "delay-4s");
 			this.rocket.addEventListener("animationend", () => {
 				this.rocket.classList.remove("animated", "bounce", "delay-4s");
@@ -78,7 +81,7 @@ class RocketComponent extends Component<
 
 	get defaultProps() {
 		return {
-			hasBounce: true
+			hasBounce: null
 		};
 	}
 
