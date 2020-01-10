@@ -8,9 +8,12 @@
 		align-items: center;
 		
 		&__icon {
-			height: 60px;
-			width: 60px;
+			height: 6rem;
+			width: 6rem;
 			fill: $white;
+			&:focus{
+				outline: none;
+			}
 		}
 		&__text {
 			text-align: center;

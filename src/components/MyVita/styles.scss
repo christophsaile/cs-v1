@@ -27,13 +27,13 @@
 			}
 			&--left {
 				margin-right: auto;
-				box-shadow: 3px 3px 7px #0000001a;
+				box-shadow: 0.3rem 0.3rem 0.7rem #0000001a;
 			}
 			&--right {
 				margin-left: auto;
 				align-items: flex-end;
 				text-align: right;
-				box-shadow: 3px 3px 7px #0000001a;
+				box-shadow: 0.3rem 0.3rem 0.7rem #0000001a;
 			}
 			&--white {
 				background: $white;

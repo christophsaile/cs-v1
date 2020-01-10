@@ -19,7 +19,9 @@ header {
 	z-index: $z-index-main;
 	position: relative;
 }
-.landingPage {
+.landingPage,
+.cg,
+.prog {
 	overflow: hidden;
 }
 .aboutMe {
@@ -114,8 +116,8 @@ footer {
 	}
 	&__3col {
 		grid-template-columns: 1fr;
-		column-gap: 10px;
-		row-gap: 15px;
+		column-gap: 1rem;
+		row-gap: 1.5rem;
 
 		@include breakpoint($small) {
 			grid-template-columns: 1fr 1fr;
@@ -338,7 +340,7 @@ svg {
 	.svg {
 		&__square {
 			display: none;
-			@include breakpoint($small){
+			@include breakpoint($small) {
 				display: block;
 			}
 			svg {

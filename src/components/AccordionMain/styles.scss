@@ -9,7 +9,7 @@
 		align-items: center;
 		align-content: center;
 		position: relative;
-		margin-top: 10px;
+		margin-top: 1rem;
 		min-height: 60vh;
 		transition: all $transition-default;
 
@@ -20,8 +20,8 @@
 			height: 5vh;
 			width: 100%;
 			overflow: hidden;
-			margin: 5px 0;
-			border-radius: 3px;
+			margin: 0.5rem 0;
+			border-radius: 0.3rem;
 			background: $white;
 			color: rgba(255, 255, 255, 0);
 			transition: all $transition-default;
@@ -39,7 +39,7 @@
 				&:last-child {
 					margin-right: 0;
 				}
-				margin: 0 5px;
+				margin: 0 0.5rem;
 				height: 60vh;
 				width: 10%;
 			}
@@ -47,7 +47,7 @@
 		.expand {
 			height: 50vh;
 			color: $black;
-			padding: 20px;
+			padding: 2rem;
 
 			.accordion__date {
 				display: inline-block;
