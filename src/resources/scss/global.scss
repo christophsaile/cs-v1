@@ -19,7 +19,9 @@ header {
 	z-index: $z-index-main;
 	position: relative;
 }
-.landingPage {
+.landingPage,
+.cg,
+.prog {
 	overflow: hidden;
 }
 .aboutMe {
@@ -338,7 +340,7 @@ svg {
 	.svg {
 		&__square {
 			display: none;
-			@include breakpoint($small){
+			@include breakpoint($small) {
 				display: block;
 			}
 			svg {
