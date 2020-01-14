@@ -8,8 +8,10 @@
 
 		&__item {
 			height: 20vh;
+			margin-top: 1rem;
 			overflow: hidden;
 			transition: height $transition-default;
+			border-radius: $border-radius;
 			box-shadow: 0.3rem 0.3rem 0.7rem #0000001a;
 
 			&:first-child {
@@ -35,7 +37,6 @@
 			background-color: $white;
 			color: $black;
 			transition: all 0.4s;
-			border-bottom: 0.1rem solid #0000001c;
 
 			&:hover {
 				padding-left: 2.7rem;
