@@ -7,8 +7,6 @@
  */
 interface HeadingCompProps {
 	type: string;
-	text: string;
-	secondLine: string;
 	hasStyle: boolean;
 	noMargin: boolean;
 }
