@@ -49,7 +49,7 @@ class RocketComponent extends Component<
 	}
 	onPropsChanged() {
 		window.setTimeout(() => {
-			//Set Timeout is needed because on the first call of onPropsChanged has-Bounce is true, but svg is not loaded, TIMING ISSUE
+			////Set Timeout is needed because on the first call of onPropsChanged has-Bounce is true, but svg is not loaded, TIMING ISSUE
 			if (this.props.hasBounce) {
 				this.bounceAnimation();
 			}

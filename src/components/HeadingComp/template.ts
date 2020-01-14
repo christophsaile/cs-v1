@@ -7,38 +7,28 @@ export default (render: Function, data: HeadingCompProps & HeadingCompState & He
     return render`
         ${createStyle(styles)}
 		${data.type === "h1" ? Component.wire()`
-		<h1 class=${`h1 ${data.hasStyle ? "h1--styled" : ""}${data.noMargin ? "h1--noMargin" : ""}`}>
-			${data.text} 
-			<br> 
-			${data.secondLine}
-		</h1>
+			<h1 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+				<slot/>
+			</h1>
 		`: null}
 		${data.type === "h2" ? Component.wire()`
-			<h2 class=${`h2 ${data.hasStyle ? "h2--styled" : ""} ${data.noMargin ? "h2--noMargin" : ""} `}>
-				${data.text} 
-				<br> 
-				${data.secondLine}
+			<h2 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""} `}>
+				<slot/>
 			</h2>
 		`: null}
 		${data.type === "h3" ? Component.wire()`
-			<h3 class=${`h3 ${data.hasStyle ? "h3--styled" : ""}${data.noMargin ? "h3--noMargin" : ""}`}>
-				${data.text} 
-				<br> 
-				${data.secondLine}
+			<h3 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+				<slot/>
 			</h3>
 		`: null}
 		${data.type === "h4" ? Component.wire()`
-			<h4 class=${`h4 ${data.hasStyle ? "h4--styled" : ""}${data.noMargin ? "h4--noMargin" : ""}`}>
-				${data.text} 
-				<br> 
-				${data.secondLine}
+			<h4 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+				<slot/>
 			</h4>
 		`: null}
 		${data.type === "h5" ? Component.wire()`
-			<h5 class=${`h5 ${data.hasStyle ? "h5--styled" : ""}${data.noMargin ? "h5--noMargin" : ""}`}>
-				${data.text} 
-				<br> 
-				${data.secondLine}
+			<h5 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+				<slot/>
 			</h5>
 		`: null}
     `;

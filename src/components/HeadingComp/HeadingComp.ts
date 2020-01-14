@@ -13,8 +13,6 @@ class HeadingComp extends Component<HeadingCompProps, HeadingCompState> {
 
 	static attributes = [
 		"type",
-		"text",
-		"second-line",
 		{ name: "no-margin", converter: toBoolean },
 		{ name: "has-style", converter: toBoolean }
 	];
@@ -28,8 +26,6 @@ class HeadingComp extends Component<HeadingCompProps, HeadingCompState> {
 	get defaultProps() {
 		return {
 			type: null,
-			text: null,
-			secondLine: null,
 			hasStyle: false,
 			noMargin: false,
 		};
