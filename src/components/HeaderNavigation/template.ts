@@ -15,7 +15,6 @@ export default (
 ) => {
 	return render`
 		${createStyle(styles)}
-		<!-- <a> will be replaced by <a> component -->
 		<nav class="navHeader">
 		<ul class="navHeader__default">
 				<li class="navHeader__links"><a href="/01site.01master.html"><span>Home</span></a></li>
