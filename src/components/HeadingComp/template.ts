@@ -1,33 +1,45 @@
 import * as styles from './styles.scss';
-
 import { HeadingCompProps, HeadingCompState, HeadingCompMethods } from './defines';
-import Component from '@biotope/element';
+import Component, { html } from '@biotope/element';
+
+function checkClasses(data: HeadingCompProps){
+	let styled: string;
+	let margin: string;
+
+	if(data.hasStyle){
+		styled="styled";
+	}
+	if(data.noMargin){
+		margin="noMargin";
+	}
+	return styled+" "+margin;
+}
 
 export default (render: Function, data: HeadingCompProps & HeadingCompState & HeadingCompMethods , createStyle: Function) => {
     return render`
         ${createStyle(styles)}
-		${data.type === "h1" ? Component.wire()`
-			<h1 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+		${data.type === "h1" ? html`
+			<h1 class=${checkClasses(data)}>
 				<slot/>
 			</h1>
 		`: null}
-		${data.type === "h2" ? Component.wire()`
-			<h2 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""} `}>
+		${data.type === "h2" ? html`
+			<h2 class=${checkClasses(data)}>
 				<slot/>
 			</h2>
 		`: null}
-		${data.type === "h3" ? Component.wire()`
-			<h3 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+		${data.type === "h3" ? html`
+			<h3 class=${checkClasses(data)}>
 				<slot/>
 			</h3>
 		`: null}
-		${data.type === "h4" ? Component.wire()`
-			<h4 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+		${data.type === "h4" ? html`
+			<h4 class=${checkClasses(data)}>
 				<slot/>
 			</h4>
 		`: null}
-		${data.type === "h5" ? Component.wire()`
-			<h5 class=${` ${data.hasStyle ? "styled" : ""} ${data.noMargin ? "noMargin" : ""}`}>
+		${data.type === "h5" ? html`
+			<h5 class=${checkClasses(data)}>
 				<slot/>
 			</h5>
 		`: null}
