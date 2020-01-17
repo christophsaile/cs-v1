@@ -15,14 +15,14 @@
 	h5 {
 		margin-top: 0.5rem;
 		line-height: 1.2;
-		font-family: "Gilroy-ExtraBold", sans-serif;
+		font-family: $font-family-bold;
 
 		&.styled {
 			display: inline-block;
 			margin-top: 1rem;
 			line-height: 0.3;
 			background-color: $turquoise;
-			font-family: "Gilroy-Light", sans-serif;
+			font-family: $font-family-light;
 		}
 		&.noMargin{
 			margin-top: 0;
