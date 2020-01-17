@@ -1,0 +1,10 @@
+# The following redirect is intended for use with most SPAs that handle
+# routing internally.
+
+[[redirects]]
+
+  from = "/*"
+
+  to = "/01site.01master.html"
+
+  status = 200
