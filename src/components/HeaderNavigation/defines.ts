@@ -13,7 +13,8 @@
  * State
  */
  interface HeaderNavigationState {
-
+	menuOpen: boolean;
+	active: boolean;
  }
 
 /**

@@ -16,7 +16,7 @@ class AccordionMain extends Component<AccordionMainProps, AccordionMainState> {
 
 	public accordionItems: NodeListOf<HTMLElement>;
 
-	connectedCallback() {
+	renderd() {
 		
 		const accordionContainer = this.shadowRoot.querySelectorAll('.accordion');
 		accordionContainer.forEach((item: Element) => {

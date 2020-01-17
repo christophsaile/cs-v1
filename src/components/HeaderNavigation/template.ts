@@ -1,15 +1,19 @@
 import * as styles from './styles.scss';
+import cn from 'classnames'
 
 import { HeaderNavigationProps, HeaderNavigationState, HeaderNavigationMethods } from './defines';
 
 
-export default (render: Function, data: HeaderNavigationProps & HeaderNavigationState & HeaderNavigationMethods , createStyle: Function) => {
+export default (render: Function, data: HeaderNavigationProps & HeaderNavigationState & HeaderNavigationMethods, refs: any, createStyle: Function) => {
+	const menuBtnClasses = cn('navHeader__menu--toggle', {'menu-open': data.menuOpen})
+	const menuClasses = cn('navHeader__menu', {'active': data.active})
+
     return render`
 		${createStyle(styles)}
 		<!-- <a> will be replaced by <a> component -->
-		<nav class="navHeader">
-		<div class="navHeader__menu--toggle"><span>Menu</span></div>
-			<ul class="navHeader__menu">
+		<nav class="navHeader"}>
+		<div class=${menuBtnClasses} ref=${refs.menuBtnRef}><span>Menu</span></div>
+			<ul class=${menuClasses} ref=${refs.menuRef}>
 				<li class="navHeader__links"><a href="/01site.01master.html"><span>Home</span></a></li>
 				<li class="navHeader__links"><a href="/01site.01master.html#aboutMe"><span>About Me</span></a></li>
 				<li class="navHeader__links"><a href="/01site.02portfolio.html"><span>Portfolio</span></a></li>
