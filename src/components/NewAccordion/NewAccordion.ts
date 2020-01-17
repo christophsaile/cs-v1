@@ -16,7 +16,7 @@ class NewAccordion extends Component<NewAccordionProps, NewAccordionState> {
 
 	public accordionItems: NodeListOf<HTMLElement>;
 
-	connectedCallback() {
+	rendered() {
 		const accordionContainer = this.shadowRoot.querySelectorAll(
 			".accordion"
 		);

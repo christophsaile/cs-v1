@@ -22,7 +22,7 @@ class PageCounter extends Component<PageCounterProps, PageCounterState> {
 
 	public counter: HTMLElement;
 
-	connectedCallback() {
+	rendered() {
 		//init variables
 		//Note: calculation based on height of FIRST section in the document!!!
 

@@ -24,7 +24,7 @@ class RocketComponent extends Component<
 	public bodyLenghtWithRocket: number;
 	public animationDuration: number;
 
-	connectedCallback() {
+	rendered() {
 		this.init();
 		this.rocket.addEventListener("click", () => {
 			this.setAttribute("has-bounce", "false"); //stop bounce effect while flying
@@ -47,13 +47,11 @@ class RocketComponent extends Component<
 		});
 		this.bounceAnimation();
 	}
-	onPropsChanged() {
-		window.setTimeout(() => {
-			////Set Timeout is needed because on the first call of onPropsChanged has-Bounce is true, but svg is not loaded, TIMING ISSUE
-			if (this.props.hasBounce) {
-				this.bounceAnimation();
-			}
-		}, 100);
+	attributeChangedCallback(name, previous, current) {
+		if (current === "true") {
+			this.bounceAnimation();
+		}
+		super.attributeChangedCallback(name, previous, current);
 	}
 	public init() {
 		this.animationDuration = 3000;
