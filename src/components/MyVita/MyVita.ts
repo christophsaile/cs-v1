@@ -11,7 +11,7 @@ class MyVita extends Component<MyVitaProps, MyVitaState> {
 
 	public methods: MyVitaMethods = {};
 
-	connectedCallback() {
+	rendered() {
 		const vita = this.shadowRoot.querySelectorAll(".vita__container");
 		vita.forEach((item: Element) => {
 			item.innerHTML = this.innerHTML;

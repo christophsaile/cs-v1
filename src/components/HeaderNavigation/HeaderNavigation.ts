@@ -1,4 +1,4 @@
-import Component from "@biotope/element";
+import Component, { createRef } from "@biotope/element";
 import template from "./template";
 
 import {
@@ -20,22 +20,38 @@ class HeaderNavigation extends Component<
 	public menu: HTMLElement;
 	public menuBtn: HTMLElement;
 
-	connectedCallback() {
-		this.menu = this.shadowRoot.querySelector(".navHeader__menu");
-		this.menuBtn = this.shadowRoot.querySelector(".navHeader__menu--toggle");
-
-		this.menuBtn.addEventListener("click", this.toggleMenuBtn, false);
-		this.menuBtn.addEventListener("click", this.toggleMenu, false);
+	private refs = {
+		menuRef: createRef<HTMLElement>(),
+		menuBtnRef: createRef<HTMLElement>()
+	};
+	rendered() {
+		this.refs.menuBtnRef.current.addEventListener(
+			"click",
+			this.toggleMenuBtn,
+			false
+		);
+		this.refs.menuBtnRef.current.addEventListener(
+			"click",
+			this.toggleMenu,
+			false
+		);
 	}
 	public toggleMenuBtn = () => {
-		this.menuBtn.classList.toggle("menu-open");
+		this.setState({
+			menuOpen: !this.state.menuOpen
+		});
 	};
 	public toggleMenu = () => {
-		this.menu.classList.toggle("active");
+		this.setState({
+			active: !this.state.active
+		});
 	};
 
 	get defaultState() {
-		return {};
+		return {
+			menuOpen: false,
+			active: false
+		};
 	}
 
 	get defaultProps() {
@@ -46,6 +62,7 @@ class HeaderNavigation extends Component<
 		return template(
 			this.html,
 			{ ...this.props, ...this.state, ...this.methods },
+			this.refs,
 			this.createStyle
 		);
 	}
