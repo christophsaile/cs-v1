@@ -1,17 +1,21 @@
 import * as styles from "./styles.scss";
+import cn from 'classnames'
+
 
 import { MyVitaProps, MyVitaState, MyVitaMethods } from "./defines";
 
 export default (
 	render: Function,
 	data: MyVitaProps & MyVitaState & MyVitaMethods,
+	refs: any,
 	createStyle: Function
 ) => {
+	//const scrollTrigger = cn
 	return render`
         ${createStyle(styles)}
         <div class="vita">
-			<div class="scroll-trigger">
-				<article class=${`vita__container animated ${data.scrollAnimation} ${data.position} ${data.theme}`}>
+			<div class="scroll-trigger" ref=${refs.scrollTriggerRef}>
+				<article class=${`vita__container animated ${data.position} ${data.theme}`} ref=${refs.animationRef}>
 					<slot />	
 				</article>
 			</div>

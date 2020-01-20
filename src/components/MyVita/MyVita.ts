@@ -1,4 +1,4 @@
-import Component from "@biotope/element";
+import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import * as ScrollMagic from "scrollmagic";
 
@@ -11,6 +11,13 @@ class MyVita extends Component<MyVitaProps, MyVitaState> {
 
 	public methods: MyVitaMethods = {};
 
+	public animation: HTMLElement;
+
+	private refs = {
+		scrollTriggerRef: createRef<HTMLElement>(),
+		animationRef: createRef<HTMLElement>()
+	};
+
 	rendered() {
 		this.initAnimation();
 	}
@@ -20,30 +27,25 @@ class MyVita extends Component<MyVitaProps, MyVitaState> {
 				triggerHook: "onEnter"
 			}
 		});
+		this.animation = this.refs.animationRef.current;
 		this.fadeInRight(controller);
 		this.fadeInLeft(controller);
 	}
 	public fadeInLeft(controller) {
-		const animationFadeInLeft: HTMLElement = this.shadowRoot.querySelector(
-			".animation-fade-in-left"
-		);
-		if (animationFadeInLeft) {
+		if (this.props.scrollAnimation === "left") {
 			let animationSceneLeft = new ScrollMagic.Scene({
-				triggerElement: this.shadowRoot.querySelector(".scroll-trigger")
+				triggerElement: this.refs.scrollTriggerRef.current
 			})
-				.setClassToggle(animationFadeInLeft, "fadeInLeft")
+				.setClassToggle(this.animation, "fadeInLeft")
 				.addTo(controller);
 		}
 	}
 	public fadeInRight(controller) {
-		const animationFadeInRight: HTMLElement = this.shadowRoot.querySelector(
-			".animation-fade-in-right"
-		);
-		if (animationFadeInRight) {
+		if (this.props.scrollAnimation === "right") {
 			let animationSceneRight = new ScrollMagic.Scene({
-				triggerElement: this.shadowRoot.querySelector(".scroll-trigger")
+				triggerElement: this.refs.scrollTriggerRef.current
 			})
-				.setClassToggle(animationFadeInRight, "fadeInRight")
+				.setClassToggle(this.animation, "fadeInRight")
 				.addTo(controller);
 		}
 	}
@@ -63,6 +65,7 @@ class MyVita extends Component<MyVitaProps, MyVitaState> {
 		return template(
 			this.html,
 			{ ...this.props, ...this.state, ...this.methods },
+			this.refs,
 			this.createStyle
 		);
 	}
