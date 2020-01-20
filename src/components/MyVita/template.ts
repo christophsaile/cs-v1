@@ -12,6 +12,7 @@ export default (
         <div class="vita">
 			<div class="scroll-trigger">
 				<article class=${`vita__container animated ${data.scrollAnimation} ${data.position} ${data.theme}`}>
+					<slot />	
 				</article>
 			</div>
 		</div>
