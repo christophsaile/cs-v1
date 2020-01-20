@@ -5,62 +5,48 @@ Accordion options:
 		accordion--turquoise
 --}}
 
-<div style="display: grid; grid-template-columns: 1fr 1fr;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; background-color:darkcyan;">
+	<heading-comp no-margin type="h2" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+		3D - Animation
+	</heading-comp>
 	<new-accordion modifier="accordion--coral" data-resources="[{paths: ['components/NewAccordion/index.js']}]">
-		<heading-comp no-margin type="h2" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
-			3D - Animation
-		</heading-comp>
-		<article class="accordion__item">
-			<header class="accordion__header">
-				<span class="accordion__icon"></span>
-				<heading-comp no-margin type="h4" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
-					Test Heading h4
-				</heading-comp>
-			</header>
-			<div class="accordion__body">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
-					ex!
-					Illo,
-					soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
-					consequuntur
-					adipisci. Ipsum, impedit.</p>
-			</div>
-		</article>
-		<article class="accordion__item hidden">
-			<header class="accordion__header">
-				<span class="accordion__icon"></span>
-				<heading-comp no-margin type="h4" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
-					Test Heading h4
-				</heading-comp>
-			</header>
-			<div class="accordion__body">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
-					ex!
-					Illo,
-					soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
-					consequuntur
-					adipisci. Ipsum, impedit.</p>
-			</div>
-		</article>
-		<article class="accordion__item hidden">
-			<header class="accordion__header">
-				<span class="accordion__icon"></span>
-				<heading-comp no-margin type="h4" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
-					Test Heading h4
-				</heading-comp>
-			</header>
-			<div class="accordion__body">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
-					ex!
-					Illo,
-					soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
-					consequuntur
-					adipisci. Ipsum, impedit.</p>
-			</div>
-		</article>
+		<accordion-item data-resources="[{paths: ['components/NewAccordion/includes/AccordionItem/index.js']}]">
+			<span slot="heading">Test Heading H4</span>
+			<span slot="text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
+				ex!
+				Illo,
+				soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
+				consequuntur
+				adipisci. Ipsum, impedit.
+			</span>
+		</accordion-item>
+		<accordion-item data-resources="[{paths: ['components/NewAccordion/includes/AccordionItem/index.js']}]">
+			<span slot="heading">Test Heading H4</span>
+			<span slot="text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
+				ex!
+				Illo,
+				soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
+				consequuntur
+				adipisci. Ipsum, impedit.
+			</span>
+		</accordion-item>
+		<accordion-item data-resources="[{paths: ['components/NewAccordion/includes/AccordionItem/index.js']}]">
+			<span slot="heading">Test Heading H4</span>
+			<span slot="text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
+				ex!
+				Illo,
+				soluta, laudantium. Ullam facere voluptate eum sequi, cupiditate incidunt natus beatae
+				consequuntur
+				adipisci. Ipsum, impedit.
+			</span>
+		</accordion-item>
 	</new-accordion>
 </div>
-<div style="display: grid; grid-template-columns: 1fr 1fr;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; background-color: coral;">
 	<heading-comp no-margin type="h2" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
 		Programming
 	</heading-comp>

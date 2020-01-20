@@ -17,12 +17,6 @@ class NewAccordion extends Component<NewAccordionProps, NewAccordionState> {
 	public accordionItems: NodeListOf<HTMLElement>;
 
 	rendered() {
-		const accordionContainer = this.shadowRoot.querySelectorAll(
-			".accordion"
-		);
-		accordionContainer.forEach((item: Element) => {
-			item.innerHTML = this.innerHTML;
-		});
 		const accordionItems = this.shadowRoot.querySelectorAll(
 			".accordion__item"
 		);
