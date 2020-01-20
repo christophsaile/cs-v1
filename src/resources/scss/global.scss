@@ -183,7 +183,7 @@ footer {
 		transition: all $transition-default;
 		z-index: $z-index-footer-brand;
 
-		&:hover {
+		&:hover, :focus {
 			color: $turquoise;
 		}
 	}

@@ -17,9 +17,6 @@ class HeaderNavigation extends Component<
 
 	public methods: HeaderNavigationMethods = {};
 
-	public menu: HTMLElement;
-	public menuBtn: HTMLElement;
-
 	private refs = {
 		menuRef: createRef<HTMLElement>(),
 		menuBtnRef: createRef<HTMLElement>()

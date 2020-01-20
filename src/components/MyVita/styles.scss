@@ -15,7 +15,7 @@
 			padding: 1rem;
 
 			&:hover {
-				.vita__number {
+				::slotted(.vita__number) {
 					background-color: $coral;
 				}
 			}
@@ -42,16 +42,16 @@
 			&--turquoise {
 				background: $turquoise;
 				&:hover {
-					.vita__number {
+					::slotted(.vita__number) {
 						background-color: $coral;
 					}
 				}
-				& .vita__number {
+				::slotted(.vita__number) {
 					background-color: $white;
 				}
 			}
 		}
-		&__number {
+		::slotted(span) {
 			display: inline-block;
 			width: fit-content;
 			margin-bottom: (4rem / 1.5 / 2);

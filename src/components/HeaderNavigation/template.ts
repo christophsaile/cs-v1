@@ -1,14 +1,26 @@
-import * as styles from './styles.scss';
-import cn from 'classnames'
+import * as styles from "./styles.scss";
+import cn from "classnames";
 
-import { HeaderNavigationProps, HeaderNavigationState, HeaderNavigationMethods } from './defines';
+import {
+	HeaderNavigationProps,
+	HeaderNavigationState,
+	HeaderNavigationMethods
+} from "./defines";
 
+export default (
+	render: Function,
+	data: HeaderNavigationProps &
+		HeaderNavigationState &
+		HeaderNavigationMethods,
+	refs: any,
+	createStyle: Function
+) => {
+	const menuBtnClasses = cn("navHeader__menu--toggle", {
+		"menu-open": data.menuOpen
+	});
+	const menuClasses = cn("navHeader__menu", { active: data.active });
 
-export default (render: Function, data: HeaderNavigationProps & HeaderNavigationState & HeaderNavigationMethods, refs: any, createStyle: Function) => {
-	const menuBtnClasses = cn('navHeader__menu--toggle', {'menu-open': data.menuOpen})
-	const menuClasses = cn('navHeader__menu', {'active': data.active})
-
-    return render`
+	return render`
 		${createStyle(styles)}
 		<!-- <a> will be replaced by <a> component -->
 		<nav class="navHeader"}>
@@ -23,4 +35,4 @@ export default (render: Function, data: HeaderNavigationProps & HeaderNavigation
 			</ul>
 		</nav>
     `;
-}
+};
