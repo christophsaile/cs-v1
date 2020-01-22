@@ -6,5 +6,4 @@
 	from = "/*"
 	to = "/01site.01master.html"
 	status = 302
-	force=true
 
