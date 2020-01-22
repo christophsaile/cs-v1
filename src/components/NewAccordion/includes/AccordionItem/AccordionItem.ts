@@ -1,4 +1,4 @@
-import Component, { HTMLFragment } from '@biotope/element';
+import Component, { HTMLFragment, createRef } from '@biotope/element';
 import { template } from './template';
 import { AccordionItemProps, AccordionItemState, AccordionItemMethods } from './defines';
 
@@ -8,12 +8,22 @@ class AccordionItem extends Component< AccordionItemProps, AccordionItemState > 
   
   protected readonly defaultProps: AccordionItemProps = {};
    
-  protected readonly defaultState: AccordionItemState = {};
+  protected readonly defaultState: AccordionItemState = {
+	  isOpen: false
+  };
 
   public methods: AccordionItemMethods = {};
 
+  public refs = {
+	accordionHeaderRef: createRef<HTMLElement>()
+  }
+  rendered(){
+	console.log(this.refs);
+
+  }
+
   public render(): HTMLFragment {
-    return template( { ...this.props, ...this.state, ...this.methods });
+	return template( { ...this.props, ...this.state, ...this.methods });
   }
 }
 

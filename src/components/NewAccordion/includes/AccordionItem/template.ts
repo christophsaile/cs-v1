@@ -6,7 +6,7 @@ import { AccordionItemProps, AccordionItemState, AccordionItemMethods } from './
 
 export const template = ( data: AccordionItemProps & AccordionItemState & AccordionItemMethods ): HTMLFragment => {
   return html`
-	<header class="accordion__header">
+	<header class="accordion__header" ref=${this.refs.accordionHeaderRef}>
 		<span class="accordion__icon"></span>
 		<heading-comp no-margin type="h4" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
 			<slot name="heading"></slot>
