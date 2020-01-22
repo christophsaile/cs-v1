@@ -4,6 +4,7 @@
 [[redirects]]
 
 	from = "/*"
-	to = "/01site01master.html"
+	to = "/01site.01master.html"
 	status = 302
+	force=true
 
