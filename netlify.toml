@@ -3,7 +3,7 @@
 
 [[redirects]]
 
-	from = "/index.html"
+	from = "/*"
 	to = "/01site01master.html"
-	status = 200
+	status = 302
 
