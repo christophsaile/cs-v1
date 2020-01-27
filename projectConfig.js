@@ -11,7 +11,10 @@ module.exports = {
 		externalResources: {
 			'sanitize.css': 'sanitize.css',
 			'@virtualidentity/css-helper': ['base.css'],
-			'handlebars': 'dist/handlebars.runtime.js'
+			'handlebars': 'dist/handlebars.runtime.js',
+			'@webcomponents/webcomponentsjs': [
+				'custom-elements-es5-adapter.js'
+			  ]
 		},
 		tsEntryPoints: [
 			'resources/ts/**/*.ts',
@@ -20,5 +23,17 @@ module.exports = {
 	},
 	webpack: {
 		watchScss: true
+	},
+	uglify: {
+		ignoreList: [
+		  'resources/js/polyfills/webcomponents-loader.js',
+		  'resources/js/polyfills/bundles/webcomponents-ce.js',
+		  'resources/js/polyfills/bundles/webcomponents-sd-ce-pf.js',
+		  'resources/js/polyfills/bundles/webcomponents-sd-ce.js',
+		  'resources/js/polyfills/bundles/webcomponents-sd.js'
+		]
+	  },
+	favicons: {
+		path: '/favicons/'
 	}
 };
