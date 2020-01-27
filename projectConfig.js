@@ -11,7 +11,7 @@ module.exports = {
 		externalResources: {
 			'sanitize.css': 'sanitize.css',
 			'@virtualidentity/css-helper': ['base.css'],
-			'handlebars': 'dist/handlebars.runtime.js',
+			'handlebars': 'dist/handlebars.runtime.js'
 		},
 		tsEntryPoints: [
 			'resources/ts/**/*.ts',
