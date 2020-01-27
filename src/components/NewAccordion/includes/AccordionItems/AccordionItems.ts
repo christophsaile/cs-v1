@@ -13,10 +13,11 @@ class AccordionItems extends Component<
 	public static componentName = "accordion-items";
 	public static attributes = [];
 
-	public refs = {
-		accordionHeaderRef: createRef<HTMLElement>()
+	private refs = {
+		accordionHeaderRef: createRef<HTMLElement>(),
+		accordionBodyRef: createRef<HTMLElement>()
 	};
-	rendered() {
+	ready() {
 		console.log(this.refs);
 	}
 	get defaultState() {
@@ -34,6 +35,7 @@ class AccordionItems extends Component<
 		return template(
 			this.html,
 			{ ...this.props, ...this.state, ...this.methods },
+			this.refs,
 			this.createStyle
 		);
 	}
