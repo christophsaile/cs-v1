@@ -183,7 +183,8 @@ footer {
 		transition: all $transition-default;
 		z-index: $z-index-footer-brand;
 
-		&:hover, :focus {
+		&:hover,
+		:focus {
 			color: $turquoise;
 		}
 	}
@@ -207,22 +208,23 @@ footer {
 
 ////BACKGROUNDS
 ////SVGs
-svg {
-	overflow: hidden;
-	position: absolute;
+.svg {
+	img {
+		overflow: hidden;
+		position: absolute;
+	}
 }
 
 .landingPage {
 	.svg {
 		&__centerDots {
-			svg {
+			img {
 				width: 100vw;
 				left: 0;
 				right: 0;
 				top: 0;
 				bottom: 0;
 				margin: auto;
-				fill: $white;
 				@include breakpoint($medium) {
 					width: 50vw;
 				}
@@ -231,20 +233,14 @@ svg {
 				}
 			}
 		}
-		&__centerBackground {
-			svg {
-				fill: $yellow;
-			}
-		}
 	}
 }
 .aboutMe {
 	.svg {
 		&__top {
-			svg {
+			img {
 				margin: 5vh 0;
 				width: 100vw;
-				fill: $white;
 
 				@include breakpoint($large) {
 					width: 60vw;
@@ -252,12 +248,11 @@ svg {
 			}
 		}
 		&__bottom {
-			svg {
+			img {
 				margin: 5vh 0;
 				bottom: 0;
 				right: 0;
 				width: 100vw;
-				fill: $white;
 
 				@include breakpoint($large) {
 					width: 60vw;
@@ -275,34 +270,11 @@ svg {
 			@include breakpoint($small) {
 				display: block;
 			}
-			svg {
+			img {
 				max-height: 70vh;
 				top: 0;
 				bottom: 0;
 				margin: auto 0;
-
-				.cls-1,
-				.cls-2 {
-					fill: none;
-				}
-
-				.cls-2 {
-					stroke: #1d1d1b;
-					stroke-width: 1.44px;
-				}
-
-				.cls-3 {
-					isolation: isolate;
-				}
-
-				.cls-4 {
-					fill: url(#_10_lpp_20_);
-				}
-
-				.cls-5 {
-					fill: $coral;
-					mix-blend-mode: multiply;
-				}
 			}
 		}
 	}
@@ -316,21 +288,11 @@ svg {
 			@include breakpoint($small) {
 				display: block;
 			}
-			svg {
+			img {
 				max-height: 60vh;
 				top: 0;
 				bottom: 0;
 				margin: auto;
-				.cls-1 {
-					fill: $turquoise;
-				}
-
-				.cls-2 {
-					fill: none;
-					stroke: #1d262d;
-					stroke-miterlimit: 10;
-					stroke-width: 2px;
-				}
 			}
 		}
 	}
@@ -343,38 +305,13 @@ svg {
 			@include breakpoint($small) {
 				display: block;
 			}
-			svg {
+			img {
 				max-height: 130vh;
 				top: 0;
 				bottom: 0;
 				left: 0;
 				right: 0;
 				margin: auto;
-
-				.cls-1,
-				.cls-2,
-				.cls-3 {
-					fill: none;
-				}
-
-				.cls-2 {
-					stroke: $white;
-					stroke-width: 1.44px;
-				}
-
-				.cls-3 {
-					stroke: $white;
-					stroke-miterlimit: 10;
-					stroke-width: 2px;
-				}
-
-				.cls-4 {
-					fill: $turquoise;
-				}
-
-				.cls-5 {
-					fill: url(#_10_lpp_20_);
-				}
 			}
 		}
 	}
