@@ -1,11 +1,10 @@
-import { html, createStyle, HTMLFragment } from '@biotope/element';
 import * as styles from './styles.scss';
 
-import { AccordionItemProps, AccordionItemState, AccordionItemMethods } from './defines';
+import { AccordionItemsProps, AccordionItemsState, AccordionItemsMethods } from './defines';
 
 
-export const template = ( data: AccordionItemProps & AccordionItemState & AccordionItemMethods ): HTMLFragment => {
-  return html`
+export const template = (render: Function, data: AccordionItemsProps & AccordionItemsState & AccordionItemsMethods , createStyle: Function) => {
+  return render`
 	<header class="accordion__header" ref=${this.refs.accordionHeaderRef}>
 		<span class="accordion__icon"></span>
 		<heading-comp no-margin type="h4" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
@@ -15,7 +14,6 @@ export const template = ( data: AccordionItemProps & AccordionItemState & Accord
 	<div class="accordion__body">
 		<slot name="text"></slot>
 	</div>
-
     ${createStyle(styles)}
   `;
 }
