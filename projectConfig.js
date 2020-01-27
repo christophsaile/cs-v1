@@ -20,5 +20,8 @@ module.exports = {
 	},
 	webpack: {
 		watchScss: true
+	},
+	favicons: {
+		path: '/favicons/'
 	}
 };
