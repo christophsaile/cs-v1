@@ -13,8 +13,6 @@ export default (
 ) => {
 	return render`
 		${createStyle(styles)}
-		<section class=${`accordion ${data.modifier}`}>
-			<slot />
-		</section>
+		<slot />
     `;
 };

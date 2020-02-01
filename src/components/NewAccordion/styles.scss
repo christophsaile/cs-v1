@@ -2,15 +2,4 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("new-accordion") {
-	.accordion {
-		width: 100%;
-		box-shadow: 0.3rem 0.3rem 0.7rem #0000001a;
-
-		&--coral {
-			background-color: $coral;
-		}
-		&--turquoise {
-			background-color: $turquoise;
-		}
-	}
 }

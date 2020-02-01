@@ -5,9 +5,7 @@
 /**
  * Props
  */
-interface NewAccordionProps {
-	modifier: string;
-}
+interface NewAccordionProps {}
 
 /**
  * State

@@ -5,21 +5,20 @@
 /**
  * Props
  */
-interface AccordionItemsProps {}
+interface AccordionItemsProps {
+	modifier: string;
+}
 
 /**
  * State
  */
-interface AccordionItemsState {}
+interface AccordionItemsState {
+	isOpen: boolean;
+}
 
 /**
  * Methods
  */
 interface AccordionItemsMethods {}
 
-
-export {
-  AccordionItemsProps,
-	AccordionItemsState,
-	AccordionItemsMethods
-}
+export { AccordionItemsProps, AccordionItemsState, AccordionItemsMethods };

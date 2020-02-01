@@ -1,5 +1,6 @@
 import Component, { createRef } from "@biotope/element";
-import { template } from "./template";
+import template from "./template";
+
 import {
 	AccordionItemsProps,
 	AccordionItemsState,
@@ -10,28 +11,46 @@ class AccordionItems extends Component<
 	AccordionItemsProps,
 	AccordionItemsState
 > {
-	public static componentName = "accordion-items";
-	public static attributes = [];
+	static componentName = "accordion-items";
+
+	static attributes = ["modifier"];
+
+	public methods: AccordionItemsMethods = {};
 
 	private refs = {
 		accordionHeaderRef: createRef<HTMLElement>(),
 		accordionBodyRef: createRef<HTMLElement>()
 	};
-	ready() {
-		console.log(this.refs);
+	rendered() {
+		this.refs.accordionHeaderRef.current.addEventListener(
+			"click",
+			this.clickHeading,
+			false
+		);
+		console.log(this.state);
 	}
-	get defaultState() {
+	public clickHeading = () => {
+		this.setState({
+			isOpen: !this.state.isOpen
+		});
+		if(this.state.isOpen){
+			console.log(this.classList.add)
+		}
+	};
+
+	get defaultState () {
 		return {
-			isOpen: false
+			isOpen: false,
 		};
 	}
+
 	get defaultProps() {
-		return {};
+		return {
+			modifier: null,
+		};
 	}
 
-	public methods: AccordionItemsMethods = {};
-
-	public render() {
+	render() {
 		return template(
 			this.html,
 			{ ...this.props, ...this.state, ...this.methods },

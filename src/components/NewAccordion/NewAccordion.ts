@@ -10,38 +10,16 @@ import {
 class NewAccordion extends Component<NewAccordionProps, NewAccordionState> {
 	static componentName = "new-accordion";
 
-	static attributes = ["modifier"];
+	static attributes = [];
 
 	public methods: NewAccordionMethods = {};
-
-	public accordionItems: NodeListOf<HTMLElement>;
-
-	rendered() {
-		const accordionItems = this.shadowRoot.querySelectorAll(
-			".accordion__item"
-		);
-		accordionItems.forEach((elem: HTMLElement) => {
-			elem.firstElementChild.addEventListener("click", function() {
-				if (this.parentElement.classList.contains("hidden")) {
-					accordionItems.forEach((elem: HTMLElement) => {
-						elem.classList.add("hidden");
-					});
-					this.parentElement.classList.remove("hidden");
-				} else {
-					this.parentElement.classList.add("hidden");
-				}
-			});
-		});
-	}
 	
 	get defaultState() {
 		return {};
 	}
 
 	get defaultProps() {
-		return {
-			modifier: null,
-		};
+		return {};
 	}
 
 	render() {
