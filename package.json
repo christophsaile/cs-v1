@@ -29,13 +29,13 @@
     "susy": "2.2.14"
   },
   "devDependencies": {
-    "@biotope/cli": "^1.1.5",
     "@biotope/build": "^7.1.1",
+    "@biotope/cli": "^1.1.5",
     "@types/modernizr": "^3.5.3",
     "@types/node": "^10.14.15",
     "chai": "4.2.0",
     "chai-fs": "2.0.0",
-    "gulp": "3.9.1",
+    "gulp": "^3.9.1",
     "mocha": "6.2.0"
   },
   "engines": {
