@@ -1,4 +1,4 @@
-import Component from "@biotope/element";
+import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import { debounce } from "../../resources/js/debounce";
 import { toBoolean } from "../../resources/ts/converters";
@@ -20,18 +20,21 @@ class PageCounter extends Component<PageCounterProps, PageCounterState> {
 
 	public methods: PageCounterMethods = {};
 
+	private refs = {
+		counterRef: createRef<HTMLElement>(),
+		counterContainerRef: createRef<HTMLElement>()
+	};
+
 	public counter: HTMLElement;
 
 	rendered() {
-		//init variables
 		//Note: calculation based on height of FIRST section in the document!!!
 
 		const section = document.querySelector("section");
 		const sectionHeight = section.getBoundingClientRect().height;
-		const counter = this.shadowRoot.querySelector(".counter");
-		const counterContainer = this.shadowRoot.querySelector(
-			".counter__container"
-		);
+		const counter = this.refs.counterRef.current;
+		const counterContainer = this.refs.counterContainerRef.current;
+		
 		const counterContainerHeight = counterContainer.getBoundingClientRect()
 			.top;
 		const firstLink = counterContainer.firstElementChild;
@@ -75,7 +78,7 @@ class PageCounter extends Component<PageCounterProps, PageCounterState> {
 		return {
 			switchSides: false,
 			firstAnchor: "#",
-			secondAnchor: null,
+			secondAnchor: null
 		};
 	}
 
@@ -83,6 +86,7 @@ class PageCounter extends Component<PageCounterProps, PageCounterState> {
 		return template(
 			this.html,
 			{ ...this.props, ...this.state, ...this.methods },
+			this.refs,
 			this.createStyle
 		);
 	}
