@@ -19,13 +19,14 @@ class PageCounter extends Component<PageCounterProps, PageCounterState> {
 	];
 
 	public methods: PageCounterMethods = {};
+	
+	public counter: HTMLElement;
 
 	private refs = {
 		counterRef: createRef<HTMLElement>(),
 		counterContainerRef: createRef<HTMLElement>()
 	};
 
-	public counter: HTMLElement;
 
 	rendered() {
 		//Note: calculation based on height of FIRST section in the document!!!

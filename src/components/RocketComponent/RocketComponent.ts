@@ -1,4 +1,4 @@
-import Component from "@biotope/element";
+import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import { toBoolean } from "../../resources/ts/converters";
 
@@ -24,6 +24,10 @@ class RocketComponent extends Component<
 	public bodyLenghtWithRocket: number;
 	public animationDuration: number;
 
+	private refs = {
+		rocketIconRef: createRef<HTMLElement>(),
+	};
+
 	rendered() {
 		this.init();
 		this.rocket.addEventListener("click", () => {
@@ -47,15 +51,10 @@ class RocketComponent extends Component<
 		});
 		this.bounceAnimation();
 	}
-	attributeChangedCallback(name, previous, current) {
-		if (current === "true") {
-			this.bounceAnimation();
-		}
-		super.attributeChangedCallback(name, previous, current);
-	}
+
 	public init() {
 		this.animationDuration = 3000;
-		this.rocket = this.shadowRoot.querySelector(".rocket__icon");
+		this.rocket = this.refs.rocketIconRef.current;
 
 		this.rocketHeight = this.rocket.getBoundingClientRect().height;
 		this.scaledRocketHeight = this.rocketHeight * 5;
@@ -87,6 +86,7 @@ class RocketComponent extends Component<
 		return template(
 			this.html,
 			{ ...this.props, ...this.state, ...this.methods },
+			this.refs,
 			this.createStyle
 		);
 	}
