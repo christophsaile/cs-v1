@@ -13,6 +13,8 @@ export default (
 ) => {
 	return render`
 		${createStyle(styles)}
-		<slot />
+		<div class="accordion">
+			<slot />
+		</div>
     `;
 };

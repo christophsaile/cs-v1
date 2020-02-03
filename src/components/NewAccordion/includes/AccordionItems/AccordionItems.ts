@@ -21,6 +21,7 @@ class AccordionItems extends Component<
 		accordionHeaderRef: createRef<HTMLElement>(),
 		accordionBodyRef: createRef<HTMLElement>()
 	};
+	
 	rendered() {
 		this.refs.accordionHeaderRef.current.addEventListener(
 			"click",
@@ -33,9 +34,6 @@ class AccordionItems extends Component<
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
-		if(this.state.isOpen){
-			console.log(this.classList.add)
-		}
 	};
 
 	get defaultState () {
