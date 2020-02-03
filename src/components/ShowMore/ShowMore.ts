@@ -1,4 +1,4 @@
-import Component from "@biotope/element";
+import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import { debounce } from "../../resources/js/debounce";
 
@@ -15,8 +15,11 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 	public prevScrollPos: number;
 	public currentScrollPos: number;
 
+	private refs = {
+		showMoreRef: createRef<HTMLElement>(),
+	};
 	rendered() {
-		this.showMore = this.shadowRoot.querySelector(".showMore");
+		this.showMore = this.refs.showMoreRef.current;
 		this.showMoreHeight = this.showMore.offsetHeight;
 		this.prevScrollPos = window.innerHeight / 10;
 
@@ -60,6 +63,7 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 		return template(
 			this.html,
 			{ ...this.props, ...this.state, ...this.methods },
+			this.refs,
 			this.createStyle
 		);
 	}
