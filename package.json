@@ -11,6 +11,8 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp build",
+    "storybook:build": "npm explore @biotope/preview -- npm run storybook:build",
+    "storybook:serve": "npm explore @biotope/preview -- npm run storybook:serve",
     "test:travis": "mocha test/travis/build.js",
     "test:ci": "echo \"Not implemented yet\"",
     "test:e2e": "echo \"Not implemented yet\"",
@@ -18,6 +20,7 @@
   },
   "dependencies": {
     "@biotope/element": "^4",
+    "@biotope/preview": "git+https://github.com/biotope/biotope-preview.git",
     "@biotope/resource-loader": "^1.4.2",
     "@types/classnames": "^2.2.9",
     "@virtualidentity/css-helper": "^2.0",

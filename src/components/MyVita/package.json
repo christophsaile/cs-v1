@@ -1,0 +1,19 @@
+{
+	"name": "myVita",
+	"tagName": "my-vita",
+	"previewConfigs": [
+		{
+			"name": "myVita--white",
+			"props": {
+				"theme": "vita__container--white"
+			},
+			"innerHTML": "<span class='vita__number'>09/2018 - Heute</span><heading-comp type='h3' data-resources='[{paths: [´components/HeadingComp/index.js´]}]'>Bachelor of Science OnlineMedien</heading-comp><p>Hochschule für Digitale Medien in Furtwangen</p>"
+		},
+		{
+			"name": "myVita--turquoise",
+			"props": {
+				"theme": "vita__container--turquoise"
+			}
+		}
+	]
+}

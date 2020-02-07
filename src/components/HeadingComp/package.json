@@ -1,0 +1,21 @@
+{
+	"name": "headingComp",
+	"tagName": "heading-comp",
+	"previewConfigs": [
+		{
+		"name": "heading",
+			"props": {
+				"type": "h2"
+			},
+			"innerHTML": "hello World"
+		},
+		{
+			"name": "heading-modifier",
+			"props": {
+				"type": "h2",
+				"has-style": true
+			},
+			"innerHTML": "hello World modified"
+		}
+	]
+}
