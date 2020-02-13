@@ -8,7 +8,6 @@
 /_assets
 app/resources/bower_components
 /bower_components
-/dist
 /nbproject
 /node_modules
 /npm-debug.log
