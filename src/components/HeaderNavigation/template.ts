@@ -26,12 +26,12 @@ export default (
 		<nav class="navHeader"}>
 		<div class=${menuBtnClasses} ref=${refs.menuBtnRef}><span>Menu</span></div>
 			<ul class=${menuClasses} ref=${refs.menuRef}>
-				<li class="navHeader__links"><a href="index.html"><span>Home</span></a></li>
-				<li class="navHeader__links"><a href="index.html#aboutMe"><span>About Me</span></a></li>
-				<li class="navHeader__links"><a href="portfolio.html"><span>Portfolio</span></a></li>
-				<li class="navHeader__links"><a href="portfolio.html#cg"><span>3D - Animation</span></a></li>
-				<li class="navHeader__links"><a href="portfolio.html#prog"><span>Programming</span></a></li>
-				<li class="navHeader__links"><a href="contact.html"><span>Contact</span></a></li>
+  				<li class="navHeader__links"><a href="https://christoph-saile.netlify.com/"><span>Home</span></a></li>
+				<li class="navHeader__links"><a href="https://christoph-saile.netlify.com/#aboutMe"><span>About Me</span></a></li>
+				<li class="navHeader__links"><a href="https://christoph-saile.netlify.com/portfolio.html"><span>Portfolio</span></a></li>
+				<li class="navHeader__links"><a href="https://christoph-saile.netlify.com/portfolio.html#cg"><span>3D - Animation</span></a></li>
+				<li class="navHeader__links"><a href="https://christoph-saile.netlify.com/portfolio.html#prog"><span>Programming</span></a></li>
+				<li class="navHeader__links"><a href="https://christoph-saile.netlify.com/contact.html"><span>Contact</span></a></li>
 			</ul>
 		</nav>
     `;
