@@ -2,7 +2,7 @@
 /.idea
 /.tmp
 /.dev
-/.dist
+/dist
 /.iconfont
 /__\[gruntbuild\]
 /__\[viftf\]
