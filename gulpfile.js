@@ -39,7 +39,7 @@ gulp.task("build:netlify", function(callback) {
 			"cleanCss:components:dist"
 		],
 		["inject", "clean:useref", "cssstats", "version"],
-        ["clean:index"],
+        ["clean:index", "rename:files"],
 		callback
 	);
 });
