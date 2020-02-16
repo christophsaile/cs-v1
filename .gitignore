@@ -2,13 +2,13 @@
 /.idea
 /.tmp
 /.dev
+/dist
 /.iconfont
 /__\[gruntbuild\]
 /__\[viftf\]
 /_assets
 app/resources/bower_components
 /bower_components
-/dist
 /nbproject
 /node_modules
 /npm-debug.log
