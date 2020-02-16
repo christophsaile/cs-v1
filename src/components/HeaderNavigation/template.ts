@@ -26,12 +26,12 @@ export default (
 		<nav class="navHeader"}>
 		<div class=${menuBtnClasses} ref=${refs.menuBtnRef}><span>Menu</span></div>
 			<ul class=${menuClasses} ref=${refs.menuRef}>
-  				<li class="navHeader__links"><a href="/#"><span>Home</span></a></li>
+				<li class="navHeader__links"><a href="/#"><span>Home</span></a></li>
 				<li class="navHeader__links"><a href="/#aboutMe"><span>About Me</span></a></li>
-				<li class="navHeader__links"><a href="/01site.02portfolio.html"><span>Portfolio</span></a></li>
-				<li class="navHeader__links"><a href="/01site.02portfolio.html#cg"><span>3D - Animation</span></a></li>
-				<li class="navHeader__links"><a href="/01site.02portfolio.html#prog"><span>Programming</span></a></li>
-				<li class="navHeader__links"><a href="/01site.03contact.html"><span>Contact</span></a></li>
+				<li class="navHeader__links"><a href="/portfolio.html"><span>Portfolio</span></a></li>
+				<li class="navHeader__links"><a href="/portfolio.html#cg"><span>3D-Animation</span></a></li>
+				<li class="navHeader__links"><a href="/portfolio.html#prog"><span>Programming</span></a></li>
+				<li class="navHeader__links"><a href="/contact.html"><span>Contact</span></a></li>
 			</ul>
 		</nav>
     `;
