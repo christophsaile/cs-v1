@@ -28,7 +28,8 @@
     "handlebars": "4.2.0",
     "sanitize.css": "^11.0.0",
     "scrollmagic": "^2.0.7",
-    "susy": "2.2.14"
+    "susy": "2.2.14",
+    "vinyl-paths": "^3.0.1"
   },
   "devDependencies": {
     "@biotope/build": "^7.1.1",
