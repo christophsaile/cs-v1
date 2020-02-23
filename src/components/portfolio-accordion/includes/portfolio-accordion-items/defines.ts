@@ -7,13 +7,13 @@
  */
 interface PortfolioAccordionItemsProps {
 	modifier: string;
+	isOpen: boolean;
 }
 
 /**
  * State
  */
 interface PortfolioAccordionItemsState {
-	isOpen: boolean;
 }
 
 /**

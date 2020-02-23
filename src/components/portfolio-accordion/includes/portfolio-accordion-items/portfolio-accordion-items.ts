@@ -11,9 +11,12 @@ class PortfolioAccordionItems extends Component<
 	PortfolioAccordionItemsProps,
 	PortfolioAccordionItemsState
 > {
-	static componentName = "accordion-items";
+	static componentName = "portfolio-accordion-items";
 
-	static attributes = ["modifier"];
+	static attributes = [
+		"modifier",
+		{ name: 'is-open', type: 'boolean' },
+	];
 
 	public methods: PortfolioAccordionItemsMethods = {};
 
@@ -28,23 +31,19 @@ class PortfolioAccordionItems extends Component<
 			this.clickHeading,
 			false
 		);
-		console.log(this.state);
 	}
 	public clickHeading = () => {
-		this.setState({
-			isOpen: !this.state.isOpen
-		});
+		this.emit('accordionOpened', this.props.isOpen, false)
 	};
 
 	get defaultState () {
-		return {
-			isOpen: false,
-		};
+		return {};
 	}
 
 	get defaultProps() {
 		return {
 			modifier: null,
+			isOpen: null,
 		};
 	}
 
