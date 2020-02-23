@@ -2,14 +2,14 @@ import * as styles from "./styles.scss";
 import cn from "classnames";
 
 import {
-	AccordionItemsProps,
-	AccordionItemsState,
-	AccordionItemsMethods
+	PortfolioAccordionItemsProps,
+	PortfolioAccordionItemsState,
+	PortfolioAccordionItemsMethods
 } from "./defines";
 
 export default (
 	render: Function,
-	data: AccordionItemsProps & AccordionItemsState & AccordionItemsMethods,
+	data: PortfolioAccordionItemsProps & PortfolioAccordionItemsState & PortfolioAccordionItemsMethods,
 	refs: any,
 	createStyle: Function
 ) => {
@@ -22,9 +22,9 @@ export default (
 	<article class=${`accordion__item ${data.modifier}`} >
 		<header class=${showHideBody} ref=${refs.accordionHeaderRef}>
 			<span class="accordion__icon"></span>
-			<heading-comp no-margin type="h4" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+			<portfolio-headline no-margin type="h4" data-resources="[{paths: ['components/PortfolioHeadline/index.js']}]">
 				<slot name="heading"></slot>
-			</heading-comp>
+			</portfolio-headline>
 		</header>
 		<div class="accordion__body" ref=${refs.accordionBodyRef}>
 			<slot name="text"></slot>

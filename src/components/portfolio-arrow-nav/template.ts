@@ -1,10 +1,10 @@
 import * as styles from "./styles.scss";
 
-import { ShowMoreProps, ShowMoreState, ShowMoreMethods } from "./defines";
+import { PortfolioArrowNavProps, PortfolioArrowNavState, PortfolioArrowNavMethods } from "./defines";
 
 export default (
 	render: Function,
-	data: ShowMoreProps & ShowMoreState & ShowMoreMethods,
+	data: PortfolioArrowNavProps & PortfolioArrowNavState & PortfolioArrowNavMethods,
 	refs: any,
 	createStyle: Function
 ) => {

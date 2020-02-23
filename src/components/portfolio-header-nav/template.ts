@@ -2,16 +2,16 @@ import * as styles from "./styles.scss";
 import cn from "classnames";
 
 import {
-	HeaderNavigationProps,
-	HeaderNavigationState,
-	HeaderNavigationMethods
+	PortfolioHeaderNavProps,
+	PortfolioHeaderNavState,
+	PortfolioHeaderNavMethods
 } from "./defines";
 
 export default (
 	render: Function,
-	data: HeaderNavigationProps &
-		HeaderNavigationState &
-		HeaderNavigationMethods,
+	data: PortfolioHeaderNavProps &
+		PortfolioHeaderNavState &
+		PortfolioHeaderNavMethods,
 	refs: any,
 	createStyle: Function
 ) => {

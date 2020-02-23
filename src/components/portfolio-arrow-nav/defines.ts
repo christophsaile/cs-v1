@@ -1,31 +1,31 @@
 /**
- *  ## DEFINE ALL INTERFACES FOR ShowMore
+ *  ## DEFINE ALL INTERFACES FOR PortfolioArrowNav
  **/
 
 /**
  * Props
  */
- interface ShowMoreProps {
+ interface PortfolioArrowNavProps {
 	text: string;
  }
 
 /**
  * State
  */
- interface ShowMoreState {
+ interface PortfolioArrowNavState {
 
  }
 
 /**
  * Methods
  */
- interface ShowMoreMethods {
+ interface PortfolioArrowNavMethods {
 
  }
 
 
 export {
-    ShowMoreProps,
-	ShowMoreState,
-	ShowMoreMethods
+    PortfolioArrowNavProps,
+	PortfolioArrowNavState,
+	PortfolioArrowNavMethods
 }

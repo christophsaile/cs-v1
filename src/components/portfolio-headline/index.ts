@@ -1,3 +1,3 @@
-import HeadingComp from './HeadingComp';
+import PortfolioHeadline from './portfolio-headline';
 
-HeadingComp.register();
+PortfolioHeadline.register();

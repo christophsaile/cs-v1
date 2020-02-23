@@ -1,11 +1,11 @@
 /**
- *  ## DEFINE ALL INTERFACES FOR MyVita
+ *  ## DEFINE ALL INTERFACES FOR PortfolioMyVita
  **/
 
 /**
  * Props
  */
-interface MyVitaProps {
+interface PortfolioMyVitaProps {
 	position: string;
 	theme: string;
 	scrollAnimation: string;
@@ -14,11 +14,11 @@ interface MyVitaProps {
 /**
  * State
  */
-interface MyVitaState {}
+interface PortfolioMyVitaState {}
 
 /**
  * Methods
  */
-interface MyVitaMethods {}
+interface PortfolioMyVitaMethods {}
 
-export { MyVitaProps, MyVitaState, MyVitaMethods };
+export { PortfolioMyVitaProps, PortfolioMyVitaState, PortfolioMyVitaMethods };

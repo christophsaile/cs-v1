@@ -2,14 +2,14 @@ import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import * as ScrollMagic from "scrollmagic";
 
-import { MyVitaProps, MyVitaState, MyVitaMethods } from "./defines";
+import { PortfolioMyVitaProps, PortfolioMyVitaState, PortfolioMyVitaMethods } from "./defines";
 
-class MyVita extends Component<MyVitaProps, MyVitaState> {
-	static componentName = "my-vita";
+class PortfolioMyVita extends Component<PortfolioMyVitaProps, PortfolioMyVitaState> {
+	static componentName = "portfolio-my-vita";
 
 	static attributes = ["scroll-animation", "position", "theme"];
 
-	public methods: MyVitaMethods = {};
+	public methods: PortfolioMyVitaMethods = {};
 
 	public animation: HTMLElement;
 
@@ -71,4 +71,4 @@ class MyVita extends Component<MyVitaProps, MyVitaState> {
 	}
 }
 
-export default MyVita;
+export default PortfolioMyVita;

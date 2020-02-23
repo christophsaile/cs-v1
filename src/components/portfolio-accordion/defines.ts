@@ -1,20 +1,20 @@
 /**
- *  ## DEFINE ALL INTERFACES FOR NewAccordion
+ *  ## DEFINE ALL INTERFACES FOR PortfolioAccordion
  **/
 
 /**
  * Props
  */
-interface NewAccordionProps {}
+interface PortfolioAccordionProps {}
 
 /**
  * State
  */
-interface NewAccordionState {}
+interface PortfolioAccordionState {}
 
 /**
  * Methods
  */
-interface NewAccordionMethods {}
+interface PortfolioAccordionMethods {}
 
-export { NewAccordionProps, NewAccordionState, NewAccordionMethods };
+export { PortfolioAccordionProps, PortfolioAccordionState, PortfolioAccordionMethods };

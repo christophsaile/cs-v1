@@ -1,3 +1,3 @@
-import MyVita from './MyVita';
+import PortfolioMyVita from './portfolio-my-vita';
 
-MyVita.register();
+PortfolioMyVita.register();

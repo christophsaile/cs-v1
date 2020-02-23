@@ -2,7 +2,7 @@
 @import "../../resources/scss/defaultSassImports.scss";
 @import "../../resources/scss/animations/animated";
 
-@include host("rocket-component") {
+@include host("portfolio-rocket") {
 	.rocket {
 		display: flex;
 		align-items: center;

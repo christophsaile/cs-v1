@@ -2,17 +2,17 @@ import Component from "@biotope/element";
 import template from "./template";
 
 import {
-	AccordionMainProps,
-	AccordionMainState,
-	AccordionMainMethods
+	PortfolioAccordionVerticalProps,
+	PortfolioAccordionVerticalState,
+	PortfolioAccordionVerticalMethods
 } from "./defines";
 
-class AccordionMain extends Component<AccordionMainProps, AccordionMainState> {
-	static componentName = "accordion-main";
+class PortfolioAccordionVertical extends Component<PortfolioAccordionVerticalProps, PortfolioAccordionVerticalState> {
+	static componentName = "portfolio-accordion-vertical";
 
 	static attributes = [];
 
-	public methods: AccordionMainMethods = {};
+	public methods: PortfolioAccordionVerticalMethods = {};
 
 	public accordionItems: NodeListOf<HTMLElement>;
 
@@ -60,4 +60,4 @@ class AccordionMain extends Component<AccordionMainProps, AccordionMainState> {
 	}
 }
 
-export default AccordionMain;
+export default PortfolioAccordionVertical;

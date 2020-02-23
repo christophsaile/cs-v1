@@ -4,13 +4,13 @@ import { debounce } from "../../resources/js/debounce";
 import { toBoolean } from "../../resources/ts/converters";
 
 import {
-	PageCounterProps,
-	PageCounterState,
-	PageCounterMethods
+	PortfolioCounterNavProps,
+	PortfolioCounterNavState,
+	PortfolioCounterNavMethods
 } from "./defines";
 
-class PageCounter extends Component<PageCounterProps, PageCounterState> {
-	static componentName = "page-counter";
+class PortfolioCounterNav extends Component<PortfolioCounterNavProps, PortfolioCounterNavState> {
+	static componentName = "portfolio-counter-nav";
 
 	static attributes = [
 		{ name: "switch-sides", converter: toBoolean },
@@ -18,7 +18,7 @@ class PageCounter extends Component<PageCounterProps, PageCounterState> {
 		"second-anchor"
 	];
 
-	public methods: PageCounterMethods = {};
+	public methods: PortfolioCounterNavMethods = {};
 	
 	public counter: HTMLElement;
 
@@ -93,4 +93,4 @@ class PageCounter extends Component<PageCounterProps, PageCounterState> {
 	}
 }
 
-export default PageCounter;
+export default PortfolioCounterNav;

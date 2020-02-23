@@ -1,3 +1,3 @@
-import PageCounter from './PageCounter';
+import PortfolioCounterNav from './portfolio-counter-nav';
 
-PageCounter.register();
+PortfolioCounterNav.register();

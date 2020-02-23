@@ -2,20 +2,20 @@ import Component, { createRef } from "@biotope/element";
 import template from "./template";
 
 import {
-	HeaderNavigationProps,
-	HeaderNavigationState,
-	HeaderNavigationMethods
+	PortfolioHeaderNavProps,
+	PortfolioHeaderNavState,
+	PortfolioHeaderNavMethods
 } from "./defines";
 
-class HeaderNavigation extends Component<
-	HeaderNavigationProps,
-	HeaderNavigationState
+class PortfolioHeaderNav extends Component<
+	PortfolioHeaderNavProps,
+	PortfolioHeaderNavState
 > {
-	static componentName = "header-navigation";
+	static componentName = "portfolio-header-nav";
 
 	static attributes = [];
 
-	public methods: HeaderNavigationMethods = {};
+	public methods: PortfolioHeaderNavMethods = {};
 
 	private refs = {
 		menuRef: createRef<HTMLElement>(),
@@ -65,4 +65,4 @@ class HeaderNavigation extends Component<
 	}
 }
 
-export default HeaderNavigation;
+export default PortfolioHeaderNav;

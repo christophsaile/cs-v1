@@ -1,7 +1,7 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
 @import "../../resources/scss/defaultSassImports.scss";
 
-@include host("header-navigation") {
+@include host("portfolio-header-nav") {
 	.navHeader {
 		top: 0;
 		right: 0;

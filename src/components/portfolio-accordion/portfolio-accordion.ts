@@ -2,17 +2,17 @@ import Component from "@biotope/element";
 import template from "./template";
 
 import {
-	NewAccordionProps,
-	NewAccordionState,
-	NewAccordionMethods
+	PortfolioAccordionProps,
+	PortfolioAccordionState,
+	PortfolioAccordionMethods
 } from "./defines";
 
-class NewAccordion extends Component<NewAccordionProps, NewAccordionState> {
-	static componentName = "new-accordion";
+class PortfolioAccordion extends Component<PortfolioAccordionProps, PortfolioAccordionState> {
+	static componentName = "portfolio-accordion";
 
 	static attributes = [];
 
-	public methods: NewAccordionMethods = {};
+	public methods: PortfolioAccordionMethods = {};
 	
 	get defaultState() {
 		return {};
@@ -31,4 +31,4 @@ class NewAccordion extends Component<NewAccordionProps, NewAccordionState> {
 	}
 }
 
-export default NewAccordion;
+export default PortfolioAccordion;

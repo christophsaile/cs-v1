@@ -1,3 +1,3 @@
-import NewAccordion from './NewAccordion';
+import PortfolioAccordion from './portfolio-accordion';
 
-NewAccordion.register();
+PortfolioAccordion.register();

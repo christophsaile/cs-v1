@@ -2,14 +2,14 @@ import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import { debounce } from "../../resources/js/debounce";
 
-import { ShowMoreProps, ShowMoreState, ShowMoreMethods } from "./defines";
+import { PortfolioArrowNavProps, PortfolioArrowNavState, PortfolioArrowNavMethods } from "./defines";
 
-class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
-	static componentName = "show-more";
+class PortfolioArrowNav extends Component<PortfolioArrowNavProps, PortfolioArrowNavState> {
+	static componentName = "portfolio-arrow-nav";
 
 	static attributes = ["text"];
 
-	public methods: ShowMoreMethods = {};
+	public methods: PortfolioArrowNavMethods = {};
 	public showMore: HTMLElement;
 	public showMoreHeight: number;
 	public prevScrollPos: number;
@@ -69,4 +69,4 @@ class ShowMore extends Component<ShowMoreProps, ShowMoreState> {
 	}
 }
 
-export default ShowMore;
+export default PortfolioArrowNav;

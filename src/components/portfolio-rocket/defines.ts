@@ -1,31 +1,31 @@
 /**
- *  ## DEFINE ALL INTERFACES FOR RocketComponent
+ *  ## DEFINE ALL INTERFACES FOR PortfolioRocket
  **/
 
 /**
  * Props
  */
- interface RocketComponentProps {
+ interface PortfolioRocketProps {
 	hasBounce: boolean;
  }
 
 /**
  * State
  */
- interface RocketComponentState {
+ interface PortfolioRocketState {
 
  }
 
 /**
  * Methods
  */
- interface RocketComponentMethods {
+ interface PortfolioRocketMethods {
 
  }
 
 
 export {
-    RocketComponentProps,
-	RocketComponentState,
-	RocketComponentMethods
+    PortfolioRocketProps,
+	PortfolioRocketState,
+	PortfolioRocketMethods
 }

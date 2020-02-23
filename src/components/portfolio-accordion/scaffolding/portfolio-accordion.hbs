@@ -6,12 +6,12 @@ accordion item options:
 --}}
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; background-color:darkcyan;">
-	<heading-comp no-margin type="h2" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+	<portfolio-headline no-margin type="h2" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
 		3D - Animation
-	</heading-comp>
-	<new-accordion data-resources="[{paths: ['components/NewAccordion/index.js']}]">
+	</portfolio-headline>
+	<portfolio-accordion data-resources="[{paths: ['components/portfolio-accordion/index.js']}]">
 		<accordion-items modifier="accordion__item--coral"
-			data-resources="[{paths: ['components/NewAccordion/includes/AccordionItems/index.js']}]">
+			data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
 			<span slot="heading">Test Heading H4</span>
 			<p slot="text">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
@@ -23,7 +23,7 @@ accordion item options:
 			</p>
 		</accordion-items>
 		<accordion-items modifier="accordion__item--coral"
-			data-resources="[{paths: ['components/NewAccordion/includes/AccordionItems/index.js']}]">
+			data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
 			<span slot="heading">Test Heading H4</span>
 			<p slot="text">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
@@ -35,7 +35,7 @@ accordion item options:
 			</p>
 		</accordion-items>
 		<accordion-items modifier="accordion__item--coral"
-			data-resources="[{paths: ['components/NewAccordion/includes/AccordionItems/index.js']}]">
+			data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
 			<span slot="heading">Test Heading H4</span>
 			<p slot="text">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
@@ -46,16 +46,16 @@ accordion item options:
 				adipisci. Ipsum, impedit.
 			</p>
 		</accordion-items>
-	</new-accordion>
+	</portfolio-accordion>
 </div>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; background-color: coral;">
-	<heading-comp no-margin type="h2" data-resources="[{paths: ['components/HeadingComp/index.js']}]">
+	<portfolio-headline no-margin type="h2" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
 		Programming
-	</heading-comp>
-	<new-accordion style="grid-column-start: 2" data-resources="[{paths: ['components/NewAccordion/index.js']}]">
+	</portfolio-headline>
+	<portfolio-accordion style="grid-column-start: 2" data-resources="[{paths: ['components/portfolio-accordion/index.js']}]">
 		<accordion-items modifier="accordion__item--turquoise"
-			data-resources="[{paths: ['components/NewAccordion/includes/AccordionItems/index.js']}]">
+			data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
 			<span slot="heading">Test Heading H4</span>
 			<p slot="text">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
@@ -67,7 +67,7 @@ accordion item options:
 			</p>
 		</accordion-items>
 		<accordion-items modifier="accordion__item--turquoise"
-			data-resources="[{paths: ['components/NewAccordion/includes/AccordionItems/index.js']}]">
+			data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
 			<span slot="heading">Test Heading H4</span>
 			<p slot="text">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
@@ -79,7 +79,7 @@ accordion item options:
 			</p>
 		</accordion-items>
 		<accordion-items modifier="accordion__item--turquoise"
-			data-resources="[{paths: ['components/NewAccordion/includes/AccordionItems/index.js']}]">
+			data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
 			<span slot="heading">Test Heading H4</span>
 			<p slot="text">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque natus, molestiae nemo quisquam
@@ -90,5 +90,5 @@ accordion item options:
 				adipisci. Ipsum, impedit.
 			</p>
 		</accordion-items>
-	</new-accordion>
+	</portfolio-accordion>
 </div>

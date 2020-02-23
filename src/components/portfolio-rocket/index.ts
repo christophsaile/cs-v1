@@ -1,3 +1,3 @@
-import RocketComponent from './RocketComponent';
+import PortfolioRocket from './portfolio-rocket';
 
-RocketComponent.register();
+PortfolioRocket.register();

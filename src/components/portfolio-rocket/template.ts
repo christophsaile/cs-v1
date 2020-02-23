@@ -1,14 +1,14 @@
 import * as styles from "./styles.scss";
 
 import {
-	RocketComponentProps,
-	RocketComponentState,
-	RocketComponentMethods
+	PortfolioRocketProps,
+	PortfolioRocketState,
+	PortfolioRocketMethods
 } from "./defines";
 
 export default (
 	render: Function,
-	data: RocketComponentProps & RocketComponentState & RocketComponentMethods,
+	data: PortfolioRocketProps & PortfolioRocketState & PortfolioRocketMethods,
 	refs: any,
 	createStyle: Function
 ) => {

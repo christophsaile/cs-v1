@@ -2,7 +2,7 @@
 @import "../../resources/scss/defaultSassImports.scss";
 @import "../../resources/scss/animations/animated";
 
-@include host("my-vita") {
+@include host("portfolio-my-vita") {
 	.vita {
 		color: $black;
 		margin-top: 3rem;

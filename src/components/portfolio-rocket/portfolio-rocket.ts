@@ -3,20 +3,20 @@ import template from "./template";
 import { toBoolean } from "../../resources/ts/converters";
 
 import {
-	RocketComponentProps,
-	RocketComponentState,
-	RocketComponentMethods
+	PortfolioRocketProps,
+	PortfolioRocketState,
+	PortfolioRocketMethods
 } from "./defines";
 
-class RocketComponent extends Component<
-	RocketComponentProps,
-	RocketComponentState
+class PortfolioRocket extends Component<
+	PortfolioRocketProps,
+	PortfolioRocketState
 > {
-	static componentName = "rocket-component";
+	static componentName = "portfolio-rocket";
 
 	static attributes = [{ name: "has-bounce", converter: toBoolean }];
 
-	public methods: RocketComponentMethods = {};
+	public methods: PortfolioRocketMethods = {};
 	public rocket: HTMLElement;
 	public rocketHeight: number;
 	public scaledRocketHeight: number;
@@ -92,4 +92,4 @@ class RocketComponent extends Component<
 	}
 }
 
-export default RocketComponent;
+export default PortfolioRocket;

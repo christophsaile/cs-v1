@@ -1,3 +1,3 @@
-import ShowMore from './ShowMore';
+import PortfolioArrowNav from './portfolio-arrow-nav';
 
-ShowMore.register();
+PortfolioArrowNav.register();

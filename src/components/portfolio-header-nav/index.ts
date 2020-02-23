@@ -1,3 +1,3 @@
-import HeaderNavigation from './HeaderNavigation';
+import PortfolioHeaderNav from './portfolio-header-nav';
 
-HeaderNavigation.register();
+PortfolioHeaderNav.register();

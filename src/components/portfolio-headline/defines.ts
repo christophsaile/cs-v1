@@ -1,11 +1,11 @@
 /**
- *  ## DEFINE ALL INTERFACES FOR HeadingComp
+ *  ## DEFINE ALL INTERFACES FOR PortfolioHeadline
  **/
 
 /**
  * Props
  */
-interface HeadingCompProps {
+interface PortfolioHeadlineProps {
 	type: string;
 	hasStyle: boolean;
 	noMargin: boolean;
@@ -14,11 +14,11 @@ interface HeadingCompProps {
 /**
  * State
  */
-interface HeadingCompState {}
+interface PortfolioHeadlineState {}
 
 /**
  * Methods
  */
-interface HeadingCompMethods {}
+interface PortfolioHeadlineMethods {}
 
-export { HeadingCompProps, HeadingCompState, HeadingCompMethods };
+export { PortfolioHeadlineProps, PortfolioHeadlineState, PortfolioHeadlineMethods };

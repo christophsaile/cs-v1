@@ -1,14 +1,14 @@
 import * as styles from "./styles.scss";
 
 import {
-	NewAccordionProps,
-	NewAccordionState,
-	NewAccordionMethods
+	PortfolioAccordionProps,
+	PortfolioAccordionState,
+	PortfolioAccordionMethods
 } from "./defines";
 
 export default (
 	render: Function,
-	data: NewAccordionProps & NewAccordionState & NewAccordionMethods,
+	data: PortfolioAccordionProps & PortfolioAccordionState & PortfolioAccordionMethods,
 	createStyle: Function
 ) => {
 	return render`

@@ -1,8 +1,8 @@
 import * as styles from './styles.scss';
-import { HeadingCompProps, HeadingCompState, HeadingCompMethods } from './defines';
+import { PortfolioHeadlineProps, PortfolioHeadlineState, PortfolioHeadlineMethods } from './defines';
 import Component, { html } from '@biotope/element';
 
-function checkClasses(data: HeadingCompProps){
+function checkClasses(data: PortfolioHeadlineProps){
 	let styled: string;
 	let margin: string;
 
@@ -15,7 +15,7 @@ function checkClasses(data: HeadingCompProps){
 	return styled+" "+margin;
 }
 
-export default (render: Function, data: HeadingCompProps & HeadingCompState & HeadingCompMethods , createStyle: Function) => {
+export default (render: Function, data: PortfolioHeadlineProps & PortfolioHeadlineState & PortfolioHeadlineMethods , createStyle: Function) => {
     return render`
         ${createStyle(styles)}
 		${data.type === "h1" ? html`

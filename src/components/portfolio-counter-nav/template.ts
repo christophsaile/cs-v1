@@ -1,14 +1,14 @@
 import * as styles from "./styles.scss";
 
 import {
-	PageCounterProps,
-	PageCounterState,
-	PageCounterMethods
+	PortfolioCounterNavProps,
+	PortfolioCounterNavState,
+	PortfolioCounterNavMethods
 } from "./defines";
 
 export default (
 	render: Function,
-	data: PageCounterProps & PageCounterState & PageCounterMethods,
+	data: PortfolioCounterNavProps & PortfolioCounterNavState & PortfolioCounterNavMethods,
 	refs: any,
 	createStyle: Function
 ) => {

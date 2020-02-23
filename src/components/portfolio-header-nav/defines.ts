@@ -1,18 +1,18 @@
 /**
- *  ## DEFINE ALL INTERFACES FOR HeaderNavigation
+ *  ## DEFINE ALL INTERFACES FOR PortfolioHeaderNav
  **/
 
 /**
  * Props
  */
- interface HeaderNavigationProps {
+ interface PortfolioHeaderNavProps {
 
  }
 
 /**
  * State
  */
- interface HeaderNavigationState {
+ interface PortfolioHeaderNavState {
 	menuOpen: boolean;
 	active: boolean;
  }
@@ -20,13 +20,13 @@
 /**
  * Methods
  */
- interface HeaderNavigationMethods {
+ interface PortfolioHeaderNavMethods {
 
  }
 
 
 export {
-    HeaderNavigationProps,
-	HeaderNavigationState,
-	HeaderNavigationMethods
+    PortfolioHeaderNavProps,
+	PortfolioHeaderNavState,
+	PortfolioHeaderNavMethods
 }

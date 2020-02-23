@@ -2,11 +2,11 @@ import * as styles from "./styles.scss";
 import cn from 'classnames'
 
 
-import { MyVitaProps, MyVitaState, MyVitaMethods } from "./defines";
+import { PortfolioMyVitaProps, PortfolioMyVitaState, PortfolioMyVitaMethods } from "./defines";
 
 export default (
 	render: Function,
-	data: MyVitaProps & MyVitaState & MyVitaMethods,
+	data: PortfolioMyVitaProps & PortfolioMyVitaState & PortfolioMyVitaMethods,
 	refs: any,
 	createStyle: Function
 ) => {

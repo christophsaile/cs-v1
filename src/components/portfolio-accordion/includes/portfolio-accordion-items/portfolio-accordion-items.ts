@@ -2,20 +2,20 @@ import Component, { createRef } from "@biotope/element";
 import template from "./template";
 
 import {
-	AccordionItemsProps,
-	AccordionItemsState,
-	AccordionItemsMethods
+	PortfolioAccordionItemsProps,
+	PortfolioAccordionItemsState,
+	PortfolioAccordionItemsMethods
 } from "./defines";
 
-class AccordionItems extends Component<
-	AccordionItemsProps,
-	AccordionItemsState
+class PortfolioAccordionItems extends Component<
+	PortfolioAccordionItemsProps,
+	PortfolioAccordionItemsState
 > {
 	static componentName = "accordion-items";
 
 	static attributes = ["modifier"];
 
-	public methods: AccordionItemsMethods = {};
+	public methods: PortfolioAccordionItemsMethods = {};
 
 	private refs = {
 		accordionHeaderRef: createRef<HTMLElement>(),
@@ -58,4 +58,4 @@ class AccordionItems extends Component<
 	}
 }
 
-export default AccordionItems;
+export default PortfolioAccordionItems;

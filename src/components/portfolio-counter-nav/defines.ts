@@ -1,11 +1,11 @@
 /**
- *  ## DEFINE ALL INTERFACES FOR PageCounter
+ *  ## DEFINE ALL INTERFACES FOR PortfolioCounterNav
  **/
 
 /**
  * Props
  */
- interface PageCounterProps {
+ interface PortfolioCounterNavProps {
 	 switchSides: boolean,
 	 firstAnchor: string,
 	 secondAnchor: string
@@ -14,20 +14,20 @@
 /**
  * State
  */
- interface PageCounterState {
+ interface PortfolioCounterNavState {
 
  }
 
 /**
  * Methods
  */
- interface PageCounterMethods {
+ interface PortfolioCounterNavMethods {
 
  }
 
 
 export {
-    PageCounterProps,
-	PageCounterState,
-	PageCounterMethods
+    PortfolioCounterNavProps,
+	PortfolioCounterNavState,
+	PortfolioCounterNavMethods
 }

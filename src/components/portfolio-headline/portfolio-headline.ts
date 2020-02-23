@@ -3,13 +3,13 @@ import template from "./template";
 import { toBoolean } from "../../resources/ts/converters";
 
 import {
-	HeadingCompProps,
-	HeadingCompState,
-	HeadingCompMethods
+	PortfolioHeadlineProps,
+	PortfolioHeadlineState,
+	PortfolioHeadlineMethods
 } from "./defines";
 
-class HeadingComp extends Component<HeadingCompProps, HeadingCompState> {
-	static componentName = "heading-comp";
+class PortfolioHeadline extends Component<PortfolioHeadlineProps, PortfolioHeadlineState> {
+	static componentName = "portfolio-headline";
 
 	static attributes = [
 		"type",
@@ -17,7 +17,7 @@ class HeadingComp extends Component<HeadingCompProps, HeadingCompState> {
 		{ name: "has-style", converter: toBoolean }
 	];
 
-	public methods: HeadingCompMethods = {};
+	public methods: PortfolioHeadlineMethods = {};
 
 	get defaultState() {
 		return {};
@@ -40,4 +40,4 @@ class HeadingComp extends Component<HeadingCompProps, HeadingCompState> {
 	}
 }
 
-export default HeadingComp;
+export default PortfolioHeadline;
