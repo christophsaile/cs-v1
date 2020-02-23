@@ -1,0 +1,158 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("portfolio-header-nav") {
+	.navHeader {
+		top: 0;
+		right: 0;
+		z-index: $z-index-header;
+		width: 100%;
+		position: fixed;
+		font-family: $font-family-bold;
+
+		&__menu {
+			top: 0;
+			left: 0;
+			margin: 0;
+			z-index: 1;
+			width: 100%;
+			background: $white;
+			padding: 6rem 0 3.5rem;
+			position: absolute;
+			transform: translateY(-100%);
+			transition: transform 0.3s cubic-bezier(1, 0.5, 0, 1);
+
+			&.active {
+				transform: translateY(0);
+				color: $black;
+				box-shadow: 0rem -1rem 1.5rem 0.1rem;
+			}
+
+			.navHeader__links {
+				list-style: none;
+
+				a {
+					padding: 2rem;
+					color: $black;
+					display: block;
+					background: none;
+					text-align: center;
+					text-decoration: none;
+					transition: all 0.2s ease-in-out;
+
+					&:hover,
+					&:focus,
+					&:active {
+						background: rgba($color: $red, $alpha: 0.8);
+						color: $white;
+					}
+				}
+			}
+		}
+
+		&__menu--toggle {
+			top: 2.4rem;
+			z-index: 2;
+			right: 6%;
+			width: 2.2rem;
+			height: 1.8rem;
+			padding: 0.8rem 0;
+			cursor: pointer;
+			border-radius: 50%;
+			position: fixed;
+
+			span {
+				height: 0.2rem;
+				display: block;
+				overflow: hidden;
+				text-indent: 100%;
+				background: $white;
+				border-radius: 0.2rem;
+				white-space: nowrap;
+				transition: background 0.3s ease-in-out;
+			}
+
+			&::before,
+			&::after {
+				left: 0;
+				content: "";
+				width: 2.2rem;
+				height: 0.2rem;
+				background: $white;
+				border-radius: 0.2rem;
+				position: absolute;
+				transform-origin: center center;
+				transition: width 0.2s ease-in-out, background 0.2s ease-in-out,
+					transform 0.2s ease-in-out, top 0.2s ease-in-out,
+					bottom 0.2s ease-in-out, left 0.2s ease-in-out,
+					right 0.2s ease-in-out;
+			}
+			&::before {
+				top: 0;
+			}
+			&::after {
+				bottom: 0;
+			}
+			&.menu-open {
+				span {
+					background: rgba(255, 255, 255, 0);
+				}
+				&::before {
+					top: 0.8rem;
+					transform: rotate(-45deg);
+				}
+				&::after {
+					bottom: 0.8rem;
+					transform: rotate(45deg);
+				}
+				&::before,
+				&::after {
+					width: 2.6rem;
+					background: $black;
+				}
+				&:hover,
+				&:focus,
+				&:active {
+					span {
+						background: rgba(255, 255, 255, 0);
+					}
+					&::before {
+						top: 0.8rem;
+						left: -0.3rem;
+						transform: rotate(-45deg);
+					}
+					&::after {
+						left: 0.9rem;
+						bottom: 0.8rem;
+						transform: rotate(45deg);
+					}
+					&::before,
+					&::after {
+						width: 1.8rem;
+					}
+				}
+			}
+			&:hover,
+			&:focus,
+			&:active {
+				span {
+					background: rgba(255, 255, 255, 0);
+				}
+				&::before {
+					top: 0.8rem;
+					left: -0.3rem;
+					transform: rotate(45deg);
+				}
+				&::after {
+					left: 0.9rem;
+					bottom: 0.8rem;
+					transform: rotate(-45deg);
+				}
+				&::before,
+				&::after {
+					width: 1.8rem;
+				}
+			}
+		}
+	}
+}
