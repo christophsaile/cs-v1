@@ -1,0 +1,48 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+
+@include host("portfolio-timeline") {
+	.timeline {
+		display: grid;
+		grid-template-columns: repeat(11, 1fr);
+        grid-template-rows: 1fr 2px 1fr;
+        
+        &__line {
+            grid-column-start: 1;
+            grid-column-end: span 11;
+            grid-row-start: 2;
+
+            background-color: crimson;
+        }
+
+		::slotted(:nth-child(odd)) {
+			background-color: blueviolet;
+			margin-bottom: 2rem;
+			grid-row-start: 1;
+		}
+		::slotted(:nth-child(even)) {
+			background-color: blue;
+			margin-top: 2rem;
+			grid-row-start: 3;
+		}
+		::slotted(:first-child) {
+			grid-column-start: 1;
+			grid-column-end: span 3;
+		}
+		::slotted(:nth-child(2)) {
+			grid-column-start: 3;
+			grid-column-end: span 3;
+		}
+		::slotted(:nth-child(3)) {
+			grid-column-start: 5;
+			grid-column-end: span 3;
+		}
+		::slotted(:nth-child(4)) {
+			grid-column-start: 7;
+			grid-column-end: span 3;
+		}
+		::slotted(:last-child) {
+			grid-column-start: 9;
+			grid-column-end: span 3;
+		}
+	}
+}
