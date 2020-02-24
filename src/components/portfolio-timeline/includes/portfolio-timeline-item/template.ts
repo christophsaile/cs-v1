@@ -6,7 +6,7 @@ import { PortfolioTimelineItemProps, PortfolioTimelineItemState, PortfolioTimeli
 
 export const template = ( data: PortfolioTimelineItemProps & PortfolioTimelineItemState & PortfolioTimelineItemMethods ): HTMLFragment => {
   return html`
-    <div class="timeline__content">
+    <div class="timeline__content ${data.right ? 'right' : ''}">
       <slot name="timeline__date"/>
       <slot name="timeline__text"/>
     </div>

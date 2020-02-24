@@ -1,48 +1,148 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
 
 @include host("portfolio-timeline") {
 	.timeline {
 		display: grid;
-		grid-template-columns: repeat(11, 1fr);
-        grid-template-rows: 1fr 2px 1fr;
-        
-        &__line {
-            grid-column-start: 1;
-            grid-column-end: span 11;
-            grid-row-start: 2;
+		height: 100%;
+		grid-template-columns: 1fr 0.2rem 1fr;
+		grid-template-rows: repeat(11, 1fr);
 
-            background-color: crimson;
+		@include breakpoint($medium) {
+			height: auto;
+			width: 100%;
+			grid-template-columns: repeat(11, 1fr);
+			grid-template-rows: 1fr 0.2rem 1fr;
         }
 
-		::slotted(:nth-child(odd)) {
-			background-color: blueviolet;
-			margin-bottom: 2rem;
+		&__line {
 			grid-row-start: 1;
+			grid-row-end: span 11;
+			grid-column-start: 2;
+			background-color: crimson;
+
+			@include breakpoint($medium) {
+				grid-column-start: 1;
+				grid-column-end: span 11;
+				grid-row-start: 2;
+				grid-row-end: 2;
+			}
 		}
-		::slotted(:nth-child(even)) {
-			background-color: blue;
-			margin-top: 2rem;
-			grid-row-start: 3;
-		}
-		::slotted(:first-child) {
+
+		::slotted(:nth-child(odd)) {
+			position: relative;
 			grid-column-start: 1;
-			grid-column-end: span 3;
+			margin-right: 2rem;
+
+			&::before {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto -2rem auto 0;
+				width: 2rem;
+				height: 0.2rem;
+				background-color: crimson;
+			}
+
+			@include breakpoint($medium) {
+				grid-row-start: 1 !important;
+				grid-row-end: 1 !important;
+				margin-right: 0;
+				margin-bottom: 2rem;
+
+				&::before {
+					top: unset;
+					left: 0;
+					margin: 0 auto -2rem auto;
+					width: 0.2rem;
+					height: 2rem;
+				}
+			}
 		}
-		::slotted(:nth-child(2)) {
+
+		::slotted(:nth-child(even)) {
+			position: relative;
 			grid-column-start: 3;
-			grid-column-end: span 3;
+			margin-left: 2rem;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0 auto -2rem;
+				width: 2rem;
+				height: 0.2rem;
+				background-color: crimson;
+			}
+
+			@include breakpoint($medium) {
+				grid-row-start: 3 !important;
+				grid-row-end: 3 !important;
+				margin-left: 0;
+				margin-top: 2rem;
+
+				&::before {
+					bottom: unset;
+					right: 0;
+					margin: -2rem auto 0 auto;
+					width: 0.2rem;
+					height: 2rem;
+				}
+			}
 		}
+
+		::slotted(:first-child) {
+			grid-row-start: 1;
+			grid-row-end: span 3;
+
+			@include breakpoint($medium) {
+				grid-column-start: 1;
+				grid-column-end: span 3;
+			}
+		}
+
+		::slotted(:nth-child(2)) {
+			grid-row-start: 3;
+			grid-row-end: span 3;
+
+			@include breakpoint($medium) {
+				grid-column-start: 3;
+				grid-column-end: span 3;
+			}
+		}
+
 		::slotted(:nth-child(3)) {
-			grid-column-start: 5;
-			grid-column-end: span 3;
+			grid-row-start: 5;
+			grid-row-end: span 3;
+
+			@include breakpoint($medium) {
+				grid-column-start: 5;
+				grid-column-end: span 3;
+			}
 		}
+
 		::slotted(:nth-child(4)) {
-			grid-column-start: 7;
-			grid-column-end: span 3;
+			grid-row-start: 7;
+			grid-row-end: span 3;
+
+			@include breakpoint($medium) {
+				grid-column-start: 7;
+				grid-column-end: span 3;
+			}
 		}
+
 		::slotted(:last-child) {
-			grid-column-start: 9;
-			grid-column-end: span 3;
+			grid-row-start: 9;
+			grid-row-end: span 3;
+
+			@include breakpoint($medium) {
+				grid-column-start: 9;
+				grid-column-end: span 3;
+			}
 		}
 	}
 }

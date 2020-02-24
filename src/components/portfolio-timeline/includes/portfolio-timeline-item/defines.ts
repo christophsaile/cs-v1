@@ -5,7 +5,9 @@
 /**
  * Props
  */
-interface PortfolioTimelineItemProps {}
+interface PortfolioTimelineItemProps {
+	right: boolean
+}
 
 /**
  * State
