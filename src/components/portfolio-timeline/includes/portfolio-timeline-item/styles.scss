@@ -11,10 +11,15 @@
             height: 100%;
             padding: 0 1rem 0 0;
 			color: black;
-
+			transform: translateX(-100vw);
+			transition: transform 800ms;
+			
 			@include breakpoint($medium) {
                 display: block;
                 padding: 0 0 1rem 0;
+			}
+			&.visible {
+				transform: translateX(0);
 			}
 			&.right {
                 text-align: right;

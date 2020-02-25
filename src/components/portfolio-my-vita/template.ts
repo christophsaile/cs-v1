@@ -1,6 +1,4 @@
 import * as styles from "./styles.scss";
-import cn from 'classnames'
-
 
 import { PortfolioMyVitaProps, PortfolioMyVitaState, PortfolioMyVitaMethods } from "./defines";
 
@@ -10,7 +8,6 @@ export default (
 	refs: any,
 	createStyle: Function
 ) => {
-	//const scrollTrigger = cn
 	return render`
         ${createStyle(styles)}
         <div class="vita">
