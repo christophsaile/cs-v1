@@ -26,14 +26,14 @@
     "breakpoint-sass": "2.7.1",
     "classnames": "^2.2.6",
     "gulp-rename": "^2.0.0",
-    "handlebars": "4.2.0",
+    "handlebars": "4.3.0",
     "sanitize.css": "^11.0.0",
     "scrollmagic": "^2.0.7",
     "susy": "2.2.14",
     "vinyl-paths": "^3.0.1"
   },
   "devDependencies": {
-    "@biotope/build": "^7.1.1",
+    "@biotope/build": "^7.2.0",
     "@biotope/cli": "^1.1.5",
     "@types/modernizr": "^3.5.3",
     "@types/node": "^10.14.15",
