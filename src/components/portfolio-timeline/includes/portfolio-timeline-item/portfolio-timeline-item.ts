@@ -32,7 +32,6 @@ class PortfolioTimelineItem extends Component<
 	}
 
 	public initScrollAnimation() {
-		console.log(this.refs.scrollTriggerRef.current);
 		let controller = new ScrollMagic.Controller({
 			globalSceneOptions: {
 				triggerHook: 0.9

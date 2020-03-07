@@ -1,0 +1,35 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+
+@include host("portfolio-about-me") {
+    .scrollTrigger {
+        height: 100%;
+    }
+    .aboutMe {
+		display: flex;
+		position: relative;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+
+		&__content {
+			background-color: white;
+			color: black;
+			width: 50%;
+            padding: 2rem;
+            z-index: 2;
+		}
+
+		&__img {
+            position: absolute;
+            right: 10%;
+            width: 30vw;
+            height: 80vh;
+            overflow: hidden;
+
+			img {
+                width: 100%;
+                height: 200%;
+			}
+		}
+	}
+}

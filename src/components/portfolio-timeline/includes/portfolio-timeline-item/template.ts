@@ -14,7 +14,10 @@ export const template = (
 	refs: any
 ): HTMLFragment => {
 	return html`
-		<div class="timeline__content ${data.right ? "right" : ""}" ref=${refs.timelineContentRef}>
+		<div
+			class="timeline__content ${data.right ? "right" : ""}"
+			ref=${refs.timelineContentRef}
+		>
 			<div class="timeline__scrollTrigger" ref=${refs.scrollTriggerRef}>
 				<slot name="timeline__date" />
 				<slot name="timeline__text" />
