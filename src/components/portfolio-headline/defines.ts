@@ -7,8 +7,9 @@
  */
 interface PortfolioHeadlineProps {
 	type: string;
-	hasStyle: boolean;
-	noMargin: boolean;
+	half: boolean;
+	halfInline: boolean;
+	vertical: boolean;
 }
 
 /**

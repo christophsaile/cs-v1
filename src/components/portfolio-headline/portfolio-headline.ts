@@ -13,8 +13,9 @@ class PortfolioHeadline extends Component<PortfolioHeadlineProps, PortfolioHeadl
 
 	static attributes = [
 		"type",
-		{ name: "no-margin", converter: toBoolean },
-		{ name: "has-style", converter: toBoolean }
+		{ name: "half", converter: toBoolean },
+		{ name: "half-inline", converter: toBoolean },
+		{ name: "vertical", converter: toBoolean }
 	];
 
 	public methods: PortfolioHeadlineMethods = {};
@@ -26,8 +27,9 @@ class PortfolioHeadline extends Component<PortfolioHeadlineProps, PortfolioHeadl
 	get defaultProps() {
 		return {
 			type: null,
-			hasStyle: false,
-			noMargin: false,
+			half: false,
+			halfInline: false,
+			vertical: false
 		};
 	}
 
