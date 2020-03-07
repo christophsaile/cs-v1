@@ -7,16 +7,20 @@ import {
 import Component, { html } from "@biotope/element";
 
 function checkClasses(data: PortfolioHeadlineProps) {
-	let styled: string = "";
-	let margin: string = "";
+	let half: string = "";
+	let halfInline: string = "";
+	let vertical: string = "";
 
-	if (data.hasStyle) {
-		styled = "styled";
+	if (data.half) {
+		half = "half";
 	}
-	if (data.noMargin) {
-		margin = "noMargin";
+	if (data.halfInline) {
+		halfInline = "halfInline";
 	}
-	return styled + "" + margin;
+	if (data.vertical) {
+		vertical = "vertical";
+	}
+	return half + " " + halfInline + " " + vertical;
 }
 
 export default (
@@ -61,15 +65,6 @@ export default (
 						<h4 class=${checkClasses(data)}>
 							<slot />
 						</h4>
-				  `
-				: null
-		}
-		${
-			data.type === "h5"
-				? html`
-						<h5 class=${checkClasses(data)}>
-							<slot />
-						</h5>
 				  `
 				: null
 		}
