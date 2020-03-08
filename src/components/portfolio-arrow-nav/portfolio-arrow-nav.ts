@@ -1,6 +1,6 @@
 import Component, { createRef } from "@biotope/element";
 import template from "./template";
-import { debounce } from "../../resources/js/debounce";
+import * as ScrollMagic from "scrollmagic";
 
 import { PortfolioArrowNavProps, PortfolioArrowNavState, PortfolioArrowNavMethods } from "./defines";
 
@@ -10,44 +10,37 @@ class PortfolioArrowNav extends Component<PortfolioArrowNavProps, PortfolioArrow
 	static attributes = ["text"];
 
 	public methods: PortfolioArrowNavMethods = {};
-	public showMore: HTMLElement;
-	public showMoreHeight: number;
-	public prevScrollPos: number;
-	public currentScrollPos: number;
 
 	private refs = {
 		showMoreRef: createRef<HTMLElement>(),
+		showMoreTextRef: createRef<HTMLElement>(),
 	};
-	rendered() {
-		this.showMore = this.refs.showMoreRef.current;
-		this.showMoreHeight = this.showMore.offsetHeight;
-		this.prevScrollPos = window.innerHeight / 10;
-
-		this.scrollDown();
-	}
-	public scrollDown() {
-		window.addEventListener(
-			"scroll",
-			debounce(() => {
-				this.currentScrollPos = window.pageYOffset;
-				if (this.prevScrollPos > this.currentScrollPos) {
-					this.showMore.classList.remove("showMore--scrollActive");
-					this.showMore.style.bottom = "";
-				} else {
-					this.showMore.classList.add("showMore--scrollActive");
-					this.showMore.style.bottom =
-						"-" + this.showMoreHeight + "px";
-				}
-			}, 300)
-		);
-
-		this.showMore.addEventListener("click", () => {
+	ready() {
+		this.initScrollAnimation();
+		this.refs.showMoreRef.current.addEventListener("click", () => {
 			window.scrollBy({
 				top: window.innerHeight,
 				left: 0,
 				behavior: "smooth"
 			});
 		});
+	}
+
+	public initScrollAnimation() {
+		let controller = new ScrollMagic.Controller();
+
+		let landingPage = new ScrollMagic.Scene({
+			triggerElement: this.refs.showMoreRef.current
+		})
+			.setPin(this.refs.showMoreRef.current)
+			.addTo(controller)
+		let contact = new ScrollMagic.Scene({
+			triggerElement: "#contact",
+			triggerHook: 0.5,
+			duration: document.querySelector("#contact").clientHeight
+		})
+			.setClassToggle(this.refs.showMoreRef.current, "arrowUp")
+			.addTo(controller)
 	}
 	get defaultState() {
 		return {};
