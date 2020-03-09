@@ -1,5 +1,6 @@
 import Component from "@biotope/element";
 import template from "./template";
+import PortfolioHeadline from '../portfolio-headline/portfolio-headline';
 
 import {
 	PortfolioAccordionProps,
@@ -14,6 +15,9 @@ class PortfolioAccordion extends Component<
 	static componentName = "portfolio-accordion";
 
 	static attributes = [];
+	public static dependencies = [
+		PortfolioHeadline as typeof Component,
+	]
 
 	public methods: PortfolioAccordionMethods = {};
 

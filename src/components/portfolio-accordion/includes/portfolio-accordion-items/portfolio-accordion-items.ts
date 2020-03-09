@@ -14,7 +14,6 @@ class PortfolioAccordionItems extends Component<
 	static componentName = "portfolio-accordion-items";
 
 	static attributes = [
-		"modifier",
 		{ name: 'is-open', type: 'boolean' },
 	];
 

@@ -6,7 +6,6 @@
  * Props
  */
 interface PortfolioAccordionItemsProps {
-	modifier: string;
 	isOpen: boolean;
 }
 
