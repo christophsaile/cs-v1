@@ -1,82 +1,110 @@
 <header>
-	<portfolio-header-nav data-resources="[{paths: ['components/portfolio-header-nav/index.js']}]"></portfolio-header-nav>
+	<portfolio-navigation data-resources="[{paths: ['components/portfolio-navigation/index.js']}]">
+	</portfolio-navigation>
 </header>
-<portfolio-counter-nav second-anchor="#aboutMe" data-resources="[{paths: ['components/portfolio-counter-nav/index.js']}]"></portfolio-counter-nav>
-<portfolio-arrow-nav text="My Story" data-resources="[{paths: ['components/portfolio-arrow-nav/index.js']}]"></portfolio-arrow-nav>
-<section class="landingPage">
-	<div class="svg svg__centerDots animated fadeIn delay-06s">
-		<img src="_assets/landingPage-background.svg" alt="background dots">
-	</div>
-	<div class="grid grid__default">
-		<div class="container center animated fadeInUp delay-06s">
-			<portfolio-headline type="h1" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
-				Christoph <br>
-				Saile
-			</portfolio-headline>
-		</div>
-</section>
+<main>
+	<section id="landingpage" class="fullpage">
 
-<section id="aboutMe" class="aboutMe">
-	<div class="svg svg__top">
-		<img src="_assets/aboutMe-background.svg" alt="background lines">
-	</div>
-	<div class="svg svg__bottom">
-		<img src="_assets/aboutMe-background.svg" alt="background lines">
-	</div>
-	<div class="grid grid__autoHeigth">
-		<div class="container">
-			<portfolio-headline type="h2" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
-				About Me
+	</section>
+	<section id="aboutMe" class="fullpage">
+		<portfolio-about-me img-name="wood.jpg" img-alt="abstract wood"
+			data-resources="[{paths: ['components/portfolio-about-me/index.js']}]">
+			<portfolio-headline half vertical type="h2" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
+				about Me
 			</portfolio-headline>
-			<portfolio-my-vita scroll-animation="left" theme="vita__container--white"
-				position="vita__container--left" data-resources="[{paths: ['components/portfolio-my-vita/index.js']}]">
-				<span class="vita__number">09/2018 - Heute</span>
-				<portfolio-headline type="h3" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
-					Bachelor of Science OnlineMedien
-				</portfolio-headline>
-				<p>Hochschule für Digitale Medien in Furtwangen</p>
-			</portfolio-my-vita>
-			<portfolio-my-vita scroll-animation="right" theme="vita__container--turquoise"
-				position="vita__container--right" data-resources="[{paths: ['components/portfolio-my-vita/index.js']}]">
-				<span class="vita__number">09/2019 - 02/2020</span>
-				<portfolio-headline type="h3" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
-					Praxissemester
-				</portfolio-headline>
-				<p>Virtual Identity AG - Freibrug</p>
-			</portfolio-my-vita>
-			<portfolio-my-vita scroll-animation="left" theme="vita__container--white"
-				position="vita__container--left" data-resources="[{paths: ['components/portfolio-my-vita/index.js']}]">
-				<span class="vita__number">09/2015 - 06/2018</span>
-				<portfolio-headline type="h3" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
-					Ausbildung zum Industriekaufmann
-				</portfolio-headline>
-				<p>Beton Kemmler GmbH - Hirschau</p>
-			</portfolio-my-vita>
-			<portfolio-my-vita scroll-animation="right" theme="vita__container--turquoise"
-				position="vita__container--right" data-resources="[{paths: ['components/portfolio-my-vita/index.js']}]">
-				<span class="vita__number">09/2014 - 08/2015</span>
-				<portfolio-headline type="h3" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
-					Bundesfrei- <br>
-					willigendienst
-				</portfolio-headline>
-				<p>Klinik für Urologie - Tübingen, Verwaltung</p>
-			</portfolio-my-vita>
-			<portfolio-my-vita scroll-animation="left" theme="vita__container--white"
-				position="vita__container--left" data-resources="[{paths: ['components/portfolio-my-vita/index.js']}]">
-				<span class="vita__number"> 2006 - 2014</span>
-				<portfolio-headline type="h3" data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
-					Allgemeine Hochschulreife
-				</portfolio-headline>
-				<p>Eugen-Bolz-Gymnasium - Rottenburg</p>
-			</portfolio-my-vita>
-		</div>
-	</div>
-</section>
+			<p>
+				Hello, my name is Christoph Saile and I am currently studying OnlineMedien (B.sc.) at the University of
+				Furtwangen.<br>
+				I am interested in webdevelopment, design and 3D - animations.<br>
+				If you have any questions about me feel free to contact me.
+			</p>
+		</portfolio-about-me>
+	</section>
+	<section id="timeline" class="fullpage fullpage--center">
+		<portfolio-timeline data-resources="[{paths: ['components/portfolio-timeline/index.js']}]">
+			<portfolio-timeline-item
+				data-resources="[{paths: ['components/portfolio-timeline/includes/portfolio-timeline-item/index.js']}]">
+				<p slot="timeline__date">
+					2006 - 2014
+				</p>
+				<p slot="timeline__text">
+					Allgemeine Hochschulreife<br>
+					Eugen-Bolz-Gymnasium - Rottenburg
+				</p>
+			</portfolio-timeline-item>
+			<portfolio-timeline-item right
+				data-resources="[{paths: ['components/portfolio-timeline/includes/portfolio-timeline-item/index.js']}]">
+				<p slot="timeline__date">
+					09/2014 - 08/2015
+				</p>
+				<p slot="timeline__text">
+					Bundesfreiwilligendienst<br>
+					Klinik für Urologie - Tübingen, Verwaltung
+				</p>
+			</portfolio-timeline-item>
+			<portfolio-timeline-item
+				data-resources="[{paths: ['components/portfolio-timeline/includes/portfolio-timeline-item/index.js']}]">
+				<p slot="timeline__date">
+					09/2015 - 06/2018
+				</p>
+				<p slot="timeline__text">
+					Ausbildung zum Industriekaufmann<br>
+					Beton Kemmler GmbH - Hirschau
+				</p>
+			</portfolio-timeline-item>
+			<portfolio-timeline-item right
+				data-resources="[{paths: ['components/portfolio-timeline/includes/portfolio-timeline-item/index.js']}]">
+				<p slot="timeline__date">
+					09/2019 - 02/2020
+				</p>
+				<p slot="timeline__text">
+					Praxissemester<br>
+					Virtual Identity AG - Freibrug
+				</p>
+			</portfolio-timeline-item>
+			<portfolio-timeline-item
+				data-resources="[{paths: ['components/portfolio-timeline/includes/portfolio-timeline-item/index.js']}]">
+				<p slot="timeline__date">
+					09/2018 - Heute
+				</p>
+				<p slot="timeline__text">
+					Bachelor of Science OnlineMedien<br>
+					Hochschule für Digitale Medien in Furtwangen
+				</p>
+			</portfolio-timeline-item>
+		</portfolio-timeline>
+	</section>
+	<section id="contact" class="fullpage fullpage--center">
+		<portfolio-accordion data-resources="[{paths: ['components/portfolio-accordion/index.js']}]">
+			<portfolio-accordion-items
+				data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
+				<span slot="heading">adresse</span>
+				<p slot="text">
+					Christoph Saile <br>
+					Im Brühl 15 <br>
+					72108 Rottenburg
+				</p>
+			</portfolio-accordion-items>
+			<portfolio-accordion-items
+				data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
+				<span slot="heading">phone</span>
+				<p slot="text">
+					+49 1578 2278711
+				</p>
+			</portfolio-accordion-items>
+			<portfolio-accordion-items
+				data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
+				<span slot="heading">e-mail</span>
+				<p slot="text">
+					christoph.saile@gmail.com
+				</p>
+			</portfolio-accordion-items>
+		</portfolio-accordion>
+	</section>
+</main>
 <footer>
 	<div class="grid grid__default">
 		<div class="container">
-			<portfolio-rocket has-bounce="true" data-resources="[{paths: ['components/portfolio-rocket/index.js']}]">
-			</portfolio-rocket>
 			<a class="brand" href="#">CS.</a>
 		</div>
 	</div>

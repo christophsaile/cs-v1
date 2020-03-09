@@ -38,18 +38,18 @@
 					width: 100%;
 					margin-top: 2rem;
 					content: "";
-					background-color: $white;
+					background-color: $black;
 				}
 			}
 		}
 		&__link {
 			position: relative;
-			color: $white;
+			color: $black;
 			text-decoration: none;
 
 
 			&--active {
-				color: $red;
+				color: $blue;
 				transition: all $transition-default;
 			}
 		}

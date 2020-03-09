@@ -19,7 +19,7 @@
 			grid-row-start: 1;
 			grid-row-end: span 11;
 			grid-column-start: 2;
-			background-color: crimson;
+			background-color: $blue;
 
 			@include breakpoint($medium) {
 				grid-column-start: 1;
@@ -43,7 +43,7 @@
 				margin: auto -2rem auto 0;
 				width: 2rem;
 				height: 0.2rem;
-				background-color: crimson;
+				background-color: $blue;
 			}
 
 			@include breakpoint($medium) {
@@ -76,7 +76,7 @@
 				margin: auto 0 auto -2rem;
 				width: 2rem;
 				height: 0.2rem;
-				background-color: crimson;
+				background-color: $blue;
 			}
 
 			@include breakpoint($medium) {

@@ -18,7 +18,7 @@
 		}
 
 		&__icon {
-			fill: $white;
+			fill: $black;
 			margin-bottom: 1.3rem;
 			transition: all 0.2s ease-in-out;
 		}
@@ -30,7 +30,7 @@
 		}
 
 		&__text {
-			color: $black;
+			color: $blue;
 			padding-bottom: 1.3rem;
 			writing-mode: vertical-lr;
 			font-size: 2rem;
@@ -45,10 +45,6 @@
 				opacity: 0;
 				visibility: hidden;
 			}
-		}
-
-		&:hover {
-			fill: darkgrey;
 		}
 	}
 }
