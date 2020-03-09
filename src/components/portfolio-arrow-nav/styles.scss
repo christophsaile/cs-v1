@@ -3,13 +3,21 @@
 
 @include host("portfolio-arrow-nav") {
 	.showMore {
+		position: fixed;
+		right: 2rem;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
 		padding-bottom: 0.5rem;
 		transition: all $transition-default;
 		cursor: pointer;
 		z-index: $z-index-showMore;
+	
+		@include breakpoint ($medium) {
+			right: 4rem;
+		}
 
 		&__icon {
-			display: inline-block;
 			fill: $white;
 			margin-bottom: 1.3rem;
 			transition: all 0.2s ease-in-out;
@@ -23,15 +31,19 @@
 
 		&__text {
 			color: $black;
-			display: block;
 			padding-bottom: 1.3rem;
 			writing-mode: vertical-lr;
 			font-size: 2rem;
+			opacity: 1;
+			visibility: visible;
+			transition: opacity 0.2s ease-in-out, height 0s, visibility 0s;
 		}
 
 		&.hideText {
 			.showMore__text {
+				height: 0;
 				opacity: 0;
+				visibility: hidden;
 			}
 		}
 

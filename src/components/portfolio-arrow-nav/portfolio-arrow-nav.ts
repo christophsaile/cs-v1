@@ -2,9 +2,16 @@ import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import * as ScrollMagic from "scrollmagic";
 
-import { PortfolioArrowNavProps, PortfolioArrowNavState, PortfolioArrowNavMethods } from "./defines";
+import {
+	PortfolioArrowNavProps,
+	PortfolioArrowNavState,
+	PortfolioArrowNavMethods
+} from "./defines";
 
-class PortfolioArrowNav extends Component<PortfolioArrowNavProps, PortfolioArrowNavState> {
+class PortfolioArrowNav extends Component<
+	PortfolioArrowNavProps,
+	PortfolioArrowNavState
+> {
 	static componentName = "portfolio-arrow-nav";
 
 	static attributes = ["text"];
@@ -13,34 +20,44 @@ class PortfolioArrowNav extends Component<PortfolioArrowNavProps, PortfolioArrow
 
 	private refs = {
 		showMoreRef: createRef<HTMLElement>(),
-		showMoreTextRef: createRef<HTMLElement>(),
+		showMoreTextRef: createRef<HTMLElement>()
 	};
 	ready() {
 		this.initScrollAnimation();
 		this.refs.showMoreRef.current.addEventListener("click", () => {
-			window.scrollBy({
-				top: window.innerHeight,
-				left: 0,
-				behavior: "smooth"
-			});
+			if (this.refs.showMoreRef.current.classList.contains("arrowUp")) {
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: "smooth"
+				});
+			} else {
+				window.scrollBy({
+					top: window.innerHeight,
+					left: 0,
+					behavior: "smooth"
+				});
+			}
 		});
 	}
 
 	public initScrollAnimation() {
 		let controller = new ScrollMagic.Controller();
 
-		let landingPage = new ScrollMagic.Scene({
-			triggerElement: this.refs.showMoreRef.current
+		let aboutMe = new ScrollMagic.Scene({
+			triggerElement: "#aboutMe",
+			triggerHook: 0.9
 		})
-			.setPin(this.refs.showMoreRef.current)
-			.addTo(controller)
+			.setClassToggle(this.refs.showMoreRef.current, "hideText")
+			.addTo(controller);
+
 		let contact = new ScrollMagic.Scene({
 			triggerElement: "#contact",
 			triggerHook: 0.5,
 			duration: document.querySelector("#contact").clientHeight
 		})
 			.setClassToggle(this.refs.showMoreRef.current, "arrowUp")
-			.addTo(controller)
+			.addTo(controller);
 	}
 	get defaultState() {
 		return {};
