@@ -14,7 +14,12 @@ export default (
 	return render`
 		${createStyle(styles)}
 		<div class="accordion">
-			<slot />
+			<portfolio-headline type="h2" half-inline vertical data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
+				contact me
+			</portfolio-headline>
+			<div class="accordion__items">
+				<slot />
+			</div>
 		</div>
     `;
 };

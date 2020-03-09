@@ -2,4 +2,31 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("portfolio-accordion") {
+	.accordion {
+		display: flex;
+		height: 100%;
+
+		&__items {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			padding: 2rem;
+			background-image: url(../../_assets/rust_structure.jpg);
+			background-size: 100%;
+
+			::slotted(:first-child) {
+				width: 80%;
+				height: 33.33%;
+			}
+			::slotted(:nth-child(2)) {
+				width: 50%;
+				height: 33.33%;
+				margin-left: auto;
+			}
+			::slotted(:last-child) {
+				width: 80%;
+				height: 33.33%;
+			}
+		}
+	}
 }
