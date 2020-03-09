@@ -4,20 +4,21 @@
 @include host("portfolio-counter-nav") {
 	.counter {
 		position: fixed;
+		margin: 6rem 0;
+		top: 0;
+		right: 2rem;
+		bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
-		top: 0;
-		bottom: 0;
-		right: 6%;
 		transition: right $transition-default;
 		z-index: $z-index-counter;
 
-		&--left {
-			right: calc(94% - 2rem); // dont forget the size of the pageCounter itself
-			transition: right $transition-default;
-		}
+		@include breakpoint ($medium) {
+			right: 4rem;
+		};
+
 		&__container {
 			list-style: none;
 			margin-block-start: 0;
@@ -27,7 +28,6 @@
 		&__item {
 			line-height: 1;
 			padding: 2rem 0;
-
 
 			&:first-child {
 				.counter__link::after {

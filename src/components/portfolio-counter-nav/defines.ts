@@ -6,9 +6,7 @@
  * Props
  */
  interface PortfolioCounterNavProps {
-	 switchSides: boolean,
-	 firstAnchor: string,
-	 secondAnchor: string
+	 currentPage: string,
  }
 
 /**

@@ -14,13 +14,13 @@ export default (
 ) => {
 	return render`
 		${createStyle(styles)}
-		<nav class="counter" ref=${refs.counterRef}>
-			<ul class="counter__container" ref=${refs.counterContainerRef}>
+		<nav class="counter">
+			<ul class="counter__container">
 				<li class="counter__item"> 
-					<a class="counter__link counter__link--active" href=${data.firstAnchor}>01</a>
+					<a class="counter__link counter__link--active" ref=${refs.counterRef}>01</a>
 				</li>
 				<li class="counter__item">
-					<a class="counter__link" href=${data.secondAnchor}>02</a>
+					<a class="counter__link" href="#contact">04</a>
 				</li>
 			</ul>
 		</nav>
