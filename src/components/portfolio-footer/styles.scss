@@ -22,27 +22,32 @@
 
 		&__logo {
 			max-width: $wide;
-            margin: auto;
-            
+			margin: auto;
+
 			a {
 				font-size: 8rem;
 			}
 		}
 
 		&__content {
-            display: flex;
-            flex-direction: column-reverse;
+			display: flex;
+			flex-direction: column-reverse;
 			padding-top: 4rem;
 			max-width: $wide;
-            margin: auto;
-            
-            @include breakpoint ($medium) {
-                flex-direction: row;
-            }
+			margin: auto;
+
+			@include breakpoint($medium) {
+				flex-direction: row;
+			}
 		}
 
 		&__navigation {
 			width: 50%;
+
+			@include breakpoint($medium) {
+				margin-right: 4rem;
+				border-right: 1px solid rgba($color: $white, $alpha: 0.1);
+			}
 
 			li:not(:first-child) {
 				padding-top: 1rem;
@@ -54,17 +59,17 @@
 
 			ul {
 				display: flex;
-                padding: 2rem 0;
-                
-                li:not(:last-child){
-                    margin-right: 3rem;
+				padding: 2rem 0;
 
-                    @include breakpoint ($medium) {
-                        margin-right: 4rem
-                    }
-                }
-            }
-            
+				li:not(:last-child) {
+					margin-right: 3rem;
+
+					@include breakpoint($medium) {
+						margin-right: 4rem;
+					}
+				}
+			}
+
 			svg {
 				width: 3.2rem;
 				height: 3.2rem;
