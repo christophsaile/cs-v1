@@ -25,7 +25,8 @@ class PortfolioCounterNav extends Component<
 	public counter: HTMLElement;
 
 	private refs = {
-		counterRef: createRef<HTMLElement>()
+		counterRef: createRef<HTMLElement>(),
+		counterLastRef: createRef<HTMLElement>()
 	};
 
 	ready() {
@@ -34,6 +35,8 @@ class PortfolioCounterNav extends Component<
 
 	public initScrollAnimation() {
 		const currentPage = this.refs.counterRef.current;
+		const lastPage = this.refs.counterLastRef.current;
+
 		let controller = new ScrollMagic.Controller({
 			globalSceneOptions: {
 				triggerHook: 0.5
@@ -79,6 +82,12 @@ class PortfolioCounterNav extends Component<
 				currentPage.innerHTML = "04";
 				currentPage.setAttribute("href", "#contact");
 			});
+		let footer= new ScrollMagic.Scene({
+			triggerElement: "#footer",
+			duration: document.querySelector("#footer").clientHeight
+		})
+			.setClassToggle(lastPage, "whiteText")
+			.addTo(controller)
 	}
 
 	get defaultState() {

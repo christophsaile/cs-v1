@@ -3,13 +3,13 @@
 
 @include host("portfolio-footer") {
 	.footer {
-		padding: 6rem 2rem 6rem;
+		padding: 6rem 6rem 6rem 2rem;
 		background-color: $black;
 		color: $white;
 		font-family: $font-family-half-regular-regular;
 
 		@include breakpoint($medium) {
-			padding: 6rem 4rem 8rem;
+			padding: 6rem 8rem 8rem 4rem;
 		}
 
 		a {

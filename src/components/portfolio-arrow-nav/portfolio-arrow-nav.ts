@@ -54,9 +54,15 @@ class PortfolioArrowNav extends Component<
 		let contact = new ScrollMagic.Scene({
 			triggerElement: "#contact",
 			triggerHook: 0.5,
-			duration: document.querySelector("#contact").clientHeight
 		})
-			.setClassToggle(this.refs.showMoreRef.current, "arrowUp")
+		.setClassToggle(this.refs.showMoreRef.current, "arrowUp")
+		.addTo(controller);
+
+		let footer = new ScrollMagic.Scene({
+			triggerElement: "#footer",
+			triggerHook: 1,
+		})
+			.setClassToggle(this.refs.showMoreRef.current, "whiteText")
 			.addTo(controller);
 	}
 	get defaultState() {
