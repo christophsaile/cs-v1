@@ -11,6 +11,7 @@
 
 		@include breakpoint ($medium) {
 			width: 70vw;
+			max-width: $wide;
 			margin: auto;
 		}
 
@@ -18,10 +19,12 @@
 			display: flex;
 			width: 100%;
 			color: $blue;
+			background-color: $white;
 			z-index: 1;
+			max-width: $large;
 
 			::slotted(portfolio-headline) {
-				padding-top: 2rem;;
+				padding-top: 2rem;
 			}
 
 			::slotted(p) {
@@ -37,7 +40,7 @@
 
 		&__img {
 			position: absolute;
-			left: 0;
+			left: -2rem;
 			width: 100%;
             height: 80vh;
 			overflow: hidden;

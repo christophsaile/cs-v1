@@ -7,17 +7,17 @@
 		height: 100%;
 		width: 100%;
 
-		@include breakpoint ($medium) {
+		@include breakpoint($medium) {
 			width: 70vw;
 			margin: auto;
 		}
 
-		@include breakpoint ($wideWithPadding) {
+		@include breakpoint($wideWithPadding) {
 			min-width: $wide;
 			max-width: $wide;
 		}
 
-		portfolio-headline{
+		portfolio-headline {
 			line-height: 0;
 			padding-right: 0.5rem;
 		}
@@ -30,7 +30,7 @@
 			background-image: url(../../_assets/rust_structure.jpg);
 			background-size: 100%;
 
-			@include breakpoint ($wide) {
+			@include breakpoint($wide) {
 				padding: 4rem;
 			}
 			::slotted(:first-child) {
