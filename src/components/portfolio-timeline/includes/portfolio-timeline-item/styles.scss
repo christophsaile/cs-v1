@@ -20,7 +20,7 @@
 			}
 			&:hover {
 				slot[name="timeline__date"]::slotted(*) {
-					border-bottom: 2px solid crimson;
+					border-bottom: 2px solid $blue;
 				}
 			}
 			&.visible {

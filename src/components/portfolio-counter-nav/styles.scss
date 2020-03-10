@@ -13,7 +13,6 @@
 		justify-content: center;
 		text-align: center;
 		transition: right $transition-default;
-		z-index: $z-index-counter;
 
 		@include breakpoint($medium) {
 			right: 4rem;

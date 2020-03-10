@@ -11,7 +11,6 @@
 		padding-bottom: 0.5rem;
 		transition: all $transition-default;
 		cursor: pointer;
-		z-index: $z-index-showMore;
 
 		@include breakpoint($medium) {
 			right: 4rem;
