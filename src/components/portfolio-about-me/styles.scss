@@ -2,35 +2,47 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("portfolio-about-me") {
-    .scrollTrigger {
-        height: 100%;
-    }
+
     .aboutMe {
 		display: flex;
-		position: relative;
 		height: 100%;
-		justify-content: center;
+		width: 100%;
 		align-items: center;
+
+		@include breakpoint ($medium) {
+			width: 70vw;
+			margin: auto;
+		}
 
 		&__content {
 			display: flex;
+			width: 100%;
 			color: $blue;
-			width: 50vw;
 			z-index: 1;
 
 			::slotted(p) {
 				padding: 2rem;
 				color: $black;
 				background-color: $white;
+
+				@include breakpoint ($medium) {
+					width: 50vw;
+				}
 			}
 		}
 
 		&__img {
-            position: absolute;
-            right: 10%;
-            width: 30vw;
+			position: absolute;
+			left: 0;
+			width: 100%;
             height: 80vh;
-            overflow: hidden;
+			overflow: hidden;
+
+			@include breakpoint ($medium) {
+				left: unset;
+				right: 0;
+				width: 35vw;
+			}
 
 			img {
                 width: 100%;

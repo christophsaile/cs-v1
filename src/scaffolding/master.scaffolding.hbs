@@ -3,10 +3,10 @@
 	</portfolio-navigation>
 </header>
 <main>
-	<section id="landingpage" class="fullpage">
-
+	<section id="intro" class="fullpage fullpage--center">
+		<portfolio-intro data-resources="[{paths: ['components/portfolio-intro/index.js']}]"></portfolio-intro>
 	</section>
-	<section id="aboutMe" class="fullpage">
+	<section id="aboutMe" class="fullpage fullpage--center">
 		<portfolio-about-me img-name="wood.jpg" img-alt="abstract wood"
 			data-resources="[{paths: ['components/portfolio-about-me/index.js']}]">
 			<portfolio-headline half vertical type="h2"
@@ -21,7 +21,7 @@
 			</p>
 		</portfolio-about-me>
 	</section>
-	<section id="timeline" class="fullpage fullpage--center">
+	<section id="timeline" class="fullpage fullpage--center fullpage--autoLength">
 		<portfolio-timeline data-resources="[{paths: ['components/portfolio-timeline/index.js']}]">
 			<portfolio-timeline-item
 				data-resources="[{paths: ['components/portfolio-timeline/includes/portfolio-timeline-item/index.js']}]">

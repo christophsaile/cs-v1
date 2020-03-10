@@ -5,6 +5,16 @@
 	.accordion {
 		display: flex;
 		height: 100%;
+		width: 100%;
+
+		@include breakpoint ($medium) {
+			width: 70vw;
+		}
+
+		@include breakpoint ($wideWithPadding) {
+			min-width: $wide;
+			max-width: $wide;
+		}
 
 		&__items {
 			display: flex;

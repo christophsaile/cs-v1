@@ -15,7 +15,7 @@ export const template = (
       <div class="footer__logo"><a href="#">CS</a></div>
       <div class="footer__content">
         <ul class="footer__navigation">
-          <li><a href=#landingpage">home</a></li>
+          <li><a href=#intro">home</a></li>
           <li><a href="#aboutMe">about me</a></li>
           <li><a href="#timeline">timeline</a></li>
           <li><a href="#contact">contact</a></li>

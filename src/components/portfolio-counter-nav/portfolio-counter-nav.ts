@@ -43,14 +43,14 @@ class PortfolioCounterNav extends Component<
 			}
 		});
 
-		let landingpage = new ScrollMagic.Scene({
-			triggerElement: "#landingpage",
-			duration: document.querySelector("#landingpage").clientHeight
+		let intro = new ScrollMagic.Scene({
+			triggerElement: "#intro",
+			duration: document.querySelector("#intro").clientHeight
 		})
 			.addTo(controller)
 			.on("enter", function() {
 				currentPage.innerHTML = "01";
-				currentPage.setAttribute("href", "#landingpage");
+				currentPage.setAttribute("href", "#intro");
 			});
 
 		let aboutMe = new ScrollMagic.Scene({

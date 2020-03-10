@@ -40,7 +40,7 @@ class PortfolioAboutMe extends Component<
 		let controller = new ScrollMagic.Controller({
 		});
 		let animationScene = new ScrollMagic.Scene({
-			triggerElement: this.refs.scrollTriggerRef.current,
+			triggerElement: '#aboutMe',
 			triggerHook: 1,
 			duration: "250%"
 		})
