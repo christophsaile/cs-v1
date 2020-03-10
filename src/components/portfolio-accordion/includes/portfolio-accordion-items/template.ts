@@ -18,7 +18,7 @@ export default (
 	<article class=accordion__item>
 		<header class="accordion__header ${data.isOpen ? '' : 'closed'}" ref=${refs.accordionHeaderRef}>
 			<span class="accordion__icon"></span>
-			<portfolio-headline half type="h3" data-resources="[{paths: ['components/PortfolioHeadline/index.js']}]">
+			<portfolio-headline half type="h2" data-resources="[{paths: ['components/PortfolioHeadline/index.js']}]">
 				<slot name="heading"></slot>
 			</portfolio-headline>
 		</header>

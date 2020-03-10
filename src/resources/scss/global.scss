@@ -9,6 +9,14 @@
 		padding: 0 8rem 0 4rem;
 	}
 
+	&--reducedLength {
+		height: 80vh;
+		
+		@include breakpoint ($wide) {
+			height: 100vh;
+		}
+	}
+
 	&--autoLength {
 		height: auto;
 		min-height: 100vh;
@@ -35,9 +43,11 @@
 		}
 
 		portfolio-accordion {
-			height: 80vh;
+			height: 80%;
 			margin: auto auto 0;
+			width: 100%;
 			max-width: $wide;
 		}
 	}
 }
+
