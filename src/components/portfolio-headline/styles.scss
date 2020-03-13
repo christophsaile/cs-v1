@@ -12,10 +12,12 @@
 
 		&.half {
 			font-family: $font-family-half-regular-regular;
+			letter-spacing: 0.2rem;
 		}
 
 		&.halfInline {
 			font-family: $font-family-half-inline-regular;
+			letter-spacing: 0.2rem;
 		}
 
 		&.vertical {

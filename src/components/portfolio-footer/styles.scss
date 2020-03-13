@@ -7,6 +7,7 @@
 		background-color: $black;
 		color: $white;
 		font-family: $font-family-half-regular-regular;
+		letter-spacing: 0.2rem;
 
 		@include breakpoint($medium) {
 			padding: 6rem 8rem 8rem 4rem;

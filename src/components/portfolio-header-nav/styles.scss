@@ -17,7 +17,7 @@
 			margin: 0;
 			width: 100vw;
 			height: 100vh;
-			background: rgba($color: $black, $alpha: 0.9);
+			background: rgba($color: $black, $alpha: 0.96);
 			padding: 6rem 0 3.5rem;
 			transform: translateX(100%);
 			transition: all 0.3s cubic-bezier(1, 0.5, 0, 1);
@@ -48,7 +48,8 @@
 					transition: opacity 0.4s ease-in-out;
 					
 					@include breakpoint ($medium) {
-						
+						font-size: 7rem;
+						line-height: 8rem;
 					}
 					@at-root .navHeader__menu.active .navHeader__links a {
 						opacity: 1;

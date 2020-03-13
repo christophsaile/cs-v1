@@ -1,8 +1,17 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
 
-@include host('portfolio-navigation') {
-    .navigation {
-        display: flex;
-        flex-direction: row;
-    }
+@include host("portfolio-navigation") {
+	.navigation {
+		display: flex;
+		flex-direction: row;
+
+		portfolio-counter-nav {
+			z-index: 10;
+        }
+        
+		portfolio-arrow-nav {
+			z-index: 10;
+        }
+    
+	}
 }
