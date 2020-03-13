@@ -44,11 +44,12 @@ class PortfolioArrowNav extends Component<
 	public initScrollAnimation() {
 		let controller = new ScrollMagic.Controller();
 
-		let aboutMe = new ScrollMagic.Scene({
-			triggerElement: "#aboutMe",
-			triggerHook: 0.9
+		let intro = new ScrollMagic.Scene({
+			triggerElement: "#intro",
+			triggerHook: 0.9,
+			duration: document.querySelector("#intro").clientHeight
 		})
-			.setClassToggle(this.refs.showMoreRef.current, "hideText")
+			.setClassToggle(this.refs.showMoreRef.current, "showText")
 			.addTo(controller);
 
 		let contact = new ScrollMagic.Scene({

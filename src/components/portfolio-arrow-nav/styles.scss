@@ -22,13 +22,14 @@
 			transition: all 0.2s ease-in-out;
 		}
 
-		&.arrowUp {
-			&.whiteText, &.whiteTextScroll {
-				.showMore__icon {
-					fill: $white;
-				}
+		&.whiteText,
+		&.whiteTextScroll {
+			.showMore__icon {
+				fill: $white;
 			}
-
+		}
+		
+		&.arrowUp {
 			.showMore__icon {
 				transform: rotate(180deg);
 			}
@@ -36,19 +37,22 @@
 
 		&__text {
 			color: $blue;
+			height: 0;
+			width: 0;
 			padding-bottom: 1.3rem;
 			writing-mode: vertical-lr;
 			font-size: 2rem;
-			opacity: 1;
-			visibility: visible;
+			opacity: 0;
+			visibility: hidden;
 			transition: opacity 0.2s ease-in-out, height 0s, visibility 0s;
 		}
 
-		&.hideText {
+		&.showText {
 			.showMore__text {
-				height: 0;
-				opacity: 0;
-				visibility: hidden;
+				height: auto;
+				width: auto;
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}
