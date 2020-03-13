@@ -27,11 +27,11 @@ export default (
 		<div class=${menuBtnClasses} ref=${refs.menuBtnRef}><span>Menu</span></div>
 		<div class=${menuClasses} ref=${refs.menuRef}>	
 			<ul>
-				<li class="navHeader__links"><a href="/#"><span>Home</span></a></li>
-				<li class="navHeader__links"><a href="/#aboutMe"><span>About Me</span></a></li>
-				<li class="navHeader__links"><a href="/#timeline"><span>Timeline</span></a></li>
-				<li class="navHeader__links"><a href="/#contact"><span>Contact</span></a></li>
-				<li class="navHeader__links"><a href="/#credits"><span>Credits</span></a></li>
+				<li class="navHeader__links"><a href="#"><span>Home</span></a></li>
+				<li class="navHeader__links"><a href="#aboutMe"><span>About Me</span></a></li>
+				<li class="navHeader__links"><a href="#timeline"><span>Timeline</span></a></li>
+				<li class="navHeader__links"><a href="#contact"><span>Contact</span></a></li>
+				<li class="navHeader__links"><a href="#credits"><span>Credits</span></a></li>
 			</ul>
 		</div>
 		</nav>
