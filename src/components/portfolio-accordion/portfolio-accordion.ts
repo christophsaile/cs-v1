@@ -25,7 +25,7 @@ class PortfolioAccordion extends Component<
 		const allAccordionItems = this.querySelectorAll(
 			"portfolio-accordion-items"
 		);
-		window.addEventListener("accordionOpened", (event: CustomEvent) => {
+		this.addEventListener("accordionOpened", (event: CustomEvent) => {
 			const currentItem = event.target as HTMLElement;
 			if (currentItem.parentElement === this) {
 				if (event.detail) {

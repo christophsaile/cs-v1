@@ -14,7 +14,7 @@ class PortfolioArrowNav extends Component<
 > {
 	static componentName = "portfolio-arrow-nav";
 
-	static attributes = ["text"];
+	static attributes = ["text", { name: "white-text", type: "boolean" }];
 
 	public methods: PortfolioArrowNavMethods = {};
 
@@ -53,16 +53,16 @@ class PortfolioArrowNav extends Component<
 
 		let contact = new ScrollMagic.Scene({
 			triggerElement: "#contact",
-			triggerHook: 0.5,
+			triggerHook: 0.5
 		})
-		.setClassToggle(this.refs.showMoreRef.current, "arrowUp")
-		.addTo(controller);
+			.setClassToggle(this.refs.showMoreRef.current, "arrowUp")
+			.addTo(controller);
 
 		let footer = new ScrollMagic.Scene({
 			triggerElement: "#footer",
-			triggerHook: 1,
+			triggerHook: 1
 		})
-			.setClassToggle(this.refs.showMoreRef.current, "whiteText")
+			.setClassToggle(this.refs.showMoreRef.current, "whiteTextScroll")
 			.addTo(controller);
 	}
 	get defaultState() {
@@ -71,7 +71,8 @@ class PortfolioArrowNav extends Component<
 
 	get defaultProps() {
 		return {
-			text: null
+			text: null,
+			whiteText: false
 		};
 	}
 

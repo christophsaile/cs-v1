@@ -35,7 +35,7 @@
 						background-color: $black;
 					}
 
-					&.whiteText {
+					&.whiteText, &.whiteTextScroll {
 						&::before {
 							background-color: $white;
 						}
@@ -51,7 +51,7 @@
 			font-size: 2rem;
 			line-height: 2.5rem;
 
-			&.whiteText {
+			&.whiteText, &.whiteTextScroll {
 				color: $white;
 			}
 

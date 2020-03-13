@@ -23,7 +23,7 @@
 		}
 
 		&.arrowUp {
-			&.whiteText {
+			&.whiteText, &.whiteTextScroll {
 				.showMore__icon {
 					fill: $white;
 				}

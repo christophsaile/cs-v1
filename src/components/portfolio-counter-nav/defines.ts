@@ -7,6 +7,7 @@
  */
  interface PortfolioCounterNavProps {
 	 currentPage: string,
+	 whiteText: boolean,
  }
 
 /**

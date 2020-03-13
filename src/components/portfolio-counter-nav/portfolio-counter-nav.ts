@@ -17,7 +17,8 @@ class PortfolioCounterNav extends Component<
 
 	static attributes = [
 		"current-page",
-		"last-page"
+		"last-page",
+		{ name: 'white-text', type: 'boolean' },
 	];
 
 	public methods: PortfolioCounterNavMethods = {};
@@ -37,11 +38,7 @@ class PortfolioCounterNav extends Component<
 		const currentPage = this.refs.counterRef.current;
 		const lastPage = this.refs.counterLastRef.current;
 
-		let controller = new ScrollMagic.Controller({
-			globalSceneOptions: {
-				triggerHook: 0.5
-			}
-		});
+		let controller = new ScrollMagic.Controller();
 
 		let intro = new ScrollMagic.Scene({
 			triggerElement: "#intro",
@@ -55,7 +52,8 @@ class PortfolioCounterNav extends Component<
 
 		let aboutMe = new ScrollMagic.Scene({
 			triggerElement: "#aboutMe",
-			duration: document.querySelector("#aboutMe").clientHeight
+			duration: document.querySelector("#aboutMe").clientHeight,
+			triggerHook: 0.50
 		})
 			.addTo(controller)
 			.on("enter", function() {
@@ -65,7 +63,8 @@ class PortfolioCounterNav extends Component<
 
 		let timeline = new ScrollMagic.Scene({
 			triggerElement: "#timeline",
-			duration: document.querySelector("#timeline").clientHeight
+			duration: document.querySelector("#timeline").clientHeight,
+			triggerHook: 0.50
 		})
 			.addTo(controller)
 			.on("enter", function() {
@@ -75,7 +74,8 @@ class PortfolioCounterNav extends Component<
 
 		let contact = new ScrollMagic.Scene({
 			triggerElement: "#contact",
-			duration: document.querySelector("#contact").clientHeight
+			duration: document.querySelector("#contact").clientHeight,
+			triggerHook: 0.50
 		})
 			.addTo(controller)
 			.on("enter", function() {
@@ -84,9 +84,10 @@ class PortfolioCounterNav extends Component<
 			});
 		let footer= new ScrollMagic.Scene({
 			triggerElement: "#footer",
-			duration: document.querySelector("#footer").clientHeight
+			duration: document.querySelector("#footer").clientHeight,
+			triggerHook: 0.55
 		})
-			.setClassToggle(lastPage, "whiteText")
+			.setClassToggle(lastPage, "whiteTextScroll")
 			.addTo(controller)
 	}
 
@@ -96,7 +97,8 @@ class PortfolioCounterNav extends Component<
 
 	get defaultProps() {
 		return {
-			currentPage: null
+			currentPage: null,
+			whiteText: false,
 		};
 	}
 

@@ -20,7 +20,7 @@ export default (
 					<a class="counter__link counter__link--active" ref=${refs.counterRef}>01</a>
 				</li>
 				<li class="counter__item">
-					<a class="counter__link" ref=${refs.counterLastRef} href="#contact">04</a>
+					<a class="counter__link ${data.whiteText ? 'whiteText': ''}" ref=${refs.counterLastRef} href="#contact">04</a>
 				</li>
 			</ul>
 		</nav>

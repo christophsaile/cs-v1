@@ -27,21 +27,14 @@ class PortfolioHeaderNav extends Component<
 			this.toggleMenuBtn,
 			false
 		);
-		this.refs.menuBtnRef.current.addEventListener(
-			"click",
-			this.toggleMenu,
-			false
-		);
 	}
+
 	public toggleMenuBtn = () => {
 		this.setState({
-			menuOpen: !this.state.menuOpen
-		});
-	};
-	public toggleMenu = () => {
-		this.setState({
+			menuOpen: !this.state.menuOpen,
 			active: !this.state.active
 		});
+		this.emit("isNavOpen", this.state.active);
 	};
 
 	get defaultState() {
