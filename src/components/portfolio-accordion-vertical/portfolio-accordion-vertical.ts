@@ -7,7 +7,10 @@ import {
 	PortfolioAccordionVerticalMethods
 } from "./defines";
 
-class PortfolioAccordionVertical extends Component<PortfolioAccordionVerticalProps, PortfolioAccordionVerticalState> {
+class PortfolioAccordionVertical extends Component<
+	PortfolioAccordionVerticalProps,
+	PortfolioAccordionVerticalState
+> {
 	static componentName = "portfolio-accordion-vertical";
 
 	static attributes = [];
@@ -17,8 +20,9 @@ class PortfolioAccordionVertical extends Component<PortfolioAccordionVerticalPro
 	public accordionItems: NodeListOf<HTMLElement>;
 
 	renderd() {
-		
-		const accordionContainer = this.shadowRoot.querySelectorAll('.accordion');
+		const accordionContainer = this.shadowRoot.querySelectorAll(
+			".accordion"
+		);
 		accordionContainer.forEach((item: Element) => {
 			item.innerHTML = this.innerHTML;
 		});
@@ -42,7 +46,7 @@ class PortfolioAccordionVertical extends Component<PortfolioAccordionVerticalPro
 			}
 		});
 	};
-	
+
 	get defaultState() {
 		return {};
 	}
