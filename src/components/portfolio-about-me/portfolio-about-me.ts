@@ -37,16 +37,36 @@ class PortfolioAboutMe extends Component<
 	}
 
 	public initScrollAnimation() {
-		let controller = new ScrollMagic.Controller({
-		});
-		let animationScene = new ScrollMagic.Scene({
-			triggerElement: '#aboutMe',
+		let controller = new ScrollMagic.Controller({});
+
+		let parallaxImg = new ScrollMagic.Scene({
+			triggerElement: "#aboutMe",
 			triggerHook: 1,
 			duration: "250%"
 		})
-      .setTween(TweenMax.from(this.refs.aboutMeImgRef.current, 1, {y: '-100%'}))
+			.setTween(
+				TweenMax.from(this.refs.aboutMeImgRef.current, 1, {
+					y: "-100%"
+				})
+			)
+			.addTo(controller);
+
+		let fadeInText = new ScrollMagic.Scene({
+			triggerElement: "#aboutMe",
+			triggerHook: 1,
+			duration: "200%"
+		})
+			.setTween(
+				TweenMax.from("#aboutMe", 1, {
+					autoAlpha: 0,
+					repeat: 1,
+					yoyo: true,
+					repeatDelay: 1
+				})
+			)
 			.addTo(controller);
 	}
+
 	public render(): HTMLFragment {
 		return template(
 			{ ...this.props, ...this.state, ...this.methods },

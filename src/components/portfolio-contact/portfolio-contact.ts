@@ -1,24 +1,57 @@
-import Component, { HTMLFragment } from '@biotope/element';
-import { template } from './template';
-import { PortfolioContactProps, PortfolioContactState, PortfolioContactMethods } from './defines';
-import PortfolioHeadline from '../portfolio-headline/portfolio-headline';
+import Component, { HTMLFragment } from "@biotope/element";
+import { template } from "./template";
+import {
+	PortfolioContactProps,
+	PortfolioContactState,
+	PortfolioContactMethods
+} from "./defines";
+import PortfolioHeadline from "../portfolio-headline/portfolio-headline";
 
-class PortfolioContact extends Component< PortfolioContactProps, PortfolioContactState > {
-  public static componentName = 'portfolio-contact';
-  public static attributes = [];
-  public static dependencies = [
-		PortfolioHeadline as typeof Component,
-	]
-  
-  protected readonly defaultProps: PortfolioContactProps = {};
-   
-  protected readonly defaultState: PortfolioContactState = {};
+import * as ScrollMagic from "scrollmagic";
+import { TweenMax, TimelineMax } from "gsap";
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
-  public methods: PortfolioContactMethods = {};
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
-  public render(): HTMLFragment {
-    return template( { ...this.props, ...this.state, ...this.methods });
-  }
+class PortfolioContact extends Component<
+	PortfolioContactProps,
+	PortfolioContactState
+> {
+	public static componentName = "portfolio-contact";
+	public static attributes = [];
+	public static dependencies = [PortfolioHeadline as typeof Component];
+
+	protected readonly defaultProps: PortfolioContactProps = {};
+
+	protected readonly defaultState: PortfolioContactState = {};
+
+	public methods: PortfolioContactMethods = {};
+
+	ready() {
+		this.initScrollAnimation();
+	}
+	public initScrollAnimation() {
+		let controller = new ScrollMagic.Controller({});
+
+		let fadeInText = new ScrollMagic.Scene({
+			triggerElement: "#contact",
+			triggerHook: 1,
+			duration: "180%"
+		})
+			.setTween(
+				TweenMax.from("#contact", 1, {
+					autoAlpha: 0,
+					repeat: 1,
+					yoyo: true,
+					repeatDelay: 1
+				})
+			)
+			.addTo(controller);
+	}
+
+	public render(): HTMLFragment {
+		return template({ ...this.props, ...this.state, ...this.methods });
+	}
 }
 
 export default PortfolioContact;
