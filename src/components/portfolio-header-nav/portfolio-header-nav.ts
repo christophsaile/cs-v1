@@ -19,12 +19,20 @@ class PortfolioHeaderNav extends Component<
 
 	private refs = {
 		menuRef: createRef<HTMLElement>(),
-		menuBtnRef: createRef<HTMLElement>()
+		menuBtnRef: createRef<HTMLElement>(),
+		listRef: createRef<HTMLElement>()
 	};
+
 	rendered() {
 		this.refs.menuBtnRef.current.addEventListener(
 			"click",
 			this.toggleMenuBtn,
+			false
+		);
+
+		this.refs.listRef.current.addEventListener(
+			"click",
+			this.closeMenu,
 			false
 		);
 	}
@@ -33,6 +41,14 @@ class PortfolioHeaderNav extends Component<
 		this.setState({
 			menuOpen: !this.state.menuOpen,
 			active: !this.state.active
+		});
+		this.emit("isNavOpen", this.state.active);
+	};
+
+	public closeMenu = () => {
+		this.setState({
+			menuOpen: false,
+			active: false
 		});
 		this.emit("isNavOpen", this.state.active);
 	};

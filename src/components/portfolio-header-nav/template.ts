@@ -22,11 +22,11 @@ export default (
 
 	return render`
 		${createStyle(styles)}
-		<!-- <a> will be replaced by <a> component -->
+
 		<nav class="navHeader"}>
 		<div class=${menuBtnClasses} ref=${refs.menuBtnRef}><span>Menu</span></div>
 		<div class=${menuClasses} ref=${refs.menuRef}>	
-			<ul>
+			<ul ref=${refs.listRef}>
 				<li class="navHeader__links"><a href="#"><span>Home</span></a></li>
 				<li class="navHeader__links"><a href="#aboutMe"><span>About Me</span></a></li>
 				<li class="navHeader__links"><a href="#timeline"><span>Timeline</span></a></li>
