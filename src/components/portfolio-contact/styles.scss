@@ -5,8 +5,6 @@
 	.contact {
 		display: flex;
 		height: 100%;
-		padding: 2rem 0;
-		position: relative;
 
 		&__content {
 			width: 100%;
@@ -30,13 +28,20 @@
 		}
 
 		&__img {
-			display: none;
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			left: 0;
+			opacity: 0.2;
+			overflow: hidden;
 
 			@include breakpoint($medium) {
-				display: block;
+				position: static;
 				width: 50%;
-				transition: all 0.5s;
+				height: auto;
+				opacity: 1;
 				overflow: hidden;
+				transition: all 0.5s;
             }
             
 			img {

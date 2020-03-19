@@ -26,12 +26,18 @@
 		}
 
 		&__img {
-			display: none;
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			left: 0;
+			overflow: hidden;
+			opacity: 0.2;
 
 			@include breakpoint ($medium) {
-				display: block;
+				position: static;
 				width: 50%;
-				overflow: hidden;
+				height: auto;
+				opacity: 1;
 			}
 
 			img {
