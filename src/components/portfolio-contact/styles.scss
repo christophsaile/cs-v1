@@ -1,0 +1,53 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("portfolio-contact") {
+	.contact {
+		display: flex;
+		height: 100%;
+		padding: 2rem 0;
+		position: relative;
+
+		&__content {
+			width: 100%;
+			margin: auto;
+			text-align: center;
+			padding: 2rem 1rem;
+
+			::slotted(p) {
+				padding: 1rem 0 2rem;
+			}
+
+			::slotted(:last-child) {
+				padding: 1rem 0;
+			}
+
+			@include breakpoint($medium) {
+				width: 50%;
+				margin: auto;
+				text-align: left;
+			}
+		}
+
+		&__img {
+			display: none;
+
+			@include breakpoint($medium) {
+				display: block;
+				width: 50%;
+				transition: all 0.5s;
+				overflow: hidden;
+            }
+            
+			img {
+				width: 100%;
+				height: 100%;
+				transition: all 0.2s;
+
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}

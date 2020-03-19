@@ -9,7 +9,7 @@
 	<section id="aboutMe" class="fullpage fullpage--center">
 		<portfolio-about-me img-name="wood.jpg" img-alt="abstract wood"
 			data-resources="[{paths: ['components/portfolio-about-me/index.js']}]">
-			<portfolio-headline half vertical type="h2"
+			<portfolio-headline half type="h2"
 				data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
 				about Me
 			</portfolio-headline>
@@ -18,7 +18,8 @@
 				Furtwangen.<br>
 				<br>
 				I am interested in webdevelopment, design and 3D - animations.<br>
-				If you have any questions about me feel free to <a href="#contact" style="color: #627C81">contact me</a>.
+				If you have any questions about me feel free to <a href="#contact" style="color: #627C81">contact
+					me</a>.
 			</p>
 		</portfolio-about-me>
 	</section>
@@ -76,32 +77,30 @@
 			</portfolio-timeline-item>
 		</portfolio-timeline>
 	</section>
-	<section id="contact" class="fullpage fullpage--center fullpage--reducedLength">
-		<portfolio-accordion data-resources="[{paths: ['components/portfolio-accordion/index.js']}]">
-			<portfolio-accordion-items
-				data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
-				<span slot="heading">adresse</span>
-				<p slot="text">
-					Christoph Saile <br>
-					Im Brühl 15 <br>
-					72108 Rottenburg
-				</p>
-			</portfolio-accordion-items>
-			<portfolio-accordion-items
-				data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
-				<span slot="heading">phone</span>
-				<p slot="text">
-					+49 1578 2278711
-				</p>
-			</portfolio-accordion-items>
-			<portfolio-accordion-items
-				data-resources="[{paths: ['components/portfolio-accordion/includes/portfolio-accordion-items/index.js']}]">
-				<span slot="heading">e-mail</span>
-				<p slot="text">
-					christoph.saile@gmail.com
-				</p>
-			</portfolio-accordion-items>
-		</portfolio-accordion>
+	<section id="contact" class="fullpage fullpage--center">
+		<portfolio-contact style="width: 100%; max-width: 1440px; margin: 0 auto"
+			data-resources="[{paths: ['components/portfolio-contact/index.js']}]">
+			<portfolio-headline type="h3" half data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
+				adresse
+			</portfolio-headline>
+			<p>
+				Christoph Saile <br>
+				Im Brühl 15 <br>
+				72108 Rottenburg
+			</p>
+			<portfolio-headline type="h3" half data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
+				phone
+			</portfolio-headline>
+			<p>
+				+49 1578 2278711
+			</p>
+			<portfolio-headline type="h3" half data-resources="[{paths: ['components/portfolio-headline/index.js']}]">
+				e-mail
+			</portfolio-headline>
+			<p>
+				christoph.saile@gmail.com
+			</p>
+		</portfolio-contact>
 	</section>
 </main>
 <footer id="footer">
