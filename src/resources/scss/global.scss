@@ -22,8 +22,9 @@
 		display: flex;
 
 		portfolio-intro {
-			margin: auto;
+			width: 100%;
 			max-width: $wide;
+			margin: auto;
 		}
 
 		portfolio-about-me {
@@ -33,8 +34,8 @@
 		}
 
 		portfolio-timeline {
-			margin: auto;
 			max-width: $wide;
+			margin: auto;
 		}
 
 		portfolio-contact {

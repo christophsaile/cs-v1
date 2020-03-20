@@ -3,17 +3,10 @@
 
 @include host("portfolio-intro") {
 	.intro {
-		&__img {
-			position: absolute;
-            left: 0;
-            width: calc(100% - 6rem);
-            z-index: -1;
+		line-height: 0;
 
-            
-            @include breakpoint ($medium){
-                width: 30vw;
-                max-height: 100vh;
-            }
+		svg {
+			max-height: 70vh;
 		}
 	}
 }
