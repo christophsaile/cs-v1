@@ -13,6 +13,10 @@
 			padding: 6rem 8rem 8rem 4rem;
 		}
 
+		@include breakpoint($wide) {
+			padding: 10rem 8rem 12rem 4rem;
+		}
+
 		a {
 			color: $white;
 
@@ -53,6 +57,10 @@
 
 			li:not(:first-child) {
 				padding-top: 1rem;
+
+				@include breakpoint($wide) {
+					padding-top: 3rem;
+				}
 			}
 		}
 
@@ -62,6 +70,10 @@
 			ul {
 				display: flex;
 				padding: 2rem 0;
+
+				@include breakpoint($wide) {
+					padding: 3rem;
+				}
 
 				li:not(:last-child) {
 					margin-right: 3rem;
