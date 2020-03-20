@@ -42,11 +42,11 @@ class PortfolioAboutMe extends Component<
 		let parallaxImg = new ScrollMagic.Scene({
 			triggerElement: "#aboutMe",
 			triggerHook: 1,
-			duration: "250%"
+			duration: "200%"
 		})
 			.setTween(
 				TweenMax.from(this.refs.aboutMeImgRef.current, 1, {
-					y: "-100%"
+					y: "-30%"
 				})
 			)
 			.addTo(controller);

@@ -23,24 +23,28 @@
 
 		portfolio-intro {
 			width: 100%;
-			max-width: $wide;
+			max-width: $xxlarge;
 			margin: auto;
 		}
 
 		portfolio-about-me {
 			width: 100%;
-			max-width: $wide;
+			max-width: $xxlarge;
 			margin: 0 auto;
 		}
 
 		portfolio-timeline {
-			max-width: $wide;
 			margin: auto;
+
+			@include breakpoint($wide) {
+				max-width: $ultraWide;
+				padding: 0 4rem;
+			}
 		}
 
 		portfolio-contact {
 			width: 100%;
-			max-width: $wide;
+			max-width: $xxlarge;
 			margin: 0 auto;
 		}
 	}

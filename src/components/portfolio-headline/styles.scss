@@ -40,6 +40,10 @@
 		@include breakpoint($medium) {
 			font-size: 7rem;
 		}
+		
+		@include breakpoint ($wide) {
+			font-size: 10rem
+		}
 	}
 
 	h3 {

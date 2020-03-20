@@ -18,14 +18,21 @@
                 display: block;
                 padding: 0 0 1rem 0;
 			}
+
+			@include breakpoint($wide) {
+				padding: 0 0 6rem 0;
+			}
+
 			&:hover {
 				slot[name="timeline__date"]::slotted(*) {
 					border-bottom: 2px solid $blue;
 				}
 			}
+
 			&.visible {
 				transform: translateX(0);
 			}
+
 			&.right {
                 text-align: right;
                 padding: 0 0 0 1rem;
@@ -34,17 +41,23 @@
                     text-align: left;
                     padding: 1rem 0 0 0 ;
 				}
+
+				@include breakpoint($wide) {
+					padding: 6rem 0 0 0;
+				}
 			}
+
 			slot[name="timeline__date"]::slotted(*) {
 				border-bottom: 2px solid transparent;
 				transition: all 300ms;
 			}
+
 			slot[name="timeline__text"]::slotted(*) {
 				padding-top: 1rem;
 			}
 
 			::slotted(*) {
-				@include breakpoint($wide) {
+				@include breakpoint($xxlarge) {
 					width: 80%;
 					margin: 0 auto;
 				}
