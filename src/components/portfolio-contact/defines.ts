@@ -5,7 +5,10 @@
 /**
  * Props
  */
-interface PortfolioContactProps {}
+interface PortfolioContactProps {
+	imgName: string;
+	imgAlt: string
+}
 
 /**
  * State

@@ -18,10 +18,14 @@ class PortfolioContact extends Component<
 	PortfolioContactState
 > {
 	public static componentName = "portfolio-contact";
-	public static attributes = [];
+	public static attributes = ["img-name", "img-alt"];
+
 	public static dependencies = [PortfolioHeadline as typeof Component];
 
-	protected readonly defaultProps: PortfolioContactProps = {};
+	protected readonly defaultProps: PortfolioContactProps = {
+		imgName: "",
+		imgAlt: ""
+	};
 
 	protected readonly defaultState: PortfolioContactState = {};
 
