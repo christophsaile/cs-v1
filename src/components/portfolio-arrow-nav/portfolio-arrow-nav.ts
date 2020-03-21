@@ -24,6 +24,8 @@ class PortfolioArrowNav extends Component<
 	};
 	ready() {
 		this.initScrollAnimation();
+		this.changeColor();
+
 		this.refs.showMoreRef.current.addEventListener("click", () => {
 			if (this.refs.showMoreRef.current.classList.contains("arrowUp")) {
 				window.scrollTo({
@@ -66,6 +68,62 @@ class PortfolioArrowNav extends Component<
 			.setClassToggle(this.refs.showMoreRef.current, "whiteTextScroll")
 			.addTo(controller);
 	}
+
+	public changeColor = () => {
+		let controller = new ScrollMagic.Controller();
+		let scene = null;
+
+		if (window.innerWidth < 768) {
+			scene = new ScrollMagic.Scene({
+				triggerElement: "#aboutMe",
+				triggerHook: 1,
+				duration: "100%"
+			})
+				.setClassToggle(this.refs.showMoreRef.current, "whiteText")
+				.addTo(controller);
+		}
+		console.log(controller);
+
+		window.onresize = () => {
+			console.log(window.innerWidth);
+			if (window.innerWidth > 768) {
+				if (scene) {
+					console.log("fire");
+					scene.destroy(true);
+					scene = null;
+					controller.destroy(true);
+					controller = null;
+				}
+			} else {
+				if (!controller) {
+					controller = new ScrollMagic.Controller();
+				}
+				scene = new ScrollMagic.Scene({
+					triggerElement: "#aboutMe",
+					triggerHook: 1,
+					duration: "100%"
+				})
+					.setClassToggle(this.refs.showMoreRef.current, "whiteText")
+					.addTo(controller);
+			}
+
+			console.log("resize controller", controller);
+			console.log("resize scene", scene);
+		};
+	};
+
+	// public changeColorAnimation = (controller, scene) => {
+	// 	controller = new ScrollMagic.Controller();
+	// 	scene = new ScrollMagic.Scene({
+	// 		triggerElement: "#aboutMe",
+	// 		triggerHook: 1,
+	// 		duration: "100%"
+	// 	})
+	// 		.setClassToggle(this.refs.showMoreRef.current, "whiteText")
+	// 		.addTo(controller);
+	// 	return controller;
+	// }
+
 	get defaultState() {
 		return {};
 	}
