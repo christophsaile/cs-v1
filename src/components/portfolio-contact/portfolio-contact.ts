@@ -32,23 +32,24 @@ class PortfolioContact extends Component<
 	public methods: PortfolioContactMethods = {};
 
 	private refs = {
-		scrollTriggerRef: createRef<HTMLElement>(),
-		aboutMeImgRef: createRef<HTMLElement>()
+		contactContentRef: createRef<HTMLElement>(),
+		contactImgRef: createRef<HTMLElement>()
 	};
 
 	ready() {
 		this.initScrollAnimation();
 	}
+
 	public initScrollAnimation() {
 		let controller = new ScrollMagic.Controller({});
 
 		let fadeInText = new ScrollMagic.Scene({
-			triggerElement: "#contact",
+			triggerElement: '#contact',
 			triggerHook: 1,
 			duration: "180%"
 		})
 			.setTween(
-				TweenMax.from("#contact", 1, {
+				TweenMax.from('#contact', 1, {
 					autoAlpha: 0,
 					repeat: 1,
 					yoyo: true,

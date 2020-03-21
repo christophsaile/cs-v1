@@ -10,15 +10,15 @@ import {
 export const template = (
 	data: PortfolioContactProps &
 		PortfolioContactState &
-    PortfolioContactMethods,
-  refs:any
+		PortfolioContactMethods,
+	refs: any
 ): HTMLFragment => {
 	return html`
 		<section class="contact">
-			<div class="contact__content">
+			<div class="contact__content" ref=${refs.contactContentRef}>
 				<slot />
 			</div>
-			<picture class="contact__img" ref=${refs.aboutMeImgRef}>
+			<picture class="contact__img" ref=${refs.contactImgRef}>
 				<source
 					srcset="_assets/wide_${data.imgName}"
 					media="(min-width: 768px)"
@@ -30,7 +30,8 @@ export const template = (
 					ref=${refs.aboutMeImgRef}
 				/>
 			</picture>
-			${createStyle(styles)}
+			<div class="contact__layer"></div>
 		</section>
+		${createStyle(styles)}
 	`;
 };
