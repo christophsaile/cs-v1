@@ -1,4 +1,4 @@
-import Component, { HTMLFragment } from "@biotope/element";
+import Component, { HTMLFragment, createRef } from "@biotope/element";
 import { template } from "./template";
 import {
 	PortfolioContactProps,
@@ -31,6 +31,11 @@ class PortfolioContact extends Component<
 
 	public methods: PortfolioContactMethods = {};
 
+	private refs = {
+		scrollTriggerRef: createRef<HTMLElement>(),
+		aboutMeImgRef: createRef<HTMLElement>()
+	};
+
 	ready() {
 		this.initScrollAnimation();
 	}
@@ -54,7 +59,10 @@ class PortfolioContact extends Component<
 	}
 
 	public render(): HTMLFragment {
-		return template({ ...this.props, ...this.state, ...this.methods });
+		return template(
+			{ ...this.props, ...this.state, ...this.methods },
+			this.refs
+		);
 	}
 }
 
