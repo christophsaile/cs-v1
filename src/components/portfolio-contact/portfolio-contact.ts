@@ -53,6 +53,17 @@ class PortfolioContact extends Component<
 				})
 			)
 			.addTo(controller);
+
+		let parallaxImg = new ScrollMagic.Scene({
+			triggerElement: this.refs.contactImgRef.current,
+			triggerHook: 1
+		})
+			.setTween(
+				TweenMax.from(this.refs.contactImgRef.current, 1, {
+					autoAlpha: 0
+				})
+			)
+			.addTo(controller);
 	}
 
 	public render(): HTMLFragment {

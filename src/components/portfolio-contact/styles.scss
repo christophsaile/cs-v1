@@ -53,7 +53,7 @@
 
 			img {
 				width: 100%;
-				transition: all 0.2s;
+				transition: all 0.4s;
 
 				@include breakpoint($wide) {
 					height: 100rem;
