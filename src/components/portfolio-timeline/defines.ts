@@ -5,7 +5,10 @@
 /**
  * Props
  */
-interface PortfolioTimelineProps {}
+interface PortfolioTimelineProps {
+	imgName: string;
+	imgAlt: string
+}
 
 /**
  * State

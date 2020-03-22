@@ -82,7 +82,7 @@ class PortfolioHeaderNav extends Component<
 		window.addEventListener(
 			"resize",
 			debounce(() => {
-				if (window.innerWidth > 768) {
+				if (window.innerWidth >= 768) {
 					if (scene) {
 						scene.destroy(true);
 						scene = null;

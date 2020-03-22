@@ -15,7 +15,7 @@
 			grid-template-columns: repeat(11, 1fr);
 			grid-template-rows: 1fr 0.2rem 1fr;
 			padding: 0;
-        }
+		}
 
 		&__line {
 			grid-row-start: 1;
@@ -102,7 +102,7 @@
 				}
 			}
 
-			@include breakpoint ($wide) {
+			@include breakpoint($wide) {
 				&::before {
 					height: 4rem;
 				}
@@ -156,6 +156,26 @@
 			@include breakpoint($medium) {
 				grid-column-start: 9;
 				grid-column-end: span 3;
+			}
+		}
+		&__background {
+			display: flex;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			padding: 6rem 0;
+			z-index: -1;
+
+			@include breakpoint ($medium) {
+				padding: 0 8rem;
+			}
+
+			img {
+				width: 100%;
 			}
 		}
 	}
