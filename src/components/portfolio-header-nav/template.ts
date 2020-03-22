@@ -15,16 +15,16 @@ export default (
 	refs: any,
 	createStyle: Function
 ) => {
-	const menuBtnClasses = cn("navHeader__menu--toggle", {
-		"menu-open": data.menuOpen
+	const menuOpen = cn("navHeader", {
+		"menuOpen": data.menuOpen
 	});
 	const menuClasses = cn("navHeader__menu", { active: data.active });
 
 	return render`
 		${createStyle(styles)}
 
-		<nav class="navHeader"}>
-		<div class=${menuBtnClasses} ref=${refs.menuBtnRef}><span>Menu</span></div>
+		<nav class=${menuOpen}>
+		<div class="navHeader__menu--toggle" ref=${refs.menuToggleRef}><span>Menu</span></div>
 		<div class=${menuClasses} ref=${refs.menuRef}>	
 			<ul ref=${refs.listRef}>
 				<li class="navHeader__links"><a href="#"><span>Home</span></a></li>

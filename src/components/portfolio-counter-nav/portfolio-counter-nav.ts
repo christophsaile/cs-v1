@@ -98,7 +98,6 @@ class PortfolioCounterNav extends Component<
 		window.addEventListener(
 			"resize",
 			debounce(() => {
-				console.log("resize");
 				if (window.innerWidth > 768) {
 					if (scene) {
 						scene.destroy(true);
@@ -125,8 +124,6 @@ class PortfolioCounterNav extends Component<
 				}
 			}, 250)
 		);
-		console.log("controller", controller);
-		console.log("scene", scene);
 	};
 
 	get defaultState() {
