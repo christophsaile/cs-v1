@@ -39,7 +39,7 @@ a {
 	text-decoration: none;
 	transition: all 0.2s;
 
-	@include breakpoint ($medium) {
+	@include breakpoint ($xxlarge) {
 		font-size: 2.5rem;
 	}
 

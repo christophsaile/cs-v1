@@ -45,11 +45,10 @@ class PortfolioContact extends Component<
 
 		let parallaxText = new ScrollMagic.Scene({
 			triggerElement: this.refs.contactContentRef.current,
-			triggerHook: 0.9
+			triggerHook: 0.8
 		})
 			.setTween(
 				TweenMax.from(this.refs.contactContentRef.current, 1, {
-					y: "-30%",
 					autoAlpha: 0
 				})
 			)
