@@ -15,12 +15,12 @@ export default (
 	return render`
 		${createStyle(styles)}
 		<nav class="counter">
-			<ul class="counter__container">
+			<ul ref=${refs.counterRef} class="counter__container ${data.menuOpen ? 'menuOpen': ''}">
 				<li class="counter__item"> 
-					<a class="counter__link counter__link--active" ref=${refs.counterRef}>01</a>
+					<a ref=${refs.counterFirstItemRef} class="counter__link counter__link--active">01</a>
 				</li>
 				<li class="counter__item">
-					<a class="counter__link ${data.whiteText ? 'whiteText': ''}" ref=${refs.counterLastRef} href="#contact">04</a>
+					<a ref=${refs.counterLastItemRef} class="counter__link" href="#contact">04</a>
 				</li>
 			</ul>
 		</nav>

@@ -1,7 +1,7 @@
 import Component, { createRef } from "@biotope/element";
 import template from "./template";
-import { toBoolean } from "../../resources/ts/converters";
 import * as ScrollMagic from "scrollmagic";
+import { debounce } from "../../resources/js/debounce";
 
 import {
 	PortfolioCounterNavProps,
@@ -18,7 +18,7 @@ class PortfolioCounterNav extends Component<
 	static attributes = [
 		"current-page",
 		"last-page",
-		{ name: 'white-text', type: 'boolean' },
+		{ name: "menu-open", type: "boolean" }
 	];
 
 	public methods: PortfolioCounterNavMethods = {};
@@ -27,69 +27,107 @@ class PortfolioCounterNav extends Component<
 
 	private refs = {
 		counterRef: createRef<HTMLElement>(),
-		counterLastRef: createRef<HTMLElement>()
+		counterFirstItemRef: createRef<HTMLElement>(),
+		counterLastItemRef: createRef<HTMLElement>()
 	};
 
+	public allPages: NodeListOf<HTMLElement>;
+
 	ready() {
+		this.allPages = document.querySelectorAll(".fullpage");
+		this.setLastPageNumber();
 		this.initScrollAnimation();
+		this.changeColor();
 	}
 
+	public setLastPageNumber = () => {
+		const allPagesNumber = this.allPages.length.toString();
+		this.refs.counterLastItemRef.current.innerHTML = "0" + allPagesNumber;
+	};
+
 	public initScrollAnimation() {
-		const currentPage = this.refs.counterRef.current;
-		const lastPage = this.refs.counterLastRef.current;
+		const currentPage = this.refs.counterFirstItemRef.current;
+		const lastPage = this.refs.counterLastItemRef.current;
 
 		let controller = new ScrollMagic.Controller();
 
-		let intro = new ScrollMagic.Scene({
-			triggerElement: "#intro",
-			duration: document.querySelector("#intro").clientHeight
-		})
-			.addTo(controller)
-			.on("enter", function() {
-				currentPage.innerHTML = "01";
-				currentPage.setAttribute("href", "#intro");
-			});
+		this.allPages.forEach((element, index) => {
+			let scene = new ScrollMagic.Scene({
+				triggerElement: element,
+				duration: "100%",
+				triggerHook: 0.5
+			})
+				.addTo(controller)
+				.on("enter", function() {
+					currentPage.innerHTML = "0" + (index + 1);
+					currentPage.setAttribute("href", element.id);
+				});
+		});
 
-		let aboutMe = new ScrollMagic.Scene({
-			triggerElement: "#aboutMe",
-			duration: document.querySelector("#aboutMe").clientHeight,
-			triggerHook: 0.50
-		})
-			.addTo(controller)
-			.on("enter", function() {
-				currentPage.innerHTML = "02";
-				currentPage.setAttribute("href", "#aboutMe");
-			});
-
-		let timeline = new ScrollMagic.Scene({
-			triggerElement: "#timeline",
-			duration: document.querySelector("#timeline").clientHeight,
-			triggerHook: 0.50
-		})
-			.addTo(controller)
-			.on("enter", function() {
-				currentPage.innerHTML = "03";
-				currentPage.setAttribute("href", "#timeline");
-			});
-
-		let contact = new ScrollMagic.Scene({
-			triggerElement: "#contact",
-			duration: document.querySelector("#contact").clientHeight,
-			triggerHook: 0.50
-		})
-			.addTo(controller)
-			.on("enter", function() {
-				currentPage.innerHTML = "04";
-				currentPage.setAttribute("href", "#contact");
-			});
-		let footer= new ScrollMagic.Scene({
+		let footer = new ScrollMagic.Scene({
 			triggerElement: "#footer",
-			duration: document.querySelector("#footer").clientHeight,
+			duration: "100%",
 			triggerHook: 0.55
 		})
-			.setClassToggle(lastPage, "whiteTextScroll")
-			.addTo(controller)
+			.setClassToggle(lastPage, "changeColor")
+			.addTo(controller);
 	}
+
+	public changeColor = () => {
+		let controller = new ScrollMagic.Controller();
+		let scene = null;
+		const colorChangeSections = document.querySelectorAll(
+			".colorChangeSection"
+		);
+
+		if (window.innerWidth < 768) {
+			colorChangeSections.forEach(section => {
+				scene = new ScrollMagic.Scene({
+					triggerElement: section,
+					triggerHook: 0.5,
+					duration: "100%"
+				})
+					.setClassToggle(
+						this.refs.counterLastItemRef.current,
+						"changeColorScroll"
+					)
+					.addTo(controller);
+			});
+		}
+
+		window.addEventListener(
+			"resize",
+			debounce(() => {
+				console.log("resize");
+				if (window.innerWidth > 768) {
+					if (scene) {
+						scene.destroy(true);
+						scene = null;
+						controller.destroy(true);
+						controller = null;
+					}
+				} else {
+					if (!controller) {
+						controller = new ScrollMagic.Controller();
+					}
+					colorChangeSections.forEach(section => {
+						scene = new ScrollMagic.Scene({
+							triggerElement: section,
+							triggerHook: 0.5,
+							duration: "100%"
+						})
+							.setClassToggle(
+								this.refs.counterLastItemRef.current,
+								"changeColorScroll"
+							)
+							.addTo(controller);
+					});
+				}
+			}, 250)
+		);
+		console.log("controller", controller);
+		console.log("scene", scene);
+	};
 
 	get defaultState() {
 		return {};
@@ -98,7 +136,7 @@ class PortfolioCounterNav extends Component<
 	get defaultProps() {
 		return {
 			currentPage: null,
-			whiteText: false,
+			menuOpen: false
 		};
 	}
 

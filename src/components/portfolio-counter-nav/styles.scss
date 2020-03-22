@@ -18,6 +18,21 @@
 			right: 4rem;
 		}
 
+		&__container {
+			&.menuOpen {
+				.counter__item {
+					&:last-child {
+						.counter__link {
+							color: $white;
+							&::before {
+								background-color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+
 		&__item {
 			line-height: 1;
 			padding: 2rem 0;
@@ -35,7 +50,8 @@
 						background-color: $black;
 					}
 
-					&.whiteText, &.whiteTextScroll {
+					&.changeColor,
+					&.changeColorScroll {
 						&::before {
 							background-color: $white;
 						}
@@ -50,8 +66,9 @@
 			text-decoration: none;
 			font-size: 2rem;
 			line-height: 2.5rem;
-
-			&.whiteText, &.whiteTextScroll {
+			
+			&.changeColor,
+			&.changeColorScroll {
 				color: $white;
 			}
 

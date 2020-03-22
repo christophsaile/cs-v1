@@ -1,6 +1,7 @@
 import Component, { createRef } from "@biotope/element";
 import template from "./template";
 import * as ScrollMagic from "scrollmagic";
+import { debounce } from "../../resources/js/debounce";
 
 import {
 	PortfolioArrowNavProps,
@@ -73,7 +74,9 @@ class PortfolioArrowNav extends Component<
 	public changeColor = () => {
 		let controller = new ScrollMagic.Controller();
 		let scene = null;
-		const colorChangeSections = document.querySelectorAll('.colorChangeSection');
+		const colorChangeSections = document.querySelectorAll(
+			".colorChangeSection"
+		);
 
 		if (window.innerWidth < 768) {
 			colorChangeSections.forEach(section => {
@@ -82,34 +85,43 @@ class PortfolioArrowNav extends Component<
 					triggerHook: 0.9,
 					duration: "100%"
 				})
-					.setClassToggle(this.refs.showMoreIconRef.current, "changeColorScroll")
+					.setClassToggle(
+						this.refs.showMoreIconRef.current,
+						"changeColorScroll"
+					)
 					.addTo(controller);
 			});
 		}
 
-		window.onresize = () => {
-			if (window.innerWidth > 768) {
-				if (scene) {
-					scene.destroy(true);
-					scene = null;
-					controller.destroy(true);
-					controller = null;
+		window.addEventListener(
+			"resize",
+			debounce(() => {
+				if (window.innerWidth > 768) {
+					if (scene) {
+						scene.destroy(true);
+						scene = null;
+						controller.destroy(true);
+						controller = null;
+					}
+				} else {
+					if (!controller) {
+						controller = new ScrollMagic.Controller();
+					}
+					colorChangeSections.forEach(section => {
+						scene = new ScrollMagic.Scene({
+							triggerElement: section,
+							triggerHook: 0.9,
+							duration: "100%"
+						})
+							.setClassToggle(
+								this.refs.showMoreIconRef.current,
+								"changeColorScroll"
+							)
+							.addTo(controller);
+					});
 				}
-			} else {
-				if (!controller) {
-					controller = new ScrollMagic.Controller();
-				}
-				colorChangeSections.forEach(section => {
-					scene = new ScrollMagic.Scene({
-						triggerElement: section,
-						triggerHook: 0.9,
-						duration: "100%"
-					})
-						.setClassToggle(this.refs.showMoreIconRef.current, "changeColorScroll")
-						.addTo(controller);
-				});
-			}
-		};
+			}, 250)
+		);
 	};
 
 	get defaultState() {
