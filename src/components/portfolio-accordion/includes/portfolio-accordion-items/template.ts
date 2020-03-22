@@ -1,5 +1,4 @@
 import * as styles from "./styles.scss";
-import cn from "classnames";
 
 import {
 	PortfolioAccordionItemsProps,
@@ -16,10 +15,10 @@ export default (
 
 	return render`
 	${createStyle(styles)}
-	<article class=${`accordion__item ${data.modifier}`} >
+	<article class=accordion__item>
 		<header class="accordion__header ${data.isOpen ? '' : 'closed'}" ref=${refs.accordionHeaderRef}>
 			<span class="accordion__icon"></span>
-			<portfolio-headline no-margin type="h4" data-resources="[{paths: ['components/PortfolioHeadline/index.js']}]">
+			<portfolio-headline half type="h2" data-resources="[{paths: ['components/PortfolioHeadline/index.js']}]">
 				<slot name="heading"></slot>
 			</portfolio-headline>
 		</header>

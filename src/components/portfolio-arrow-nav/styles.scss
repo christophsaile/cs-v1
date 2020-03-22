@@ -3,33 +3,65 @@
 
 @include host("portfolio-arrow-nav") {
 	.showMore {
-		position: absolute;
+		position: fixed;
+		right: 2rem;
 		bottom: 0;
+		display: flex;
+		flex-direction: column;
 		padding-bottom: 0.5rem;
-		right: 6%;
-		opacity: 1;
 		transition: all $transition-default;
 		cursor: pointer;
-		z-index: $z-index-showMore;
 
-		&--scrollActive {
-			opacity: 0;
+		@include breakpoint($medium) {
+			right: 4rem;
 		}
+
 		&__icon {
-			display: block;
-			fill: $white;
+			fill: $black;
+			margin-bottom: 1.3rem;
+			transition: all 0.2s ease-in-out;
 		}
-		&__text {
-			color: $black;
-			display: block;
-			margin-top: 1.3rem;
-			writing-mode: vertical-lr;
-			font-family: $font-family-bold;
-			font-size: 2rem;
 
+		&__text {
+			color: $blue;
+			height: 0;
+			width: 0;
+			padding-bottom: 1.3rem;
+			writing-mode: vertical-lr;
+			font-size: 2rem;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.2s ease-in-out, height 0s, visibility 0s;
+
+			&.showText {
+				height: auto;
+				width: auto;
+				opacity: 1;
+				visibility: visible;
+			}
 		}
-		&:hover {
-			fill: darkgrey;
+		
+		.arrowUp {
+			.showMore__icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		.changeColor,
+		.changeColorScroll {
+			.showMore__icon {
+				fill: $white;
+			}
+		}
+
+		&.menuOpen {
+			.showMore__text {
+				color: $white;
+			}
+
+			.showMore__icon {
+				fill: $white;
+			}
 		}
 	}
 }

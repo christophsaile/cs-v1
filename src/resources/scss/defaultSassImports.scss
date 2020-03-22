@@ -1,5 +1,4 @@
-@import 'base/types';
-@import 'settings/settings';
-@import 'layouts/grid';
-@import 'utilities/functions';
-//@import 'fonts/fonts';
+/* Note: settings and breakpoints are already importent in base/types */
+
+@import "base/types";
+@import "base/margins";

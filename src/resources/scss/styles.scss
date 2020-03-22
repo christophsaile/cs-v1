@@ -1,8 +1,7 @@
 @charset "UTF-8";
+/* defaulSass */
 
-/* global settings */
-@import "settings/settings";
-
+@import "defaultSassImports";
 /* animations */
 @import "animations/animated";
 
@@ -11,20 +10,11 @@
 
 /* fonts */
 @import "fonts/fonts";
-// @import "../../../.iconfont/iconStyles";
-// @import "../../../.iconfont/icons";
-
-/* breakpoint */
-@import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 /* layout */
 @import "layouts/default";
 @import "layouts/section";
 @import "layouts/grid";
-
-/* base styles */
-@import "base/margins";
-@import "base/types";
 
 /* global */
 @import "global";

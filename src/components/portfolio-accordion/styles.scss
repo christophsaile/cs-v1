@@ -2,4 +2,45 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("portfolio-accordion") {
+	.accordion {
+		display: flex;
+		height: 100%;
+		width: 100%;
+
+		@include breakpoint($medium) {
+			width: 70vw;
+			margin: auto;
+		}
+
+		portfolio-headline {
+			line-height: 0;
+			padding-right: 0.5rem;
+			color: $blue;
+		}
+
+		&__items {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			padding: 2rem;
+			background-image: url(../../_assets/wide_contact.jpg);
+			background-size: 100%;
+
+			@include breakpoint($xxlarge) {
+				padding: 4rem;
+			}
+			::slotted(:first-child) {
+				width: 80%;
+				height: 35%;
+			}
+			::slotted(:nth-child(2)) {
+				height: 32.5%;
+				margin-left: auto;
+			}
+			::slotted(:last-child) {
+				width: 80%;
+				height: 32.5%;
+			}
+		}
+	}
 }

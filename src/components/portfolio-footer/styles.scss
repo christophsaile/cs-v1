@@ -1,0 +1,98 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("portfolio-footer") {
+	.footer {
+		padding: 6rem 6rem 6rem 2rem;
+		background-color: $black;
+		color: $white;
+		font-family: $font-family-half-regular-regular;
+		letter-spacing: 0.2rem;
+
+		@include breakpoint($medium) {
+			padding: 6rem 8rem 8rem 4rem;
+		}
+
+		@include breakpoint($wide) {
+			padding: 10rem 8rem 12rem 4rem;
+		}
+
+		a {
+			color: $white;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+
+		&__logo {
+			max-width: $xxlarge;
+			margin: auto;
+			line-height: 1;
+
+			a {
+				font-size: 8rem;
+			}
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column-reverse;
+			padding-top: 4rem;
+			max-width: $xxlarge;
+			margin: auto;
+
+			@include breakpoint($medium) {
+				flex-direction: row;
+			}
+		}
+
+		&__navigation {
+			width: 50%;
+
+			@include breakpoint($medium) {
+				margin-right: 4rem;
+				border-right: 1px solid rgba($color: $white, $alpha: 0.1);
+			}
+
+			li:not(:first-child) {
+				padding-top: 1rem;
+
+				@include breakpoint($wide) {
+					padding-top: 3rem;
+				}
+			}
+		}
+
+		&__social {
+			width: 50%;
+
+			ul {
+				display: flex;
+				padding: 2rem 0;
+
+				@include breakpoint($wide) {
+					padding: 3rem;
+				}
+
+				li:not(:last-child) {
+					margin-right: 3rem;
+
+					@include breakpoint($medium) {
+						margin-right: 4rem;
+					}
+				}
+			}
+
+			svg {
+				width: 3.2rem;
+				height: 3.2rem;
+				fill: $white;
+
+				&:hover {
+					fill: $blue;
+				}
+			}
+		}
+	}
+}

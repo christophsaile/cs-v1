@@ -1,0 +1,72 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("portfolio-about-me") {
+	.aboutMe {
+		display: flex;
+		height: 100%;
+		width: 100%;
+
+		&__content {
+			width: 100%;
+			margin: auto 0;
+			color: $blue;
+			z-index: 1;
+
+			@include breakpoint($medium) {
+				width: 50%;
+				padding: 0 2rem 0 4rem;
+			}
+
+			@include breakpoint($wide) {
+				padding: 0 0 0 6rem;
+			}
+
+			::slotted(p) {
+				padding: 2rem 0 0 0;
+				color: $white;
+
+				@include breakpoint($medium) {
+					color: $black;
+				}
+			}
+		}
+
+		&__img {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			max-height: 100vh;
+			overflow: hidden;
+
+			@include breakpoint($medium) {
+				position: static;
+				margin: auto;
+				height: 100%;
+			}
+
+			@include breakpoint($wide) {
+				height: 100rem;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&__layer {
+			@include breakpoint($medium) {
+				display: none;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background: rgba($color: #000000, $alpha: 0.6);
+			}
+		}
+	}
+}

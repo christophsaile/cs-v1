@@ -1,61 +1,137 @@
 import Component, { createRef } from "@biotope/element";
 import template from "./template";
+import * as ScrollMagic from "scrollmagic";
 import { debounce } from "../../resources/js/debounce";
 
-import { PortfolioArrowNavProps, PortfolioArrowNavState, PortfolioArrowNavMethods } from "./defines";
+import {
+	PortfolioArrowNavProps,
+	PortfolioArrowNavState,
+	PortfolioArrowNavMethods
+} from "./defines";
 
-class PortfolioArrowNav extends Component<PortfolioArrowNavProps, PortfolioArrowNavState> {
+class PortfolioArrowNav extends Component<
+	PortfolioArrowNavProps,
+	PortfolioArrowNavState
+> {
 	static componentName = "portfolio-arrow-nav";
 
-	static attributes = ["text"];
+	static attributes = ["text", { name: "menu-open", type: "boolean" }];
 
 	public methods: PortfolioArrowNavMethods = {};
-	public showMore: HTMLElement;
-	public showMoreHeight: number;
-	public prevScrollPos: number;
-	public currentScrollPos: number;
 
 	private refs = {
 		showMoreRef: createRef<HTMLElement>(),
+		showMoreIconRef: createRef<HTMLElement>(),
+		showMoreTextRef: createRef<HTMLElement>()
 	};
-	rendered() {
-		this.showMore = this.refs.showMoreRef.current;
-		this.showMoreHeight = this.showMore.offsetHeight;
-		this.prevScrollPos = window.innerHeight / 10;
+	ready() {
+		this.initScrollAnimation();
+		this.changeColor();
 
-		this.scrollDown();
-	}
-	public scrollDown() {
-		window.addEventListener(
-			"scroll",
-			debounce(() => {
-				this.currentScrollPos = window.pageYOffset;
-				if (this.prevScrollPos > this.currentScrollPos) {
-					this.showMore.classList.remove("showMore--scrollActive");
-					this.showMore.style.bottom = "";
-				} else {
-					this.showMore.classList.add("showMore--scrollActive");
-					this.showMore.style.bottom =
-						"-" + this.showMoreHeight + "px";
-				}
-			}, 300)
-		);
-
-		this.showMore.addEventListener("click", () => {
-			window.scrollBy({
-				top: window.innerHeight,
-				left: 0,
-				behavior: "smooth"
-			});
+		this.refs.showMoreRef.current.addEventListener("click", () => {
+			if (this.refs.showMoreRef.current.classList.contains("arrowUp")) {
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: "smooth"
+				});
+			} else {
+				window.scrollBy({
+					top: window.innerHeight,
+					left: 0,
+					behavior: "smooth"
+				});
+			}
 		});
 	}
+
+	public initScrollAnimation() {
+		let controller = new ScrollMagic.Controller();
+
+		let intro = new ScrollMagic.Scene({
+			triggerElement: "#intro",
+			triggerHook: 0.9,
+			duration: document.querySelector("#intro").clientHeight
+		})
+			.setClassToggle(this.refs.showMoreTextRef.current, "showText")
+			.addTo(controller);
+
+		let contact = new ScrollMagic.Scene({
+			triggerElement: "#contact",
+			triggerHook: 0.5
+		})
+			.setClassToggle(this.refs.showMoreIconRef.current, "arrowUp")
+			.addTo(controller);
+
+		let footer = new ScrollMagic.Scene({
+			triggerElement: "#footer",
+			triggerHook: 1
+		})
+			.setClassToggle(this.refs.showMoreIconRef.current, "changeColor")
+			.addTo(controller);
+	}
+
+	public changeColor = () => {
+		let controller = new ScrollMagic.Controller();
+		let scene = null;
+		const colorChangeSections = document.querySelectorAll(
+			".colorChangeSection"
+		);
+
+		if (window.innerWidth < 768) {
+			colorChangeSections.forEach(section => {
+				scene = new ScrollMagic.Scene({
+					triggerElement: section,
+					triggerHook: 0.9,
+					duration: "100%"
+				})
+					.setClassToggle(
+						this.refs.showMoreIconRef.current,
+						"changeColorScroll"
+					)
+					.addTo(controller);
+			});
+		}
+
+		window.addEventListener(
+			"resize",
+			debounce(() => {
+				if (window.innerWidth > 768) {
+					if (scene) {
+						scene.destroy(true);
+						scene = null;
+						controller.destroy(true);
+						controller = null;
+					}
+				} else {
+					if (!controller) {
+						controller = new ScrollMagic.Controller();
+					}
+					colorChangeSections.forEach(section => {
+						scene = new ScrollMagic.Scene({
+							triggerElement: section,
+							triggerHook: 0.9,
+							duration: "100%"
+						})
+							.setClassToggle(
+								this.refs.showMoreIconRef.current,
+								"changeColorScroll"
+							)
+							.addTo(controller);
+					});
+				}
+			}, 250)
+		);
+	};
+
 	get defaultState() {
 		return {};
 	}
 
 	get defaultProps() {
 		return {
-			text: null
+			text: null,
+			menuOpen: false
 		};
 	}
 

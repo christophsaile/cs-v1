@@ -5,27 +5,20 @@
 /**
  * Props
  */
- interface PortfolioAccordionVerticalProps {
-
- }
+interface PortfolioAccordionVerticalProps {}
 
 /**
  * State
  */
- interface PortfolioAccordionVerticalState {
-
- }
+interface PortfolioAccordionVerticalState {}
 
 /**
  * Methods
  */
- interface PortfolioAccordionVerticalMethods {
-
- }
-
+interface PortfolioAccordionVerticalMethods {}
 
 export {
-    PortfolioAccordionVerticalProps,
+	PortfolioAccordionVerticalProps,
 	PortfolioAccordionVerticalState,
 	PortfolioAccordionVerticalMethods
-}
+};

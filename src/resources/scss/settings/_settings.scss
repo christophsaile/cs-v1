@@ -1,36 +1,20 @@
 // GLOBAL SASS SETTINGS
 
 // FONTS
-$font-family-light: "Gilroy-Light", sans-serif;
-$font-family-bold: "Gilroy-ExtraBold", sans-serif;
+$font-family-raleway-thin: "ralewaylight", sans-serif;
+$font-family-raleway-medium: "ralewaymedium", sans-serif;
+$font-family-half-regular: "halfregular", sans-serif;
+$font-family-half-bold-regular: "half_boldregular", sans-serif;
+$font-family-half-inline-regular: "half_inlineregular", sans-serif;
+$font-family-half-regular-regular: "half_regularregular", sans-serif;
 $font-weight-normal: normal;
 
-// Z-INDEXES
-//HEADER
-$z-index-header: 20;
-//NAV
-$z-index-showMore: 12;
-$z-index-counter: 12;
-$z-index-svg: 11;
-//MAIN
-//LANDINGPAGE
-$z-index-main: 10;
-//ABOUTME
-
-//FOOTER
-$z-index-footer: 20;
-$z-index-footer-brand: 3;
-$z-index-footer-svg: 2;
-
 // COLORS
-$orangeGradient: linear-gradient(90deg, #f7b733, #ff7012);
-$purpleGradient: linear-gradient(90deg, #4a00e0, #8e2de2);
-$blackGradient: linear-gradient(90deg, #434343, #000000);
 $coral: rgb(255, 164, 137);
 $red: rgb(222, 40, 38);
 $turquoise: rgb(159, 212, 202);
-$white: rgb(245, 245, 235);
-$blue: #00a5b9;
+$white: #fff;
+$blue: #627C81;
 $yellow: #fdd06a;
 $black: rgb(24, 23, 23);
 
@@ -38,9 +22,9 @@ $black: rgb(24, 23, 23);
 $transition-default: 0.3s cubic-bezier(1, 0.5, 0, 1);
 
 // BODY STYLES
-$body-bg: $black;
-$body-font-color: $white;
-$body-font-family: $font-family-light;
+$body-bg: $white;
+$body-font-color: $black;
+$body-font-family: $font-family-raleway-thin;
 $body-font-weight: $font-weight-normal;
 $body-font-style: normal;
 $body-font-size: 10px;
@@ -57,7 +41,10 @@ $small: 600px;
 $medium: 768px;
 $large: 992px;
 $xlarge: 1200px;
-$wide: 1440px;
+$xxlarge: 1440px;
+$wide: 1600px;
+$ultraWide: 1920px;
+
 
 // MaxValues
 $xsmallMax: $small - 1;

@@ -1,0 +1,67 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../../../resources/scss/defaultSassImports.scss";
+
+@include host("portfolio-timeline-item") {
+	.timeline {
+		&__content {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+            height: 100%;
+            padding: 0 1rem 0 0;
+			color: black;
+			transform: translateX(-100vw);
+			transition: all 800ms;
+			
+			@include breakpoint($medium) {
+                display: block;
+                padding: 0 0 1rem 0;
+			}
+
+			@include breakpoint($wide) {
+				padding: 0 0 6rem 0;
+			}
+
+			&:hover {
+				slot[name="timeline__date"]::slotted(*) {
+					border-bottom: 2px solid $blue;
+				}
+			}
+
+			&.visible {
+				transform: translateX(0);
+			}
+
+			&.right {
+                text-align: right;
+                padding: 0 0 0 1rem;
+
+				@include breakpoint($medium) {
+                    text-align: left;
+                    padding: 1rem 0 0 0 ;
+				}
+
+				@include breakpoint($wide) {
+					padding: 6rem 0 0 0;
+				}
+			}
+
+			slot[name="timeline__date"]::slotted(*) {
+				border-bottom: 2px solid transparent;
+				transition: all 300ms;
+			}
+
+			slot[name="timeline__text"]::slotted(*) {
+				padding-top: 1rem;
+			}
+
+			::slotted(*) {
+				@include breakpoint($xxlarge) {
+					width: 80%;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

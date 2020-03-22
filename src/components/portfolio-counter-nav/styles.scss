@@ -4,52 +4,76 @@
 @include host("portfolio-counter-nav") {
 	.counter {
 		position: fixed;
+		margin: 6rem 0;
+		top: 0;
+		right: 2rem;
+		bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
-		top: 0;
-		bottom: 0;
-		right: 6%;
 		transition: right $transition-default;
-		z-index: $z-index-counter;
 
-		&--left {
-			right: calc(94% - 2rem); // dont forget the size of the pageCounter itself
-			transition: right $transition-default;
+		@include breakpoint($medium) {
+			right: 4rem;
 		}
+
 		&__container {
-			list-style: none;
-			margin-block-start: 0;
-			margin-block-end: 0;
-			padding-inline-start: 0;
+			&.menuOpen {
+				.counter__item {
+					&:last-child {
+						.counter__link {
+							color: $white;
+							&::before {
+								background-color: $white;
+							}
+						}
+					}
+				}
+			}
 		}
+
 		&__item {
 			line-height: 1;
 			padding: 2rem 0;
 
+			&:last-child {
+				.counter__link {
+					&::before {
+						position: absolute;
+						bottom: 1.9rem;
+						left: 0;
+						height: 0.1rem;
+						width: 100%;
+						margin-bottom: 2.3rem;
+						content: "";
+						background-color: $black;
+					}
 
-			&:first-child {
-				.counter__link::after {
-					position: absolute;
-					bottom: -1.9rem;
-					left: 0;
-					height: 0.1rem;
-					width: 100%;
-					margin-top: 2rem;
-					content: "";
-					background-color: $white;
+					&.changeColor,
+					&.changeColorScroll {
+						&::before {
+							background-color: $white;
+						}
+					}
 				}
 			}
 		}
+
 		&__link {
 			position: relative;
-			color: $white;
+			color: $black;
 			text-decoration: none;
-
+			font-size: 2rem;
+			line-height: 2.5rem;
+			
+			&.changeColor,
+			&.changeColorScroll {
+				color: $white;
+			}
 
 			&--active {
-				color: $red;
+				color: $blue;
 				transition: all $transition-default;
 			}
 		}
