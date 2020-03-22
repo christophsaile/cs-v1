@@ -22,19 +22,6 @@
 			transition: all 0.2s ease-in-out;
 		}
 
-		&.whiteText,
-		&.whiteTextScroll {
-			.showMore__icon {
-				fill: $white;
-			}
-		}
-		
-		&.arrowUp {
-			.showMore__icon {
-				transform: rotate(180deg);
-			}
-		}
-
 		&__text {
 			color: $blue;
 			height: 0;
@@ -45,14 +32,35 @@
 			opacity: 0;
 			visibility: hidden;
 			transition: opacity 0.2s ease-in-out, height 0s, visibility 0s;
-		}
 
-		&.showText {
-			.showMore__text {
+			&.showText {
 				height: auto;
 				width: auto;
 				opacity: 1;
 				visibility: visible;
+			}
+		}
+		
+		.arrowUp {
+			.showMore__icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		.changeColor,
+		.changeColorScroll {
+			.showMore__icon {
+				fill: $white;
+			}
+		}
+
+		&.menuOpen {
+			.showMore__text {
+				color: $white;
+			}
+
+			.showMore__icon {
+				fill: $white;
 			}
 		}
 	}

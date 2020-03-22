@@ -7,7 +7,7 @@
  */
  interface PortfolioArrowNavProps {
 	text: string;
-	whiteText: boolean
+	menuOpen: boolean
  }
 
 /**

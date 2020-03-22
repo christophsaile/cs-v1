@@ -14,12 +14,13 @@ class PortfolioArrowNav extends Component<
 > {
 	static componentName = "portfolio-arrow-nav";
 
-	static attributes = ["text", { name: "white-text", type: "boolean" }];
+	static attributes = ["text", { name: "menu-open", type: "boolean" }];
 
 	public methods: PortfolioArrowNavMethods = {};
 
 	private refs = {
 		showMoreRef: createRef<HTMLElement>(),
+		showMoreIconRef: createRef<HTMLElement>(),
 		showMoreTextRef: createRef<HTMLElement>()
 	};
 	ready() {
@@ -51,44 +52,44 @@ class PortfolioArrowNav extends Component<
 			triggerHook: 0.9,
 			duration: document.querySelector("#intro").clientHeight
 		})
-			.setClassToggle(this.refs.showMoreRef.current, "showText")
+			.setClassToggle(this.refs.showMoreTextRef.current, "showText")
 			.addTo(controller);
 
 		let contact = new ScrollMagic.Scene({
 			triggerElement: "#contact",
 			triggerHook: 0.5
 		})
-			.setClassToggle(this.refs.showMoreRef.current, "arrowUp")
+			.setClassToggle(this.refs.showMoreIconRef.current, "arrowUp")
 			.addTo(controller);
 
 		let footer = new ScrollMagic.Scene({
 			triggerElement: "#footer",
 			triggerHook: 1
 		})
-			.setClassToggle(this.refs.showMoreRef.current, "whiteTextScroll")
+			.setClassToggle(this.refs.showMoreIconRef.current, "changeColor")
 			.addTo(controller);
 	}
 
 	public changeColor = () => {
 		let controller = new ScrollMagic.Controller();
 		let scene = null;
+		const colorChangeSections = document.querySelectorAll('.colorChangeSection');
 
 		if (window.innerWidth < 768) {
-			scene = new ScrollMagic.Scene({
-				triggerElement: "#aboutMe",
-				triggerHook: 1,
-				duration: "100%"
-			})
-				.setClassToggle(this.refs.showMoreRef.current, "whiteText")
-				.addTo(controller);
+			colorChangeSections.forEach(section => {
+				scene = new ScrollMagic.Scene({
+					triggerElement: section,
+					triggerHook: 0.9,
+					duration: "100%"
+				})
+					.setClassToggle(this.refs.showMoreIconRef.current, "changeColorScroll")
+					.addTo(controller);
+			});
 		}
-		console.log(controller);
 
 		window.onresize = () => {
-			console.log(window.innerWidth);
 			if (window.innerWidth > 768) {
 				if (scene) {
-					console.log("fire");
 					scene.destroy(true);
 					scene = null;
 					controller.destroy(true);
@@ -98,31 +99,18 @@ class PortfolioArrowNav extends Component<
 				if (!controller) {
 					controller = new ScrollMagic.Controller();
 				}
-				scene = new ScrollMagic.Scene({
-					triggerElement: "#aboutMe",
-					triggerHook: 1,
-					duration: "100%"
-				})
-					.setClassToggle(this.refs.showMoreRef.current, "whiteText")
-					.addTo(controller);
+				colorChangeSections.forEach(section => {
+					scene = new ScrollMagic.Scene({
+						triggerElement: section,
+						triggerHook: 0.9,
+						duration: "100%"
+					})
+						.setClassToggle(this.refs.showMoreIconRef.current, "changeColorScroll")
+						.addTo(controller);
+				});
 			}
-
-			console.log("resize controller", controller);
-			console.log("resize scene", scene);
 		};
 	};
-
-	// public changeColorAnimation = (controller, scene) => {
-	// 	controller = new ScrollMagic.Controller();
-	// 	scene = new ScrollMagic.Scene({
-	// 		triggerElement: "#aboutMe",
-	// 		triggerHook: 1,
-	// 		duration: "100%"
-	// 	})
-	// 		.setClassToggle(this.refs.showMoreRef.current, "whiteText")
-	// 		.addTo(controller);
-	// 	return controller;
-	// }
 
 	get defaultState() {
 		return {};
@@ -131,7 +119,7 @@ class PortfolioArrowNav extends Component<
 	get defaultProps() {
 		return {
 			text: null,
-			whiteText: false
+			menuOpen: false
 		};
 	}
 

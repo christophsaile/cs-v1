@@ -1,5 +1,6 @@
 import Component, { HTMLFragment, createRef } from "@biotope/element";
 import { template } from "./template";
+import { debounce } from "../../resources/js/debounce";
 import {
 	PortfolioNavigationProps,
 	PortfolioNavigationState,
@@ -34,43 +35,42 @@ class PortfolioNavigation extends Component<
 	};
 
 	ready() {
-		this.refs.navRef.current.addEventListener(
-			"isNavOpen",
-			(event: CustomEvent) => {
-				if (
-					this.refs.counterRef.current.shadowRoot.querySelector(
-						".whiteTextScroll"
-					) === null
-				) {
-					event.detail
-						? this.refs.counterRef.current.setAttribute(
-								"white-text",
-								"true"
-						  )
-						: this.refs.counterRef.current.setAttribute(
-								"white-text",
-								"false"
-						  );
-				}
-				if (
-					this.refs.arrowRef.current.shadowRoot.querySelector(
-						".whiteTextScroll"
-					) === null
-				) {
-					event.detail
-						? this.refs.arrowRef.current.setAttribute(
-								"white-text",
-								"true"
-						  )
-						: this.refs.arrowRef.current.setAttribute(
-								"white-text",
-								"false"
-						  );
-				}
-			}
+		this.isNavOpen();
+		this.colorChange();
+
+		window.addEventListener(
+			"resize",
+			debounce(() => {
+				this.colorChange();
+			}, 250)
 		);
 	}
 
+	private colorChange = () => {
+		const colorChangeSections = ["#aboutMe", "#contact"];
+
+		colorChangeSections.forEach(section => {
+			document.querySelector(section).classList.add("colorChangeSection");
+		});
+	};
+
+	private isNavOpen = () => {
+		this.refs.navRef.current.addEventListener(
+			"isNavOpen",
+			(event: CustomEvent) => {
+				let array = [
+					this.refs.counterRef.current,
+					this.refs.arrowRef.current
+				];
+				array.forEach(element => {
+					event.detail
+						? element.setAttribute("menu-open", "true")
+						: element.setAttribute("menu-open", "false");
+				});
+			}
+		);
+	};
+	
 	public render(): HTMLFragment {
 		return template(
 			{ ...this.props, ...this.state, ...this.methods },

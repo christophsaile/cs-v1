@@ -18,7 +18,7 @@ export const template = (
 			<div class="contact__content" ref=${refs.contactContentRef}>
 				<slot />
 			</div>
-			<picture class="contact__img" ref=${refs.contactImgRef}>
+			<picture class="contact__img">
 				<source
 					srcset="_assets/wide_${data.imgName}"
 					media="(min-width: 768px)"
@@ -27,7 +27,8 @@ export const template = (
 				<img
 					src="_assets/${data.imgName}"
 					alt=${data.imgAlt}
-					ref=${refs.aboutMeImgRef}
+					ref=${refs.contactImgRef}
+					
 				/>
 			</picture>
 			<div class="contact__layer"></div>

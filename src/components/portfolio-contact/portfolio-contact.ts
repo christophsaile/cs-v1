@@ -43,17 +43,14 @@ class PortfolioContact extends Component<
 	public initScrollAnimation() {
 		let controller = new ScrollMagic.Controller({});
 
-		let fadeInText = new ScrollMagic.Scene({
-			triggerElement: '#contact',
-			triggerHook: 1,
-			duration: "180%"
+		let parallaxText = new ScrollMagic.Scene({
+			triggerElement: this.refs.contactContentRef.current,
+			triggerHook: 0.9
 		})
 			.setTween(
-				TweenMax.from('#contact', 1, {
-					autoAlpha: 0,
-					repeat: 1,
-					yoyo: true,
-					repeatDelay: 1
+				TweenMax.from(this.refs.contactContentRef.current, 1, {
+					y: "-30%",
+					autoAlpha: 0
 				})
 			)
 			.addTo(controller);
