@@ -60,7 +60,7 @@ class PortfolioCounterNav extends Component<
 				.addTo(controller)
 				.on("enter", function() {
 					currentPage.innerHTML = "0" + (index + 1);
-					currentPage.setAttribute("href", element.id);
+					currentPage.setAttribute("href", '#'+element.id);
 				});
 		});
 
