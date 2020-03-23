@@ -5,6 +5,8 @@
 @include host("portfolio-intro") {
 	.intro {
 		line-height: 0;
+		display: flex;
+		justify-content: center;
 
 		svg {
 			max-height: 70vh;
