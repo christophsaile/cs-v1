@@ -29,7 +29,7 @@ class PortfolioArrowNav extends Component<
 		this.changeColor();
 
 		this.refs.showMoreRef.current.addEventListener("click", () => {
-			if (this.refs.showMoreRef.current.classList.contains("arrowUp")) {
+			if (this.refs.showMoreIconRef.current.classList.contains("arrowUp")) {
 				window.scrollTo({
 					top: 0,
 					left: 0,
