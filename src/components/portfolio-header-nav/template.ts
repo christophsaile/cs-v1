@@ -31,7 +31,6 @@ export default (
 				<li class="navHeader__links"><a href="#aboutMe"><span>About Me</span></a></li>
 				<li class="navHeader__links"><a href="#timeline"><span>Timeline</span></a></li>
 				<li class="navHeader__links"><a href="#contact"><span>Contact</span></a></li>
-				<li class="navHeader__links"><a href="#credits"><span>Credits</span></a></li>
 			</ul>
 		</div>
 		</nav>
