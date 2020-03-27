@@ -37,9 +37,6 @@ const vm = require("vm");
 		document.onreadystatechange = function() {
 			if (document.readyState === "complete") {
 				document
-					.querySelector(".initLoader__helix")
-					.classList.remove("active");
-				document
 					.querySelector(".initLoader__intro")
 					.classList.add("active");
 				document
