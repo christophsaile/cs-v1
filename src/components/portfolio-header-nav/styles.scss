@@ -51,7 +51,7 @@
 					opacity: 0;
 					font-size: 4.5rem;
 					line-height: 5.4rem;
-					transition: opacity 0.4s ease-in-out;
+					transition: color .2s ease-in-out, opacity .4s ease-in-out;
 
 					@include breakpoint($medium) {
 						font-size: 6rem;
@@ -121,6 +121,7 @@
 			position: fixed;
 			transition: all 0.2s ease-in-out;
 			z-index: 9;
+			font-family: $font-family-half-inline-regular;
 
 			@include breakpoint($medium) {
 				right: 4rem;
