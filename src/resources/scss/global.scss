@@ -1,6 +1,10 @@
 @import "settings/settings";
 @import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 
+body {
+	background: url('../../_assets/background_pattern.svg');
+	background-size: cover;
+}
 #aboutMe,
 #contact,
 #timeline {
