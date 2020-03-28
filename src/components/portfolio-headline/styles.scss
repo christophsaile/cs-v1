@@ -28,7 +28,7 @@
 	}
 
 	h1 {
-		font-size: 4.5rem;
+		font-size: 6.5rem;
 
 		@include breakpoint($medium) {
 			font-size: 8rem;
@@ -36,10 +36,10 @@
 	}
 
 	h2 {
-		font-size: 3.5rem;
+		font-size: 5.5rem;
 
 		@include breakpoint($medium) {
-			font-size: 7rem;
+			font-size: 6.5rem;
 		}
 
 		@include breakpoint ($wide) {
@@ -48,14 +48,14 @@
 	}
 
 	h3 {
-		font-size: 3rem;
+		font-size: 5.5rem;
 
 		@include breakpoint($medium) {
-			font-size: 6rem;
+			font-size: 6.5rem;
 		}
 
 		@include breakpoint ($wide) {
-			font-size: 8rem
+			font-size: 10rem
 		}
 	}
 
