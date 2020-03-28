@@ -10,12 +10,13 @@
 		&__content {
 			width: 100%;
 			margin: auto 0;
-			color: $blue;
+			color: $white;
 			z-index: 1;
 
 			@include breakpoint($medium) {
 				width: 50%;
 				padding: 0 0rem 0 4rem;
+				color: $black;
 			}
 
 			@include breakpoint($wide) {
