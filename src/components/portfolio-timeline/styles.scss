@@ -171,7 +171,11 @@
 			z-index: -1;
 
 			@include breakpoint ($medium) {
-				padding: 0 8rem;
+				padding: 0 8rem 0 4rem;
+			}
+			@include breakpoint	($wide) {
+				max-width: $ultraWide;
+				padding: 0 12rem 0 8rem;
 			}
 
 			img {
