@@ -21,7 +21,7 @@
 			grid-row-start: 1;
 			grid-row-end: span 11;
 			grid-column-start: 2;
-			background-color: $blue;
+			background-color: $black;
 
 			@include breakpoint($medium) {
 				grid-column-start: 1;
@@ -45,7 +45,7 @@
 				margin: auto -2rem auto 0;
 				width: 2rem;
 				height: 0.2rem;
-				background-color: $blue;
+				background-color: $black;
 			}
 
 			@include breakpoint($medium) {
@@ -84,7 +84,7 @@
 				margin: auto 0 auto -2rem;
 				width: 2rem;
 				height: 0.2rem;
-				background-color: $blue;
+				background-color: $black;
 			}
 
 			@include breakpoint($medium) {
@@ -171,7 +171,11 @@
 			z-index: -1;
 
 			@include breakpoint ($medium) {
-				padding: 0 8rem;
+				padding: 0 8rem 0 4rem;
+			}
+			@include breakpoint	($wide) {
+				max-width: $ultraWide;
+				padding: 0 12rem 0 8rem;
 			}
 
 			img {
