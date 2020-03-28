@@ -23,12 +23,6 @@
 				padding: 0 0 6rem 0;
 			}
 
-			&:hover {
-				slot[name="timeline__date"]::slotted(*) {
-					border-bottom: 2px solid $blue;
-				}
-			}
-
 			&.visible {
 				transform: translateX(0);
 			}
