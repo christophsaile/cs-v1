@@ -29,7 +29,8 @@ class PortfolioAboutMe extends Component<
 	public methods: PortfolioAboutMeMethods = {};
 	private refs = {
 		scrollTriggerRef: createRef<HTMLElement>(),
-		aboutMeImgRef: createRef<HTMLElement>()
+		aboutMeImgRef: createRef<HTMLElement>(),
+		aboutMeContentRef: createRef<HTMLElement>()
 	};
 
 	ready() {
@@ -51,13 +52,28 @@ class PortfolioAboutMe extends Component<
 			)
 			.addTo(controller);
 
-		let fadeInText = new ScrollMagic.Scene({
+		let fadeInImg = new ScrollMagic.Scene({
 			triggerElement: "#aboutMe",
 			triggerHook: 1,
 			duration: "200%"
 		})
 			.setTween(
-				TweenMax.from("#aboutMe", 1, {
+				TweenMax.from(this.refs.aboutMeImgRef.current, 1, {
+					autoAlpha: 0,
+					repeat: 1,
+					yoyo: true,
+					repeatDelay: 1
+				})
+			)
+			.addTo(controller);
+
+		let parallaxText = new ScrollMagic.Scene({
+			triggerElement: this.refs.aboutMeContentRef.current,
+			triggerHook: 1,
+			duration: "150%"
+		})
+			.setTween(
+				TweenMax.from(this.refs.aboutMeContentRef.current, 1, {
 					autoAlpha: 0,
 					repeat: 1,
 					yoyo: true,

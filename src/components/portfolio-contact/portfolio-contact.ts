@@ -45,22 +45,30 @@ class PortfolioContact extends Component<
 
 		let parallaxText = new ScrollMagic.Scene({
 			triggerElement: this.refs.contactContentRef.current,
-			triggerHook: 0.8
+			triggerHook: 1,
+			duration: "150%"
 		})
 			.setTween(
 				TweenMax.from(this.refs.contactContentRef.current, 1, {
-					autoAlpha: 0
+					autoAlpha: 0,
+					repeat: 1,
+					yoyo: true,
+					repeatDelay: 1
 				})
 			)
 			.addTo(controller);
 
 		let parallaxImg = new ScrollMagic.Scene({
-			triggerElement: this.refs.contactImgRef.current,
-			triggerHook: 1
+			triggerElement: '#contact',
+			triggerHook: 1,
+			duration: "200%"
 		})
 			.setTween(
 				TweenMax.from(this.refs.contactImgRef.current, 1, {
-					autoAlpha: 0
+					autoAlpha: 0,
+					repeat: 1,
+					yoyo: true,
+					repeatDelay: 1
 				})
 			)
 			.addTo(controller);

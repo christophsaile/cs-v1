@@ -28,7 +28,7 @@ export const template = (
 				/>
 			</picture>
 			<div class="aboutMe__layer"></div>
-			<article class="aboutMe__content">
+			<article ref=${refs.aboutMeContentRef} class="aboutMe__content">
 				<slot />
 			</article>
 		</section>
