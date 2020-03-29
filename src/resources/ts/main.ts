@@ -33,6 +33,22 @@ const vm = require("vm");
 				script.onload = () => callback();
 			}
 		};
+		
+		document.onreadystatechange = function() {
+			if (document.readyState === "complete") {
+				document
+					.querySelector(".initLoader__intro")
+					.classList.add("active");
+				document
+					.querySelector(".initLoader")
+					.classList.add("fadeOutBackground");
+				window.setTimeout(() => {
+					document
+						.querySelector(".initLoader")
+						.classList.remove("active");
+				}, 3000);
+			}
+		};
 
 		return new ResourceLoader({
 			base: biotope.configuration.get("data.staticResourcesBase"),
