@@ -21,11 +21,14 @@
 			}
 
 			.cls-2 {
-				stroke: $green;
+				stroke: transparent;
 				animation: halfInlineAnimation 4s linear 1.2s forwards;
 			}
 
-			.c, .p, .i, .e {
+			.c,
+			.p,
+			.i,
+			.e {
 				animation: halfAnimation 3.5s linear 1.5s forwards;
 			}
 

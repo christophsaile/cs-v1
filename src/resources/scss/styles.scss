@@ -2,8 +2,6 @@
 /* defaulSass */
 
 @import "defaultSassImports";
-/* animations */
-@import "animations/animated";
 
 /* functions */
 @import "utilities/functions";
@@ -13,8 +11,6 @@
 
 /* layout */
 @import "layouts/default";
-@import "layouts/section";
-@import "layouts/grid";
 
 /* global */
 @import "global";
