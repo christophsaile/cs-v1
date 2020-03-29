@@ -47,9 +47,14 @@
 		.text__medium a {
 			font-size: 3rem;
 			color: $green;
+			transition: all 2s;
 
 			@include breakpoint($medium) {
 				font-size: 6rem;
+			}
+
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}
