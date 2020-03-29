@@ -4,6 +4,7 @@
 		url("../fonts/raleway-light-webfont.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
 		url("../fonts/half-inline-webfont.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
 		url("../fonts/half-regular-webfont.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -28,11 +31,8 @@
          url('../fonts/made_saonara_2_personal_use-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+	font-display: swap;
 }
-
-
-
 
 @font-face {
     font-family: 'made_saonararegular';
