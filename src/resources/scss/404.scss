@@ -1,0 +1,56 @@
+@import "settings/settings";
+@import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+.pageNotFound {
+	display: flex;
+	height: 100vh;
+    padding: 4rem;
+    
+    &__background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('../../_assets/404.svg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+	&__content {
+		margin: auto;
+		text-align: center;
+		font-family: $font-family-half-regular-regular;
+
+		line-height: 1;
+
+		.text__large {
+			font-size: 6rem;
+
+			@include breakpoint($medium) {
+				font-size: 10rem;
+			}
+		}
+
+		.text__medium {
+			display: inline-block;
+			font-size: 3rem;
+			margin-top: 1rem;
+
+			@include breakpoint($medium) {
+				font-size: 6rem;
+			}
+		}
+
+		.text__medium a {
+			font-size: 3rem;
+			color: $green;
+
+			@include breakpoint($medium) {
+				font-size: 6rem;
+			}
+		}
+	}
+}

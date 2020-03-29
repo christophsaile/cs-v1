@@ -63,6 +63,12 @@ gulp.task('rename:files', function(cb) {
 					opt.basename = 'index';
 					return opt;
 				}
+
+				if (opt.basename === '01site.404') {
+					opt.basename = '404';
+					return opt;
+				}
+				
 				opt.basename = opt.basename.replace(/01site.0[0-9]+/, '');
 				return opt;
 			})
