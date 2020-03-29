@@ -14,19 +14,19 @@
 			height: 100%;
 
 			.cls-1 {
-				stroke: transparent;
+				stroke: $black;
 				stroke-width: 0.1rem;
-				fill: transparent;
-				animation: halfAnimation 3.5s linear 1.2s forwards;
+				fill: $black;
+				//animation: halfAnimation 3.5s linear 1.2s forwards;
 			}
 
 			.cls-2 {
-				stroke: transparent;
-				animation: halfInlineAnimation 4s linear 1.2s forwards;
+				stroke: $green;
+				//animation: halfInlineAnimation 4s linear 1.2s forwards;
 			}
 
 			.c, .p, .i, .e {
-				animation: halfAnimation 3.5s linear 1.5s forwards;
+				//animation: halfAnimation 3.5s linear 1.5s forwards;
 			}
 
 			@keyframes halfInlineAnimation {
