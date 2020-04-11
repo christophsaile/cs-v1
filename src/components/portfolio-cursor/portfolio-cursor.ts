@@ -36,10 +36,14 @@ class PortfolioCursor extends Component<
 		const innerCursor = this.refs.innerCursorRef.current;
 		const initCursor = () => {
 			// add listener to track the current mouse position
-			document.addEventListener("mousemove", e => {
-				clientX = e.clientX;
-				clientY = e.clientY;
-			});
+			document.addEventListener(
+				"mousemove",
+				e => {
+					clientX = e.clientX;
+					clientY = e.clientY;
+				},
+				{ passive: false }
+			);
 
 			// transform the innerCursor to the current mouse position
 			// use requestAnimationFrame() for smooth performance
@@ -48,7 +52,6 @@ class PortfolioCursor extends Component<
 					x: clientX,
 					y: clientY
 				});
-
 				requestAnimationFrame(render);
 			};
 			requestAnimationFrame(render);
@@ -59,8 +62,8 @@ class PortfolioCursor extends Component<
 		let lastY = 0;
 		let isStuck = false;
 		let showCursor = false;
-    let group, stuckX, stuckY, fillOuterCursor;
-    
+		let group, stuckX, stuckY, fillOuterCursor;
+
 		const initCanvas = () => {
 			const canvas = this.refs.canvasRef.current as HTMLCanvasElement;
 			const shapeBounds = {
@@ -69,7 +72,7 @@ class PortfolioCursor extends Component<
 			};
 
 			paper.setup(canvas);
-      const strokeColor: any = "#25d366";
+			const strokeColor: any = "#25d366";
 			const strokeWidth = 1;
 			const segments = 8;
 			const radius = 15;
@@ -113,13 +116,13 @@ class PortfolioCursor extends Component<
 			paper.view.onFrame = event => {
 				// using linear interpolation, the circle will move 0.2 (20%)
 				// of the distance between its current position and the mouse
-        // coordinates per Frame
+				// coordinates per Frame
 				lastX = lerp(lastX, clientX, 0.2);
 				lastY = lerp(lastY, clientY, 0.2);
 				group.position = new paper.Point(lastX, lastY);
 			};
-    };
-    
+		};
+
 		initCanvas();
 	}
 
