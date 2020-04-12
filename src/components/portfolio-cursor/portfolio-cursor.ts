@@ -42,7 +42,7 @@ class PortfolioCursor extends Component<
 					clientX = e.clientX;
 					clientY = e.clientY;
 				},
-				{ passive: false }
+				{ passive: true }
 			);
 
 			// transform the innerCursor to the current mouse position
