@@ -3,7 +3,6 @@ const runSequence = require('run-sequence');
 gulp.tasks = require('@biotope/build');
 
 gulp.task('build:netlify', function(callback) {
-	console.log('gulpfile');
 	runSequence(
 		['clean:dist', 'build:dev'],
 		['copy:dev:resources:js'],
