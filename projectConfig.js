@@ -22,6 +22,7 @@ module.exports = {
 		watchScss: true
 	},
 	favicons: {
+		appName: "Christoph Saile",
 		path: '/favicons/'
 	}
 };
